@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UtkJufbFMQFGf4i9GdYIhI5CJM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vinylApp.Main" />
+      <module name="VinylApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vinylApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Maciek\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="" />
+      <created>1576183210666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576183210666</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2312" y="384" key="#Project_Structure" timestamp="1576183450800">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2312" y="384" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183450800" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1576183637582">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183637582" />
+    <state x="2221" y="324" key="SettingsEditor" timestamp="1576183548275">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2221" y="324" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183548275" />
+  </component>
+</project>

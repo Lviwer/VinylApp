@@ -1,4 +1,4 @@
-package vinylApp.Controllers;
+package vinylApp.controllers;
 
 public class MainController {
 

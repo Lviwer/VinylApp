@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Main extends Application {
 
@@ -26,11 +28,14 @@ public class Main extends Application {
 
 
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(BORDER_PANE_MAIN_FXML));
+        Locale.setDefault(new Locale("pl"));//l
+        ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");//l
+        loader.setResources(bundle);//l
         BorderPane borderPane = loader.load();
         Scene scene = new Scene(borderPane);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("VinylApp");
+        primaryStage.setTitle(bundle.getString("title.application"));
         primaryStage.show();
 
 

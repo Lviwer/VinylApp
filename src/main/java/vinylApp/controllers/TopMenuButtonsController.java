@@ -9,6 +9,9 @@ public class TopMenuButtonsController {
     public static final String ADD_VINYL_FXML = "/fxml/AddVinyl.fxml";
     public static final String ADD_RELEASE_COUNTRY_FXML = "/fxml/AddReleaseCountry.fxml";
     public static final String LIST_OF_VINYLS_FXML = "/fxml/ListOfVinyls.fxml";
+    public static final String ADD_LABEL_FXML = "/fxml/AddLabel.fxml";
+    public static final String ADD_GENRE_FXML = "/fxml/AddGenre.fxml";
+    public static final String FXML_SEARCH_FXML = "/fxml/Search.fxml";
     private MainController mainController;
     @FXML
     private ToggleGroup toggleButtons;
@@ -35,15 +38,14 @@ public class TopMenuButtonsController {
     }
 
     public void addLabel(ActionEvent actionEvent) {
-        mainController.setCenter("/fxml/AddLabel.fxml");
+        mainController.setCenter(ADD_LABEL_FXML);
     }
 
     public void addGenre(ActionEvent actionEvent) {
-        mainController.setCenter("/fxml/AddGenre.fxml");
+        mainController.setCenter(ADD_GENRE_FXML);
     }
 
     public void search(ActionEvent actionEvent) {
-        mainController.setCenter("/fxml/Search.fxml");
+        mainController.setCenter(FXML_SEARCH_FXML);
     }
 }
-//start 28

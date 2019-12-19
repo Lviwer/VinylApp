@@ -5,9 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import vinylApp.utils.FxmlUtils;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -26,16 +28,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        Pane pane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
 
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(BORDER_PANE_MAIN_FXML));
-        Locale.setDefault(new Locale("pl"));//l
-        ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");//l
-        loader.setResources(bundle);//l
-        BorderPane borderPane = loader.load();
-        Scene scene = new Scene(borderPane);
+        Scene scene = new Scene(pane);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle(bundle.getString("title.application"));
+        primaryStage.setTitle(FxmlUtils.getResourceBundle().getString("title.application"));
         primaryStage.show();
 
 

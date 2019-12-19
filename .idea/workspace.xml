@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddGenre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddLabel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddReleaseCountry.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddVinyl.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Search.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/DialogsUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FxmlUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/TopMenuButtonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/TopMenuButtonsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/TopMenuButtons.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/BorderPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/BorderPaneMain.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/TopMenuButtonsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/TopMenuButtonsController.class" afterDir="false" />
@@ -29,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -137,30 +134,30 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576268616357" />
-    <state width="1556" height="3" key="GridCell.Tab.0.bottom" timestamp="1576765656267">
+    <state width="1556" height="272" key="GridCell.Tab.0.bottom" timestamp="1576784645549">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="3" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576765656267" />
-    <state width="1556" height="3" key="GridCell.Tab.0.center" timestamp="1576765656267">
+    <state width="1556" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576784645549" />
+    <state width="1556" height="272" key="GridCell.Tab.0.center" timestamp="1576784645549">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="3" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576765656267" />
-    <state width="1556" height="3" key="GridCell.Tab.0.left" timestamp="1576765656267">
+    <state width="1556" height="272" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576784645549" />
+    <state width="1556" height="272" key="GridCell.Tab.0.left" timestamp="1576784645549">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="3" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576765656267" />
-    <state width="1556" height="3" key="GridCell.Tab.0.right" timestamp="1576765656267">
+    <state width="1556" height="272" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576784645549" />
+    <state width="1556" height="272" key="GridCell.Tab.0.right" timestamp="1576784645549">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="3" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576765656267" />
+    <state width="1556" height="272" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576784645549" />
     <state width="1876" height="394" key="GridCell.Tab.1.bottom" timestamp="1576530879388">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>

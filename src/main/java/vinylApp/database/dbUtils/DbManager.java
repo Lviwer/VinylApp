@@ -19,7 +19,7 @@ public class DbManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
-    private static final String JDBC_DRIVER_HD = "jdbc:h2:/vinylDB";
+    private static final String JDBC_DRIVER_HD = "jdbc:h2:./databases/vinylDB";
     private static final String USER = "admin";
     private static final String PASS = "admin";
 

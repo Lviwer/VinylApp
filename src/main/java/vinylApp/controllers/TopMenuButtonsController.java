@@ -22,11 +22,11 @@ public class TopMenuButtonsController {
     }
 
     public void addVinyl() {
-        if(toggleButtons.getSelectedToggle() != null){  //when we click addVinyl we check &
-            toggleButtons.getSelectedToggle().setSelected(false); //erase clicked button in group toggledbutton
-        }
+        resetToggleButtons();
         mainController.setCenter(ADD_VINYL_FXML);
     }
+
+
 
 
     public void addReleaseCountry(ActionEvent actionEvent) {
@@ -42,10 +42,23 @@ public class TopMenuButtonsController {
     }
 
     public void addGenre(ActionEvent actionEvent) {
+        resetToggleButtons();
         mainController.setCenter(ADD_GENRE_FXML);
     }
 
     public void search(ActionEvent actionEvent) {
         mainController.setCenter(FXML_SEARCH_FXML);
     }
+
+    private void resetToggleButtons() {
+        if (toggleButtons.getSelectedToggle() != null) {  //when we click addVinyl we check &
+            toggleButtons.getSelectedToggle().setSelected(false); //erase clicked button in group toggledbutton
+        }
+    }
+
+
+
+
+
+
 }

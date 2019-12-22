@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/VinylApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/CommonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/GenreDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/LabelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/ReleaseCountryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/VinylDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/DbManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/BaseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Label.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/ReleaseCountry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LoginWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LoginWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/MainController.class" afterDir="false" />
@@ -21,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -52,15 +64,18 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="vinylApp.database.models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\photos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\_WorkSpace_\VinylApp\src\main\resources" />
       <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\css" />
       <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
       <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\photos" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
       <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\photos" />
     </key>
   </component>
@@ -119,39 +134,39 @@
     </state>
     <state x="470" y="139" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576431991962" />
     <state x="2312" y="384" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183450800" />
-    <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1576531418018">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1577013532288">
+      <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531418018" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183637582" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577013532288" />
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1576268616357">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576268616357" />
-    <state width="1556" height="272" key="GridCell.Tab.0.bottom" timestamp="1576792408760">
+    <state width="1556" height="272" key="GridCell.Tab.0.bottom" timestamp="1577018973618">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792408760" />
-    <state width="1556" height="272" key="GridCell.Tab.0.center" timestamp="1576792408760">
+    <state width="1556" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577018973618" />
+    <state width="1556" height="272" key="GridCell.Tab.0.center" timestamp="1577018973618">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="272" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792408760" />
-    <state width="1556" height="272" key="GridCell.Tab.0.left" timestamp="1576792408759">
+    <state width="1556" height="272" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577018973618" />
+    <state width="1556" height="272" key="GridCell.Tab.0.left" timestamp="1577018973618">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="272" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792408759" />
-    <state width="1556" height="272" key="GridCell.Tab.0.right" timestamp="1576792408760">
+    <state width="1556" height="272" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577018973618" />
+    <state width="1556" height="272" key="GridCell.Tab.0.right" timestamp="1577018973618">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="272" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792408760" />
+    <state width="1556" height="272" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577018973618" />
     <state width="1876" height="394" key="GridCell.Tab.1.bottom" timestamp="1576530879388">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -168,15 +183,27 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="1876" height="394" key="GridCell.Tab.1.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576530879388" />
+    <state x="2250" y="381" key="Maven.ArtifactSearchDialog" timestamp="1576852785242">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2250" y="381" key="Maven.ArtifactSearchDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576852785242" />
     <state x="2221" y="324" key="SettingsEditor" timestamp="1576792054180">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="301" y="45" key="SettingsEditor/0.0.1600.870@0.0.1600.870" timestamp="1576600542055" />
     <state x="361" y="61" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576524480468" />
     <state x="2221" y="324" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792054180" />
+    <state x="2144" y="474" width="1416" height="716" key="dock-window-1" timestamp="1576933863575">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2144" y="474" width="1416" height="716" key="dock-window-1/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576933863575" />
     <state x="2102" y="421" key="new project wizard" timestamp="1576791106823">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="2102" y="421" key="new project wizard/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576791106823" />
+    <state x="2383" y="467" width="672" height="678" key="search.everywhere.popup" timestamp="1576933521652">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2383" y="467" width="672" height="678" key="search.everywhere.popup/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576933521652" />
   </component>
 </project>

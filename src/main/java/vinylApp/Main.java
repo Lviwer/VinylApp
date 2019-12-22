@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import vinylApp.database.dbUtils.DbManager;
 import vinylApp.utils.FxmlUtils;
 
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class Main extends Application {
         primaryStage.setTitle(FxmlUtils.getResourceBundle().getString("title.application"));
         primaryStage.show();
 
-
+        DbManager.initDatabase();
     }
 
 

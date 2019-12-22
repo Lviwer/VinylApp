@@ -18,9 +18,6 @@ public class Genre implements BaseModel {
     @DatabaseField(columnName = "NAME", canBeNull = false)
     private String nameOfGenre;
 
-    @ForeignCollectionField(eager = true)
-    private ForeignCollection<Vinyl> vinyls;
-
 
     public int getId() {
         return id;
@@ -38,11 +35,5 @@ public class Genre implements BaseModel {
         this.nameOfGenre = nameOfGenre;
     }
 
-    public ForeignCollection<Vinyl> getVinyls() {
-        return vinyls;
-    }
 
-    public void setVinyls(ForeignCollection<Vinyl> vinyls) {
-        this.vinyls = vinyls;
-    }
 }

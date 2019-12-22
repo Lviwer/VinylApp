@@ -67,7 +67,7 @@ public class DbManager {
         }
     }
 
-    private static void closeConnectionSource() {
+    public static void closeConnectionSource() {
         if (connectionSource != null) {
             try {
                 connectionSource.close();
@@ -77,5 +77,11 @@ public class DbManager {
         }
     }
 
+    public static ConnectionSource getConnectionSource() {
+        if (connectionSource == null) {
+            createConnectionSource();
+        }
+        return connectionSource;
+    }
 
 }

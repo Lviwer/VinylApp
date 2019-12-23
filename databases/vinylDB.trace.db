@@ -431,3 +431,31 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/_WorkSpac
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 84 more
+2019-12-23 23:16:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+SELECT * FROM `AUTHOR`  [42102-200]
+2019-12-23 23:18:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+SELECT * FROM `AUTHOR`  [42102-200]
+2019-12-23 23:21:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+SELECT * FROM `AUTHOR`  [42102-200]
+2019-12-23 23:26:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+SELECT * FROM `AUTHOR`  [42102-200]
+2019-12-23 23:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+SELECT * FROM `AUTHOR`  [42102-200]
+2019-12-23 23:32:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+SELECT * FROM `AUTHOR`  [42102-200]
+2019-12-23 23:34:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+DROP TABLE `AUTHOR`  [42102-200]

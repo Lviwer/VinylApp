@@ -12,6 +12,8 @@ public class TopMenuButtonsController {
     public static final String ADD_LABEL_FXML = "/fxml/AddLabel.fxml";
     public static final String ADD_GENRE_FXML = "/fxml/AddGenre.fxml";
     public static final String FXML_SEARCH_FXML = "/fxml/Search.fxml";
+    public static final String ADD_AUTHOR_FXML = "/fxml/AddAuthor.fxml";
+
     private MainController mainController;
     @FXML
     private ToggleGroup toggleButtons;
@@ -25,8 +27,6 @@ public class TopMenuButtonsController {
         resetToggleButtons();
         mainController.setCenter(ADD_VINYL_FXML);
     }
-
-
 
 
     public void addReleaseCountry(ActionEvent actionEvent) {
@@ -57,8 +57,8 @@ public class TopMenuButtonsController {
     }
 
 
-
-
-
-
+    public void addAuthor(ActionEvent actionEvent) {
+        resetToggleButtons();
+        mainController.setCenter(ADD_AUTHOR_FXML);
+    }
 }

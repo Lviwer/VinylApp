@@ -6,10 +6,7 @@ import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import javafx.scene.control.Tab;
-import vinylApp.database.models.Genre;
-import vinylApp.database.models.Label;
-import vinylApp.database.models.ReleaseCountry;
-import vinylApp.database.models.Vinyl;
+import vinylApp.database.models.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -49,7 +46,7 @@ public class DbManager {
             TableUtils.dropTable(connectionSource, Label.class, true);
             TableUtils.dropTable(connectionSource, ReleaseCountry.class, true);
             TableUtils.dropTable(connectionSource, Vinyl.class, true);
-
+            TableUtils.dropTable(connectionSource, Author.class, true);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }
@@ -62,6 +59,7 @@ public class DbManager {
             TableUtils.createTableIfNotExists(connectionSource, Label.class);
             TableUtils.createTableIfNotExists(connectionSource, ReleaseCountry.class);
             TableUtils.createTableIfNotExists(connectionSource, Vinyl.class);
+            TableUtils.createTableIfNotExists(connectionSource, Author.class);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }

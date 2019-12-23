@@ -1,6 +1,5 @@
 package vinylApp.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -13,7 +12,7 @@ import vinylApp.utils.exceptions.ApplicationException;
 public class GenreController {
 
     @FXML
-    private Button editCategoryButton;
+    private Button editGenreButton;
     @FXML
     private Button deleteButton;
     @FXML
@@ -42,7 +41,7 @@ public class GenreController {
     private void initBindings() {
         this.addGenreButton.disableProperty().bind(genreTextField.textProperty().isEmpty());
         this.deleteButton.disableProperty().bind(this.genreModel.genreProperty().isNull());
-        this.editCategoryButton.disableProperty().bind(this.genreModel.genreProperty().isNull());
+        this.editGenreButton.disableProperty().bind(this.genreModel.genreProperty().isNull());
     }
 
 

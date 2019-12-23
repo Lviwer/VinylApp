@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vinylApp.controllers.GenreController">
+<VBox minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vinylApp.controllers.AuthorController">
    <children>
       <HBox alignment="TOP_CENTER" spacing="20.0">
          <children>
-            <Label text="%add.genre" />
-            <TextField fx:id="genreTextField" />
-            <Button fx:id="addGenreButton" mnemonicParsing="false" onAction="#addGenreOnAction" text="%add.button" />
-            <Label text="%choose.genre" />
-            <ComboBox fx:id="genreComboBox" onAction="#onActionComboBox" prefWidth="150.0" />
-            <Button fx:id="editGenreButton" mnemonicParsing="false" onAction="#onActionEditGenre" text="%edit.button" />
+            <Label text="%add.author" />
+            <TextField fx:id="authorTextField" />
+            <Button fx:id="addAuthorButton" mnemonicParsing="false" onAction="#addAuthorOnAction" text="%add.button" />
+            <Label text="%choose.author" />
+            <ComboBox fx:id="authorComboBox" onAction="#onActionComboBox" prefWidth="150.0" />
+            <Button fx:id="editAuthorButton" mnemonicParsing="false" onAction="#onActionEditAuthor" text="%edit.button" />
             <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onActionDeleteButton" text="%delete" />
          </children>
          <padding>

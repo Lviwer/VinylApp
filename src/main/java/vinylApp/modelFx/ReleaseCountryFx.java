@@ -33,4 +33,10 @@ public class ReleaseCountryFx {
     public void setNameOfCountry(String nameOfCountry) {
         this.nameOfCountry.set(nameOfCountry);
     }
+
+
+    @Override
+    public String toString() {
+        return nameOfCountry.getValue();
+    }
 }

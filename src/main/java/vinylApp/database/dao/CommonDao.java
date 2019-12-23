@@ -6,6 +6,7 @@ import com.j256.ormlite.logger.Logger;
 import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.support.ConnectionSource;
+import javafx.beans.property.IntegerProperty;
 import vinylApp.database.models.BaseModel;
 
 import java.sql.SQLException;
@@ -61,6 +62,17 @@ public abstract class CommonDao {
             LOGGER.warn(e.getMessage());
         }
         return null;
+    }
+
+
+    public <T extends BaseModel, I> void deleteById(Class<T> cls, Integer id) {
+
+        try {
+            Dao<T, I> dao = getDao(cls);
+            dao.deleteById((I) id);
+        } catch (SQLException e) {
+            LOGGER.warn(e.getMessage());
+        }
     }
 
 

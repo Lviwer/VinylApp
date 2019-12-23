@@ -16,7 +16,8 @@
             <TextField fx:id="releaseCountryTextField" />
             <Button fx:id="addReleaseCountryButton" mnemonicParsing="false" onAction="#addReleaseCountryOnAction" text="%add.button" />
             <Label text="%choose.release.country" />
-            <ComboBox fx:id="releaseCountryComboBox" prefWidth="150.0" />
+            <ComboBox fx:id="releaseCountryComboBox" onAction="#onActionComboBox" prefWidth="150.0" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onActionDeleteButton" text="%delete" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

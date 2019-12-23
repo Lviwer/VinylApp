@@ -34,4 +34,10 @@ public class LabelFx {
     public void setNameOfLabel(String nameOfLabel) {
         this.nameOfLabel.set(nameOfLabel);
     }
+
+
+    @Override
+    public String toString() {
+        return  nameOfLabel.getValue();
+    }
 }

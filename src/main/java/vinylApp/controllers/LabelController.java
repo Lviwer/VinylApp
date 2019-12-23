@@ -9,6 +9,9 @@ import vinylApp.modelFx.LabelFx;
 import vinylApp.modelFx.LabelModel;
 
 public class LabelController {
+
+    @FXML
+    private Button deleteButton;
     @FXML
     private TextField labelTextField;
 
@@ -20,18 +23,29 @@ public class LabelController {
 
     private LabelModel labelModel;
 
-    public void initialize(){
+    public void initialize() {
         this.labelModel = new LabelModel();
+        this.labelModel.init();
+        this.labelComboBox.setItems(this.labelModel.getLabelList());
         initBindings();
     }
 
     private void initBindings() {
         addLabelButton.disableProperty().bind(labelTextField.textProperty().isEmpty());
+        this.deleteButton.disableProperty().bind(this.labelModel.labelProperty().isNull());
     }
 
 
     public void addLabelOnAction(ActionEvent actionEvent) {
-    labelModel.saveLabelInDataBase(labelTextField.getText());
-    labelTextField.clear();
+        labelModel.saveLabelInDataBase(labelTextField.getText());
+        labelTextField.clear();
+    }
+
+    public void onActionDeleteButton(ActionEvent actionEvent) {
+        this.labelModel.deleteLabelById();
+    }
+
+    public void onActionComboBox(ActionEvent actionEvent) {
+        this.labelModel.setLabel(this.labelComboBox.getSelectionModel().getSelectedItem());
     }
 }

@@ -9,6 +9,9 @@ import vinylApp.modelFx.GenreFx;
 import vinylApp.modelFx.GenreModel;
 
 public class GenreController {
+
+    @FXML
+    private Button deleteButton;
     @FXML
     private TextField genreTextField;
 
@@ -21,19 +24,30 @@ public class GenreController {
     private GenreModel genreModel;
 
     @FXML
-    public void initialize()
-    {
+    public void initialize() {
         this.genreModel = new GenreModel();
+        this.genreModel.init();
+        this.genreComboBox.setItems(this.genreModel.getGenreList());
         initBindings();
     }
 
     private void initBindings() {
-        addGenreButton.disableProperty().bind(genreTextField.textProperty().isEmpty());
+        this.addGenreButton.disableProperty().bind(genreTextField.textProperty().isEmpty());
+        this.deleteButton.disableProperty().bind(this.genreModel.genreProperty().isNull());
     }
 
 
-    public void addGenreOnAction(ActionEvent actionEvent) {
-       genreModel.saveGenreInDataBase(genreTextField.getText());
-       genreTextField.clear();
+    public void addGenreOnAction() {
+        genreModel.saveGenreInDataBase(genreTextField.getText());
+        genreTextField.clear();
+    }
+
+    public void onActionDeleteButton() {
+        this.genreModel.deleteGenreById();
+    }
+
+    public void onActionComboBox() {
+        this.genreModel.setGenre(this.genreComboBox.getSelectionModel().getSelectedItem());
+
     }
 }

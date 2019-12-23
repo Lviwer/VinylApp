@@ -35,4 +35,9 @@ public class GenreFx {
     public void setNameOfGenre(String nameOfGenre) {
         this.nameOfGenre.set(nameOfGenre);
     }
+
+    @Override
+    public String toString() {
+        return nameOfGenre.getValue();
+    }
 }

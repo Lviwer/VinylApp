@@ -17,6 +17,7 @@
             <Button fx:id="addReleaseCountryButton" mnemonicParsing="false" onAction="#addReleaseCountryOnAction" text="%add.button" />
             <Label text="%choose.release.country" />
             <ComboBox fx:id="releaseCountryComboBox" onAction="#onActionComboBox" prefWidth="150.0" />
+            <Button fx:id="editReleaseCountryButton" mnemonicParsing="false" onAction="#onActionEditReleaseCountry" text="%edit.button" />
             <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onActionDeleteButton" text="%delete" />
          </children>
          <padding>

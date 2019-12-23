@@ -4,8 +4,10 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.LabelDao;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.database.models.Genre;
 import vinylApp.database.models.Label;
 
 import java.util.List;
@@ -64,5 +66,14 @@ public class LabelModel {
 
     public void setLabel(LabelFx label) {
         this.label.set(label);
+    }
+
+    public void updateLabelInDatabase() {
+        LabelDao labelDao = new LabelDao((DbManager.getConnectionSource()));
+        Label tempLabel = labelDao.findById(Label.class, this.getLabel().getId());
+        tempLabel.setNameOfLabel(getLabel().getNameOfLabel());
+        labelDao.createOrUpdate(tempLabel);
+        DbManager.closeConnectionSource();
+        init();
     }
 }

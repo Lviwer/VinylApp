@@ -7,9 +7,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import vinylApp.modelFx.GenreFx;
 import vinylApp.modelFx.GenreModel;
+import vinylApp.utils.DialogsUtils;
 
 public class GenreController {
 
+    @FXML
+    private Button editCategoryButton;
     @FXML
     private Button deleteButton;
     @FXML
@@ -34,6 +37,7 @@ public class GenreController {
     private void initBindings() {
         this.addGenreButton.disableProperty().bind(genreTextField.textProperty().isEmpty());
         this.deleteButton.disableProperty().bind(this.genreModel.genreProperty().isNull());
+        this.editCategoryButton.disableProperty().bind(this.genreModel.genreProperty().isNull());
     }
 
 
@@ -49,5 +53,13 @@ public class GenreController {
     public void onActionComboBox() {
         this.genreModel.setGenre(this.genreComboBox.getSelectionModel().getSelectedItem());
 
+    }
+
+    public void onActionEditGenre() {
+        String newGenreName = DialogsUtils.editDialog(this.genreModel.getGenre().getNameOfGenre());
+        if(newGenreName!=null){
+            this.genreModel.getGenre().setNameOfGenre(newGenreName);
+            this.genreModel.updateGenreInDataBase();
+        }
     }
 }

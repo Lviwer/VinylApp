@@ -51,6 +51,20 @@ public class GenreModel {
         init();
     }
 
+
+    public void updateGenreInDataBase() {
+        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        Genre tempGenre = genreDao.findById(Genre.class, this.getGenre().getId());
+        tempGenre.setNameOfGenre(getGenre().getNameOfGenre());
+        genreDao.createOrUpdate(tempGenre);
+        DbManager.closeConnectionSource();
+        init();
+
+
+    }
+
+
+
     public ObservableList<GenreFx> getGenreList() {
         return genreList;
     }
@@ -70,4 +84,6 @@ public class GenreModel {
     public void setGenre(GenreFx genre) {
         this.genre.set(genre);
     }
+
+
 }

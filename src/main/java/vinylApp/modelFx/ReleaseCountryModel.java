@@ -4,8 +4,10 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.ReleaseCountryDao;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.database.models.Genre;
 import vinylApp.database.models.ReleaseCountry;
 
 import java.util.List;
@@ -67,5 +69,14 @@ public class ReleaseCountryModel {
 
     public void setReleaseCountry(ReleaseCountryFx releaseCountry) {
         this.releaseCountry.set(releaseCountry);
+    }
+
+    public void updateReleaseCountryInDataBase() {
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
+        ReleaseCountry tempReleaseCountry = releaseCountryDao.findById(ReleaseCountry.class, this.getReleaseCountry().getId());
+        tempReleaseCountry.setNameOfCountry(getReleaseCountry().getNameOfCountry());
+        releaseCountryDao.createOrUpdate(tempReleaseCountry);
+        DbManager.closeConnectionSource();
+        init();
     }
 }

@@ -9,6 +9,7 @@ import vinylApp.database.dao.ReleaseCountryDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.models.Genre;
 import vinylApp.database.models.ReleaseCountry;
+import vinylApp.utils.exceptions.ApplicationException;
 
 import java.util.List;
 
@@ -18,8 +19,7 @@ public class ReleaseCountryModel {
     private ObservableList<ReleaseCountryFx> releaseCountryList = FXCollections.observableArrayList();
     private ObjectProperty<ReleaseCountryFx> releaseCountry = new SimpleObjectProperty<>();
 
-    public void init()
-    {
+    public void init() throws ApplicationException {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
         List<ReleaseCountry> releaseCountries = releaseCountryDao.queryForAll(ReleaseCountry.class);
         this.releaseCountryList.clear();
@@ -33,7 +33,7 @@ public class ReleaseCountryModel {
         DbManager.closeConnectionSource();
     }
 
-    public void deleteReleaseCountryById(){
+    public void deleteReleaseCountryById() throws ApplicationException {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
         releaseCountryDao.deleteById(ReleaseCountry.class, releaseCountry.getValue().getId());
         DbManager.closeConnectionSource();
@@ -41,8 +41,7 @@ public class ReleaseCountryModel {
     }
 
 
-    public void saveCountryInDataBase(String name)
-    {
+    public void saveCountryInDataBase(String name) throws ApplicationException {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
         ReleaseCountry releaseCountry = new ReleaseCountry();
         releaseCountry.setNameOfCountry(name);
@@ -71,7 +70,7 @@ public class ReleaseCountryModel {
         this.releaseCountry.set(releaseCountry);
     }
 
-    public void updateReleaseCountryInDataBase() {
+    public void updateReleaseCountryInDataBase() throws ApplicationException {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
         ReleaseCountry tempReleaseCountry = releaseCountryDao.findById(ReleaseCountry.class, this.getReleaseCountry().getId());
         tempReleaseCountry.setNameOfCountry(getReleaseCountry().getNameOfCountry());

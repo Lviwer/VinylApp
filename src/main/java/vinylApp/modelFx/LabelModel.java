@@ -9,6 +9,7 @@ import vinylApp.database.dao.LabelDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.models.Genre;
 import vinylApp.database.models.Label;
+import vinylApp.utils.exceptions.ApplicationException;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class LabelModel {
     private ObservableList<LabelFx> labelList = FXCollections.observableArrayList();
     private ObjectProperty<LabelFx> label = new SimpleObjectProperty<>();
 
-    public void init() {
+    public void init() throws ApplicationException {
         LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
         List<Label> labels = labelDao.queryForAll(Label.class);
         this.labelList.clear();
@@ -31,14 +32,14 @@ public class LabelModel {
 
     }
 
-    public void deleteLabelById() {
+    public void deleteLabelById() throws ApplicationException {
         LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
         labelDao.deleteById(Label.class, label.getValue().getId());
         DbManager.closeConnectionSource();
         init();
     }
 
-    public void saveLabelInDataBase(String name) {
+    public void saveLabelInDataBase(String name) throws ApplicationException {
         LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
         Label label = new Label();
         label.setNameOfLabel(name);
@@ -68,7 +69,7 @@ public class LabelModel {
         this.label.set(label);
     }
 
-    public void updateLabelInDatabase() {
+    public void updateLabelInDatabase() throws ApplicationException {
         LabelDao labelDao = new LabelDao((DbManager.getConnectionSource()));
         Label tempLabel = labelDao.findById(Label.class, this.getLabel().getId());
         tempLabel.setNameOfLabel(getLabel().getNameOfLabel());

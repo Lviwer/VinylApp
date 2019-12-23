@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import vinylApp.modelFx.GenreFx;
 import vinylApp.modelFx.GenreModel;
 import vinylApp.utils.DialogsUtils;
+import vinylApp.utils.exceptions.ApplicationException;
 
 public class GenreController {
 
@@ -29,7 +30,11 @@ public class GenreController {
     @FXML
     public void initialize() {
         this.genreModel = new GenreModel();
-        this.genreModel.init();
+        try {
+            this.genreModel.init();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         this.genreComboBox.setItems(this.genreModel.getGenreList());
         initBindings();
     }
@@ -42,12 +47,20 @@ public class GenreController {
 
 
     public void addGenreOnAction() {
-        genreModel.saveGenreInDataBase(genreTextField.getText());
+        try {
+            genreModel.saveGenreInDataBase(genreTextField.getText());
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         genreTextField.clear();
     }
 
     public void onActionDeleteButton() {
-        this.genreModel.deleteGenreById();
+        try {
+            this.genreModel.deleteGenreById();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
     }
 
     public void onActionComboBox() {
@@ -57,9 +70,13 @@ public class GenreController {
 
     public void onActionEditGenre() {
         String newGenreName = DialogsUtils.editDialog(this.genreModel.getGenre().getNameOfGenre());
-        if(newGenreName!=null){
+        if (newGenreName != null) {
             this.genreModel.getGenre().setNameOfGenre(newGenreName);
-            this.genreModel.updateGenreInDataBase();
+            try {
+                this.genreModel.updateGenreInDataBase();
+            } catch (ApplicationException e) {
+                DialogsUtils.errorDialog(e.getMessage());
+            }
         }
     }
 }

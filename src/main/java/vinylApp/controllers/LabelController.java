@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import vinylApp.modelFx.LabelFx;
 import vinylApp.modelFx.LabelModel;
 import vinylApp.utils.DialogsUtils;
+import vinylApp.utils.exceptions.ApplicationException;
 
 public class LabelController {
 
@@ -29,7 +30,11 @@ public class LabelController {
 
     public void initialize() {
         this.labelModel = new LabelModel();
-        this.labelModel.init();
+        try {
+            this.labelModel.init();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         this.labelComboBox.setItems(this.labelModel.getLabelList());
         initBindings();
     }
@@ -45,12 +50,20 @@ public class LabelController {
 
 
     public void addLabelOnAction(ActionEvent actionEvent) {
-        labelModel.saveLabelInDataBase(labelTextField.getText());
+        try {
+            labelModel.saveLabelInDataBase(labelTextField.getText());
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         labelTextField.clear();
     }
 
     public void onActionDeleteButton(ActionEvent actionEvent) {
-        this.labelModel.deleteLabelById();
+        try {
+            this.labelModel.deleteLabelById();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
     }
 
     public void onActionComboBox(ActionEvent actionEvent) {
@@ -62,7 +75,11 @@ public class LabelController {
         String newLabelName = DialogsUtils.editDialog(this.labelModel.getLabel().getNameOfLabel());
         if(newLabelName != null){
             this.labelModel.getLabel().setNameOfLabel(newLabelName);
-            this.labelModel.updateLabelInDatabase();
+            try {
+                this.labelModel.updateLabelInDatabase();
+            } catch (ApplicationException e) {
+                DialogsUtils.errorDialog(e.getMessage());
+            }
 
         }
     }

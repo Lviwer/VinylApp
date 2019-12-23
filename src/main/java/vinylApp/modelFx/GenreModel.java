@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.models.Genre;
+import vinylApp.utils.exceptions.ApplicationException;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class GenreModel {
     private ObjectProperty<GenreFx> genre = new SimpleObjectProperty<>();//take choosen from comboBox element
 
 
-    public void init() {
+    public void init() throws ApplicationException {
         GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
         List<Genre> genres = genreDao.queryForAll(Genre.class);
         this.genreList.clear();
@@ -34,7 +35,7 @@ public class GenreModel {
     }
 
 
-    public void saveGenreInDataBase(String name) {
+    public void saveGenreInDataBase(String name) throws ApplicationException {
         GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
         Genre genre = new Genre();
         genre.setNameOfGenre(name);
@@ -44,7 +45,7 @@ public class GenreModel {
     }
 
 
-    public void deleteGenreById() {
+    public void deleteGenreById() throws ApplicationException {
         GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
         genreDao.deleteById(Genre.class, genre.getValue().getId());
         DbManager.closeConnectionSource();
@@ -52,7 +53,7 @@ public class GenreModel {
     }
 
 
-    public void updateGenreInDataBase() {
+    public void updateGenreInDataBase() throws ApplicationException {
         GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
         Genre tempGenre = genreDao.findById(Genre.class, this.getGenre().getId());
         tempGenre.setNameOfGenre(getGenre().getNameOfGenre());

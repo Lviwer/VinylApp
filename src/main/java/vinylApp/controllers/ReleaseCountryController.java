@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import vinylApp.modelFx.ReleaseCountryFx;
 import vinylApp.modelFx.ReleaseCountryModel;
 import vinylApp.utils.DialogsUtils;
+import vinylApp.utils.exceptions.ApplicationException;
 
 public class ReleaseCountryController {
 
@@ -29,7 +30,11 @@ public class ReleaseCountryController {
 
     public void initialize() {
         this.releaseCountryModel = new ReleaseCountryModel();
-        this.releaseCountryModel.init();
+        try {
+            this.releaseCountryModel.init();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         this.releaseCountryComboBox.setItems(this.releaseCountryModel.getReleaseCountryList());
         initBindings();
     }
@@ -43,12 +48,20 @@ public class ReleaseCountryController {
 
 
     public void addReleaseCountryOnAction(ActionEvent actionEvent) {
-        releaseCountryModel.saveCountryInDataBase(releaseCountryTextField.getText());
+        try {
+            releaseCountryModel.saveCountryInDataBase(releaseCountryTextField.getText());
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
         releaseCountryTextField.clear();
     }
 
     public void onActionDeleteButton(ActionEvent actionEvent) {
-        this.releaseCountryModel.deleteReleaseCountryById();
+        try {
+            this.releaseCountryModel.deleteReleaseCountryById();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
     }
 
     public void onActionComboBox(ActionEvent actionEvent) {
@@ -60,7 +73,11 @@ public class ReleaseCountryController {
         if(newReleaseCountryName !=null)
         {
             this.releaseCountryModel.getReleaseCountry().setNameOfCountry(newReleaseCountryName);
-            this.releaseCountryModel.updateReleaseCountryInDataBase();
+            try {
+                this.releaseCountryModel.updateReleaseCountryInDataBase();
+            } catch (ApplicationException e) {
+                DialogsUtils.errorDialog(e.getMessage());
+            }
         }
     }
 

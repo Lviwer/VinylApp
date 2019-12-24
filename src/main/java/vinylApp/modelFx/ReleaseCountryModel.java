@@ -4,9 +4,11 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.ReleaseCountryDao;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.database.dbUtils.converters.ConverterReleaseCountry;
 import vinylApp.database.models.Genre;
 import vinylApp.database.models.ReleaseCountry;
 import vinylApp.utils.exceptions.ApplicationException;
@@ -18,19 +20,34 @@ public class ReleaseCountryModel {
 
     private ObservableList<ReleaseCountryFx> releaseCountryList = FXCollections.observableArrayList();
     private ObjectProperty<ReleaseCountryFx> releaseCountry = new SimpleObjectProperty<>();
+    private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
         List<ReleaseCountry> releaseCountries = releaseCountryDao.queryForAll(ReleaseCountry.class);
-        this.releaseCountryList.clear();
+        initReleaseCountryList(releaseCountries);
+        initRoot(releaseCountries);
+        DbManager.closeConnectionSource();
+    }
 
-        releaseCountries.forEach(c->{
-            ReleaseCountryFx releaseCountryFx = new ReleaseCountryFx();
-            releaseCountryFx.setId(c.getId());
-            releaseCountryFx.setNameOfCountry(c.getNameOfCountry());
+    private void initRoot(List<ReleaseCountry> releaseCountries) {
+        this.root.getChildren().clear();
+        releaseCountries.forEach(a -> {
+            TreeItem<String> releaseItem = new TreeItem<>(a.getNameOfCountry());
+            a.getVinylsRelease().forEach(b -> {
+                releaseItem.getChildren().add(new TreeItem<>(b.getTitle()));
+            });
+            root.getChildren().add(releaseItem);
+        });
+
+    }
+
+    private void initReleaseCountryList(List<ReleaseCountry> releaseCountries) {
+        this.releaseCountryList.clear();
+        releaseCountries.forEach(c -> {
+            ReleaseCountryFx releaseCountryFx = ConverterReleaseCountry.convertToReleaseCountryFx(c);
             this.releaseCountryList.add(releaseCountryFx);
         });
-        DbManager.closeConnectionSource();
     }
 
     public void deleteReleaseCountryById() throws ApplicationException {
@@ -77,5 +94,13 @@ public class ReleaseCountryModel {
         releaseCountryDao.createOrUpdate(tempReleaseCountry);
         DbManager.closeConnectionSource();
         init();
+    }
+
+    public TreeItem<String> getRoot() {
+        return root;
+    }
+
+    public void setRoot(TreeItem<String> root) {
+        this.root = root;
     }
 }

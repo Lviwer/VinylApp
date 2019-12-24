@@ -18,6 +18,8 @@ public class Label implements BaseModel {
     @DatabaseField(columnName = "NAME", canBeNull = false, unique = true)
     private String nameOfLabel;
 
+    @ForeignCollectionField(columnName = "VINYL_ID")
+    private ForeignCollection<Vinyl> vinylsLabel;
 
     public int getId() {
         return id;
@@ -36,4 +38,11 @@ public class Label implements BaseModel {
     }
 
 
+    public ForeignCollection<Vinyl> getVinylsLabel() {
+        return vinylsLabel;
+    }
+
+    public void setVinylsLabel(ForeignCollection<Vinyl> vinylsLabel) {
+        this.vinylsLabel = vinylsLabel;
+    }
 }

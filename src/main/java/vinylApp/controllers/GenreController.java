@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeView;
 import vinylApp.modelFx.GenreFx;
 import vinylApp.modelFx.GenreModel;
 import vinylApp.utils.DialogsUtils;
@@ -11,6 +12,8 @@ import vinylApp.utils.exceptions.ApplicationException;
 
 public class GenreController {
 
+    @FXML
+    private TreeView<String> genreTreeView;
     @FXML
     private Button editGenreButton;
     @FXML
@@ -35,6 +38,7 @@ public class GenreController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         this.genreComboBox.setItems(this.genreModel.getGenreList());
+        this.genreTreeView.setRoot(this.genreModel.getRoot());
         initBindings();
     }
 

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeView;
 import vinylApp.modelFx.AuthorFx;
 import vinylApp.modelFx.AuthorModel;
 import vinylApp.utils.DialogsUtils;
@@ -12,6 +13,8 @@ import vinylApp.utils.exceptions.ApplicationException;
 
 public class AuthorController {
 
+    @FXML
+    private TreeView<String> authorTreeView;
     @FXML
     private TextField authorTextField;
     @FXML
@@ -35,6 +38,7 @@ public class AuthorController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         this.authorComboBox.setItems(this.authorModel.getAuthorList());
+        this.authorTreeView.setRoot(this.authorModel.getRoot());
         initBindings();
     }
 

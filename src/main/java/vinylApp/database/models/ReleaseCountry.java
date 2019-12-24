@@ -18,6 +18,10 @@ public class ReleaseCountry implements BaseModel {
     @DatabaseField(columnName = "NAME", canBeNull = false, unique = true)
     private String nameOfCountry;
 
+    @ForeignCollectionField(columnName = "VINYL_ID")
+    private ForeignCollection<Vinyl> vinylsRelease;
+
+
 
     public int getId() {
         return id;
@@ -35,4 +39,12 @@ public class ReleaseCountry implements BaseModel {
         this.nameOfCountry = nameOfCountry;
     }
 
+
+    public ForeignCollection<Vinyl> getVinylsRelease() {
+        return vinylsRelease;
+    }
+
+    public void setVinylsRelease(ForeignCollection<Vinyl> vinylsRelease) {
+        this.vinylsRelease = vinylsRelease;
+    }
 }

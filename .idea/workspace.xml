@@ -2,27 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/AuthorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/AuthorDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/AuthorFx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/AuthorModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterAuthor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterGenre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterReleaseCountry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databases/vinylDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/vinylDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/vinylDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/vinylDB.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/AuthorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/GenreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/TopMenuButtonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/TopMenuButtonsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/DbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/DbManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LabelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LabelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ReleaseCountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ReleaseCountryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/VinylDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dao/VinylDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/ReleaseCountry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/ReleaseCountry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/AuthorFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/AuthorFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/AuthorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/AuthorModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/GenreModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/GenreModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/LabelModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/LabelModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ReleaseCountryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ReleaseCountryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddGenre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddGenre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TopMenuButtons.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/TopMenuButtons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/TopMenuButtons.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/TopMenuButtonsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/TopMenuButtonsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddLabel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddLabel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddReleaseCountry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddReleaseCountry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddAuthor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddAuthor.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddGenre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddGenre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddLabel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddLabel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddReleaseCountry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddReleaseCountry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/AuthorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/AuthorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/GenreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/GenreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LabelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LabelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ReleaseCountryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ReleaseCountryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/database/dao/VinylDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/database/dao/VinylDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/database/models/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/database/models/Author.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/database/models/Vinyl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/database/models/Vinyl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/AuthorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/AuthorModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/GenreModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/GenreModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/LabelModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/LabelModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ReleaseCountryModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ReleaseCountryModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/utils/FillDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/utils/FillDatabase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +92,8 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\css" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\photos" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="vinylApp.database.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
@@ -85,8 +104,12 @@
       <recent name="vinylApp.database.models" />
       <recent name="vinylApp.modelFx" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="vinylApp.database.models" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\css" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\photos" />
     </key>
   </component>
   <component name="RunManager">
@@ -150,39 +173,43 @@
     </state>
     <state x="470" y="139" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576431991962" />
     <state x="2312" y="384" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183450800" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1577130432426">
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1577200462505">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531418018" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577130432426" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577200462505" />
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1576268616357">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576268616357" />
-    <state width="1556" height="2" key="GridCell.Tab.0.bottom" timestamp="1577140444409">
+    <state x="2516" y="585" width="407" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1577193836131">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
+    <state x="2516" y="585" width="407" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577193836131" />
+    <state width="1556" height="230" key="GridCell.Tab.0.bottom" timestamp="1577200955055">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577140444409" />
-    <state width="1556" height="2" key="GridCell.Tab.0.center" timestamp="1577140444409">
+    <state width="1556" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577200955055" />
+    <state width="1556" height="230" key="GridCell.Tab.0.center" timestamp="1577200955055">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="2" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577140444409" />
-    <state width="1556" height="2" key="GridCell.Tab.0.left" timestamp="1577140444409">
+    <state width="1556" height="230" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577200955055" />
+    <state width="1556" height="230" key="GridCell.Tab.0.left" timestamp="1577200955055">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="2" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577140444409" />
-    <state width="1556" height="2" key="GridCell.Tab.0.right" timestamp="1577140444409">
+    <state width="1556" height="230" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577200955055" />
+    <state width="1556" height="230" key="GridCell.Tab.0.right" timestamp="1577200955055">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="2" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577140444409" />
+    <state width="1556" height="230" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577200955055" />
     <state width="1876" height="394" key="GridCell.Tab.1.bottom" timestamp="1576530879388">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -213,18 +240,18 @@
     <state x="301" y="45" key="SettingsEditor/0.0.1600.870@0.0.1600.870" timestamp="1576600542055" />
     <state x="361" y="61" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576524480468" />
     <state x="2221" y="324" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792054180" />
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1577094149943">
+    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1577188347120">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577094149943" />
+    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577188347120" />
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1" timestamp="1576933863575">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576933863575" />
-    <state x="2450" y="481" width="540" height="500" key="extract.method.dialog" timestamp="1577023249100">
+    <state x="2846" y="393" width="540" height="500" key="extract.method.dialog" timestamp="1577197132733">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state x="2450" y="481" width="540" height="500" key="extract.method.dialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577023249100" />
+    <state x="2846" y="393" width="540" height="500" key="extract.method.dialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577197132733" />
     <state x="2102" y="421" key="new project wizard" timestamp="1576791106823">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>

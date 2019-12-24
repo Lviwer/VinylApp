@@ -4,8 +4,10 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.database.dbUtils.converters.ConverterGenre;
 import vinylApp.database.models.Genre;
 import vinylApp.utils.exceptions.ApplicationException;
 
@@ -17,21 +19,35 @@ public class GenreModel {
 
     private ObservableList<GenreFx> genreList = FXCollections.observableArrayList();//connect with comboBox
     private ObjectProperty<GenreFx> genre = new SimpleObjectProperty<>();//take choosen from comboBox element
-
+    private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
         GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
         List<Genre> genres = genreDao.queryForAll(Genre.class);
-        this.genreList.clear();
-
-        genres.forEach(c -> {
-            GenreFx genreFx = new GenreFx();
-            genreFx.setId(c.getId());
-            genreFx.setNameOfGenre(c.getNameOfGenre());
-            this.genreList.add(genreFx);
-        });
+        initGenreList(genres);
+        initRoot(genres);
         DbManager.closeConnectionSource();
 
+    }
+
+    private void initRoot(List<Genre> genres) {
+        this.root.getChildren().clear();
+        genres.forEach(a -> {
+            TreeItem<String> genreItem = new TreeItem<>(a.getNameOfGenre());
+
+            a.getVinylsGenre().forEach(b -> {
+                genreItem.getChildren().add(new TreeItem<>(b.getTitle()));
+            });
+            root.getChildren().add(genreItem);
+        });
+    }
+
+    private void initGenreList(List<Genre> genres) {
+        this.genreList.clear();
+        genres.forEach(c -> {
+            GenreFx genreFx = ConverterGenre.convertToGenreFx(c);
+            this.genreList.add(genreFx);
+        });
     }
 
 
@@ -65,7 +81,6 @@ public class GenreModel {
     }
 
 
-
     public ObservableList<GenreFx> getGenreList() {
         return genreList;
     }
@@ -87,4 +102,11 @@ public class GenreModel {
     }
 
 
+    public TreeItem<String> getRoot() {
+        return root;
+    }
+
+    public void setRoot(TreeItem<String> root) {
+        this.root = root;
+    }
 }

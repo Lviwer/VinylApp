@@ -10,6 +10,8 @@ public class AuthorFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();
     private StringProperty nameOfAuthor = new SimpleStringProperty();
+    private StringProperty surnameOfAuthor = new SimpleStringProperty();
+
 
 
     public int getId() {
@@ -34,6 +36,18 @@ public class AuthorFx {
 
     public void setNameOfAuthor(String nameOfAuthor) {
         this.nameOfAuthor.set(nameOfAuthor);
+    }
+
+    public String getSurnameOfAuthor() {
+        return surnameOfAuthor.get();
+    }
+
+    public StringProperty surnameOfAuthorProperty() {
+        return surnameOfAuthor;
+    }
+
+    public void setSurnameOfAuthor(String surnameOfAuthor) {
+        this.surnameOfAuthor.set(surnameOfAuthor);
     }
 
     @Override

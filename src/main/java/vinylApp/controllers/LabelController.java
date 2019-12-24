@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeView;
 import vinylApp.modelFx.LabelFx;
 import vinylApp.modelFx.LabelModel;
 import vinylApp.utils.DialogsUtils;
@@ -13,6 +14,9 @@ import vinylApp.utils.exceptions.ApplicationException;
 
 public class LabelController {
 
+
+    @FXML
+    private TreeView<String> labelTreeView;
     @FXML
     private Button editLabelButton;
     @FXML
@@ -36,6 +40,7 @@ public class LabelController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         this.labelComboBox.setItems(this.labelModel.getLabelList());
+        this.labelTreeView.setRoot(this.labelModel.getRoot());
         initBindings();
     }
 

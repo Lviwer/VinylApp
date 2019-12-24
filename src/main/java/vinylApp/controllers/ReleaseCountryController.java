@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeView;
 import vinylApp.modelFx.ReleaseCountryFx;
 import vinylApp.modelFx.ReleaseCountryModel;
 import vinylApp.utils.DialogsUtils;
@@ -13,6 +14,8 @@ import vinylApp.utils.exceptions.ApplicationException;
 
 public class ReleaseCountryController {
 
+    @FXML
+    private TreeView<String> releaseCountryTreeView;
     @FXML
     private Button editReleaseCountryButton;
     @FXML
@@ -36,6 +39,7 @@ public class ReleaseCountryController {
             DialogsUtils.errorDialog(e.getMessage());
         }
         this.releaseCountryComboBox.setItems(this.releaseCountryModel.getReleaseCountryList());
+        this.releaseCountryTreeView.setRoot(this.releaseCountryModel.getRoot());
         initBindings();
     }
 

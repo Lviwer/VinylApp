@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.utils.FillDatabase;
 import vinylApp.utils.FxmlUtils;
 
 import java.io.IOException;
@@ -38,6 +39,10 @@ public class Main extends Application {
         primaryStage.show();
 
         DbManager.initDatabase();
+        FillDatabase.fillDatabase();
+
+
+
     }
 
 

@@ -4,11 +4,11 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.AuthorDao;
-import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.database.dbUtils.converters.ConverterAuthor;
 import vinylApp.database.models.Author;
-import vinylApp.database.models.Genre;
 import vinylApp.utils.exceptions.ApplicationException;
 
 import java.util.List;
@@ -19,21 +19,38 @@ public class AuthorModel {
 
     private ObservableList<AuthorFx> authorList = FXCollections.observableArrayList();//connect with comboBox
     private ObjectProperty<AuthorFx> author = new SimpleObjectProperty<>();//take choosen from comboBox element
-
+    private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
         AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
         List<Author> authors = authorDao.queryForAll(Author.class);
-        this.authorList.clear();
-
-        authors.forEach(c -> {
-            AuthorFx authorFx = new AuthorFx();
-            authorFx.setId(c.getId());
-            authorFx.setNameOfAuthor(c.getNameOfAuthor());
-            this.authorList.add(authorFx);
-        });
+        initAuthorList(authors);
+        initRoot(authors);
         DbManager.closeConnectionSource();
 
+    }
+
+    private void initRoot(List<Author> authors) {
+
+        this.root.getChildren().clear();
+        authors.forEach(a -> {
+            String nameAndSurname = a.getNameOfAuthor() + " " + a.getSurnameOfAuthor(); //FOR NAME AND SURNAME in TreeView
+            TreeItem<String> authorItem = new TreeItem<>(nameAndSurname);
+            a.getVinylsAuthor().forEach(b->{
+                authorItem.getChildren().add(new TreeItem<>(b.getTitle())); // title from vinyls list
+            });
+            root.getChildren().add(authorItem);
+        });
+
+
+    }
+
+    private void initAuthorList(List<Author> authors) {
+        this.authorList.clear();
+        authors.forEach(c -> {
+            AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(c);
+            this.authorList.add(authorFx);
+        });
     }
 
 
@@ -67,7 +84,6 @@ public class AuthorModel {
     }
 
 
-
     public ObservableList<AuthorFx> getAuthorList() {
         return authorList;
     }
@@ -89,4 +105,11 @@ public class AuthorModel {
     }
 
 
+    public TreeItem<String> getRoot() {
+        return root;
+    }
+
+    public void setRoot(TreeItem<String> root) {
+        this.root = root;
+    }
 }

@@ -31,6 +31,9 @@ public class Vinyl implements BaseModel {
     @DatabaseField(columnName = "RELEASE_COUNTRY", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private ReleaseCountry releaseCountry;
 
+    @DatabaseField(columnName = "AUTHOR", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = true)
+    private Author author;
+
     @DatabaseField(columnName = "CATALOG_NUMBER", width = 1)
     private long catalogNumber;
 
@@ -165,5 +168,13 @@ public class Vinyl implements BaseModel {
 
     public void setWantTo(boolean wantTo) {
         this.wantTo = wantTo;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

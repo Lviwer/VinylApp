@@ -15,11 +15,8 @@ public class Author implements BaseModel {
     @DatabaseField(generatedId = true)
     private int id;
 
-    @DatabaseField(columnName = "NAME", canBeNull = false)
+    @DatabaseField(columnName = "NAME", canBeNull = false, unique = true)
     private String nameOfAuthor;
-
-    @DatabaseField(columnName = "SURNAME", canBeNull = false)
-    private String surnameOfAuthor;
 
     @ForeignCollectionField(columnName = "VINYL_ID")
     private ForeignCollection<Vinyl> vinylsAuthor;
@@ -38,14 +35,6 @@ public class Author implements BaseModel {
 
     public void setNameOfAuthor(String nameOfAuthor) {
         this.nameOfAuthor = nameOfAuthor;
-    }
-
-    public String getSurnameOfAuthor() {
-        return surnameOfAuthor;
-    }
-
-    public void setSurnameOfAuthor(String surnameOfAuthor) {
-        this.surnameOfAuthor = surnameOfAuthor;
     }
 
     public ForeignCollection<Vinyl> getVinylsAuthor() {

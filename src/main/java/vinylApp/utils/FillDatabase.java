@@ -69,10 +69,8 @@ public class FillDatabase {
 
         Author author1 = new Author();
         author1.setNameOfAuthor("Biały Wilk");
-        author1.setSurnameOfAuthor("Z Rivii");
         Author author2 = new Author();
         author2.setNameOfAuthor("Jaskier");
-        author2.setSurnameOfAuthor("Pinda");
 
         AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
 

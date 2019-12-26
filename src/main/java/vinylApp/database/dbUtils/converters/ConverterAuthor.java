@@ -10,7 +10,6 @@ public class ConverterAuthor {
         AuthorFx authorFx = new AuthorFx();
         authorFx.setId(author.getId());
         authorFx.setNameOfAuthor(author.getNameOfAuthor());
-        authorFx.setSurnameOfAuthor(author.getSurnameOfAuthor());
 
         return authorFx;
     }

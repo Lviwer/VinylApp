@@ -34,8 +34,7 @@ public class AuthorModel {
 
         this.root.getChildren().clear();
         authors.forEach(a -> {
-            String nameAndSurname = a.getNameOfAuthor() + " " + a.getSurnameOfAuthor(); //FOR NAME AND SURNAME in TreeView
-            TreeItem<String> authorItem = new TreeItem<>(nameAndSurname);
+            TreeItem<String> authorItem = new TreeItem<>(a.getNameOfAuthor());
             a.getVinylsAuthor().forEach(b->{
                 authorItem.getChildren().add(new TreeItem<>(b.getTitle())); // title from vinyls list
             });

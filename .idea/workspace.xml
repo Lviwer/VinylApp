@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylFx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databases/vinylDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/vinylDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/VinylController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/VinylController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddVinyl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddVinyl.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddVinyl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddVinyl.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,11 +137,11 @@
     </state>
     <state x="470" y="139" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576431991962" />
     <state x="2312" y="384" key="#Project_Structure/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576183450800" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1577459488116">
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1577561131442">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531418018" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577459488116" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577561131442" />
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1576268616357">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -151,30 +150,30 @@
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="2516" y="585" width="407" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577193836131" />
-    <state width="1556" height="230" key="GridCell.Tab.0.bottom" timestamp="1577459650473">
+    <state width="1556" height="267" key="GridCell.Tab.0.bottom" timestamp="1577561488762">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577459650473" />
-    <state width="1556" height="230" key="GridCell.Tab.0.center" timestamp="1577459650472">
+    <state width="1556" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577561488762" />
+    <state width="1556" height="267" key="GridCell.Tab.0.center" timestamp="1577561488762">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="230" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577459650472" />
-    <state width="1556" height="230" key="GridCell.Tab.0.left" timestamp="1577459650472">
+    <state width="1556" height="267" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577561488762" />
+    <state width="1556" height="267" key="GridCell.Tab.0.left" timestamp="1577561488762">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="230" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577459650472" />
-    <state width="1556" height="230" key="GridCell.Tab.0.right" timestamp="1577459650473">
+    <state width="1556" height="267" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577561488762" />
+    <state width="1556" height="267" key="GridCell.Tab.0.right" timestamp="1577561488762">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1556" height="2" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1576604871923" />
     <state width="1876" height="319" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531696069" />
-    <state width="1556" height="230" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577459650473" />
+    <state width="1556" height="267" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577561488762" />
     <state width="1876" height="394" key="GridCell.Tab.1.bottom" timestamp="1576530879388">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -205,18 +204,18 @@
     <state x="301" y="45" key="SettingsEditor/0.0.1600.870@0.0.1600.870" timestamp="1576600542055" />
     <state x="361" y="61" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576524480468" />
     <state x="2221" y="324" key="SettingsEditor/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576792054180" />
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1577447739376">
+    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1577536271540">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577447739376" />
+    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577536271540" />
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1" timestamp="1576933863575">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1576933863575" />
-    <state x="2846" y="393" width="540" height="500" key="extract.method.dialog" timestamp="1577197132733">
+    <state x="2846" y="393" width="540" height="500" key="extract.method.dialog" timestamp="1577561352670">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state x="2846" y="393" width="540" height="500" key="extract.method.dialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577197132733" />
+    <state x="2846" y="393" width="540" height="500" key="extract.method.dialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577561352670" />
     <state x="2102" y="421" key="new project wizard" timestamp="1576791106823">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>

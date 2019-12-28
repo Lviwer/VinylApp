@@ -34,14 +34,14 @@ public class Vinyl implements BaseModel {
     @DatabaseField(columnName = "AUTHOR", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = true)
     private Author author;
 
-    @DatabaseField(columnName = "CATALOG_NUMBER", width = 1)
-    private long catalogNumber;
+    @DatabaseField(columnName = "CATALOG_NUMBER")
+    private String catalogNumber;
 
     @DatabaseField(columnName = "PRICE", canBeNull = false)
-    private float price;
+    private double price;
 
     @DatabaseField(columnName = "SELL_PRICE")
-    private float sellPrice;
+    private double sellPrice;
 
     @DatabaseField(columnName = "BUY_DATE")
     private Date buyDate;
@@ -106,28 +106,12 @@ public class Vinyl implements BaseModel {
         this.releaseCountry = releaseCountry;
     }
 
-    public long getCatalogNumber() {
+    public String getCatalogNumber() {
         return catalogNumber;
     }
 
-    public void setCatalogNumber(long catalogNumber) {
+    public void setCatalogNumber(String catalogNumber) {
         this.catalogNumber = catalogNumber;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public float getSellPrice() {
-        return sellPrice;
-    }
-
-    public void setSellPrice(float sellPrice) {
-        this.sellPrice = sellPrice;
     }
 
     public Date getBuyDate() {
@@ -176,5 +160,21 @@ public class Vinyl implements BaseModel {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getSellPrice() {
+        return sellPrice;
+    }
+
+    public void setSellPrice(double sellPrice) {
+        this.sellPrice = sellPrice;
     }
 }

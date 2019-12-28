@@ -2,6 +2,8 @@ package vinylApp.modelFx;
 
 import javafx.beans.property.*;
 
+import java.time.LocalDate;
+
 public class VinylFx {
 
 
@@ -10,12 +12,12 @@ public class VinylFx {
  private ObjectProperty<AuthorFx> authorFx = new SimpleObjectProperty<>();
  private ObjectProperty<LabelFx> labelFx = new SimpleObjectProperty<>();
  private ObjectProperty<ReleaseCountryFx> countryFx = new SimpleObjectProperty<>();
- private SimpleStringProperty released = new SimpleStringProperty();
+ private ObjectProperty<LocalDate> released = new SimpleObjectProperty<>();
  private ObjectProperty<GenreFx> genreFx = new SimpleObjectProperty<>();
  private SimpleStringProperty catalogNumber = new SimpleStringProperty();
- private SimpleStringProperty dateOfPurchase = new SimpleStringProperty();
- private SimpleFloatProperty price = new SimpleFloatProperty();
- private SimpleFloatProperty sellingPrice = new SimpleFloatProperty();
+ private ObjectProperty<LocalDate> dateOfPurchase = new SimpleObjectProperty<>();
+ private SimpleStringProperty price = new SimpleStringProperty();
+ private SimpleStringProperty sellingPrice = new SimpleStringProperty();
  private SimpleStringProperty vinylCondition = new SimpleStringProperty();
  private SimpleStringProperty accessoriesCondition = new SimpleStringProperty();
  private SimpleBooleanProperty isAvailable = new SimpleBooleanProperty();
@@ -82,18 +84,6 @@ public class VinylFx {
         this.countryFx.set(countryFx);
     }
 
-    public String getReleased() {
-        return released.get();
-    }
-
-    public SimpleStringProperty releasedProperty() {
-        return released;
-    }
-
-    public void setReleased(String released) {
-        this.released.set(released);
-    }
-
     public GenreFx getGenreFx() {
         return genreFx.get();
     }
@@ -116,42 +106,6 @@ public class VinylFx {
 
     public void setCatalogNumber(String catalogNumber) {
         this.catalogNumber.set(catalogNumber);
-    }
-
-    public String getDateOfPurchase() {
-        return dateOfPurchase.get();
-    }
-
-    public SimpleStringProperty dateOfPurchaseProperty() {
-        return dateOfPurchase;
-    }
-
-    public void setDateOfPurchase(String dateOfPurchase) {
-        this.dateOfPurchase.set(dateOfPurchase);
-    }
-
-    public float getPrice() {
-        return price.get();
-    }
-
-    public SimpleFloatProperty priceProperty() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price.set(price);
-    }
-
-    public float getSellingPrice() {
-        return sellingPrice.get();
-    }
-
-    public SimpleFloatProperty sellingPriceProperty() {
-        return sellingPrice;
-    }
-
-    public void setSellingPrice(float sellingPrice) {
-        this.sellingPrice.set(sellingPrice);
     }
 
     public String getVinylCondition() {
@@ -200,5 +154,74 @@ public class VinylFx {
 
     public void setWantList(boolean wantList) {
         this.wantList.set(wantList);
+    }
+
+    public LocalDate getReleased() {
+        return released.get();
+    }
+
+    public ObjectProperty<LocalDate> releasedProperty() {
+        return released;
+    }
+
+    public void setReleased(LocalDate released) {
+        this.released.set(released);
+    }
+
+    public LocalDate getDateOfPurchase() {
+        return dateOfPurchase.get();
+    }
+
+    public ObjectProperty<LocalDate> dateOfPurchaseProperty() {
+        return dateOfPurchase;
+    }
+
+    public void setDateOfPurchase(LocalDate dateOfPurchase) {
+        this.dateOfPurchase.set(dateOfPurchase);
+    }
+
+    public String getPrice() {
+        return price.get();
+    }
+
+    public SimpleStringProperty priceProperty() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price.set(price);
+    }
+
+    public String getSellingPrice() {
+        return sellingPrice.get();
+    }
+
+    public SimpleStringProperty sellingPriceProperty() {
+        return sellingPrice;
+    }
+
+    public void setSellingPrice(String sellingPrice) {
+        this.sellingPrice.set(sellingPrice);
+    }
+
+    @Override
+    public String toString() {
+        return "VinylFx{" +
+                "id=" + id.get() +
+                ", title=" + title.get() +
+                ", authorFx=" + authorFx.get() +
+                ", labelFx=" + labelFx.get() +
+                ", countryFx=" + countryFx.get() +
+                ", released=" + released.get() +
+                ", genreFx=" + genreFx.get() +
+                ", catalogNumber=" + catalogNumber.get() +
+                ", dateOfPurchase=" + dateOfPurchase.get() +
+                ", price=" + price.get() +
+                ", sellingPrice=" + sellingPrice.get() +
+                ", vinylCondition=" + vinylCondition.get() +
+                ", accessoriesCondition=" + accessoriesCondition.get() +
+                ", isAvailable=" + isAvailable.get() +
+                ", wantList=" + wantList.get() +
+                '}';
     }
 }

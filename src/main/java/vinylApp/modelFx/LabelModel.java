@@ -65,6 +65,16 @@ public class LabelModel {
 
     }
 
+
+    public void updateLabelInDatabase() throws ApplicationException {
+        LabelDao labelDao = new LabelDao();
+        Label tempLabel = labelDao.findById(Label.class, this.getLabel().getId());
+        tempLabel.setNameOfLabel(getLabel().getNameOfLabel());
+        labelDao.createOrUpdate(tempLabel);
+        init();
+    }
+
+
     public ObservableList<LabelFx> getLabelList() {
         return labelList;
     }
@@ -85,13 +95,6 @@ public class LabelModel {
         this.label.set(label);
     }
 
-    public void updateLabelInDatabase() throws ApplicationException {
-        LabelDao labelDao = new LabelDao();
-        Label tempLabel = labelDao.findById(Label.class, this.getLabel().getId());
-        tempLabel.setNameOfLabel(getLabel().getNameOfLabel());
-        labelDao.createOrUpdate(tempLabel);
-        init();
-    }
 
     public TreeItem<String> getRoot() {
         return root;

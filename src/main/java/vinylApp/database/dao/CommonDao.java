@@ -39,11 +39,10 @@ public abstract class CommonDao {
         }
     }
 
-
     public <T extends BaseModel, I> void refresh(BaseModel baseModel) throws ApplicationException {
 
-        Dao<T, I> dao = getDao((Class<T>) baseModel.getClass());
         try {
+            Dao<T, I> dao = getDao((Class<T>) baseModel.getClass());
             dao.refresh((T) baseModel);
         } catch (SQLException e) {
             LOGGER.warn(e.getCause().getMessage());
@@ -55,8 +54,9 @@ public abstract class CommonDao {
     }
 
     public <T extends BaseModel, I> void delete(BaseModel baseModel) throws ApplicationException {
-        Dao<T, I> dao = getDao((Class<T>) baseModel.getClass());
+
         try {
+            Dao<T, I> dao = getDao((Class<T>) baseModel.getClass());
             dao.delete((T) baseModel);
         } catch (SQLException e) {
             LOGGER.warn(e.getCause().getMessage());
@@ -68,8 +68,9 @@ public abstract class CommonDao {
 
 
     public <T extends BaseModel, I> List<T> queryForAll(Class<T> cls) throws ApplicationException {
-        Dao<T, I> dao = getDao(cls);
+
         try {
+            Dao<T, I> dao = getDao(cls);
             return dao.queryForAll();
         } catch (SQLException e) {
             LOGGER.warn(e.getCause().getMessage());

@@ -51,18 +51,16 @@ public class AuthorModel {
     }
 
 
+    public void deleteAuthorById() throws ApplicationException {
+        AuthorDao authorDao = new AuthorDao();
+        authorDao.deleteById(Author.class, author.getValue().getId());
+        init();
+    }
     public void saveAuthorInDataBase(String name) throws ApplicationException {
         AuthorDao authorDao = new AuthorDao();
         Author author = new Author();
         author.setNameOfAuthor(name);
         authorDao.createOrUpdate(author);
-        init();
-    }
-
-
-    public void deleteAuthorById() throws ApplicationException {
-        AuthorDao authorDao = new AuthorDao();
-        authorDao.deleteById(Author.class, author.getValue().getId());
         init();
     }
 

@@ -26,14 +26,12 @@ public class GenreModel {
         List<Genre> genres = genreDao.queryForAll(Genre.class);
         initGenreList(genres);
         initRoot(genres);
-
     }
 
     private void initRoot(List<Genre> genres) {
         this.root.getChildren().clear();
         genres.forEach(a -> {
             TreeItem<String> genreItem = new TreeItem<>(a.getNameOfGenre());
-
             a.getVinylsGenre().forEach(b -> {
                 genreItem.getChildren().add(new TreeItem<>(b.getTitle()));
             });

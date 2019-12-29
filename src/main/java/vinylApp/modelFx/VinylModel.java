@@ -37,7 +37,6 @@ public class VinylModel {
             ReleaseCountryFx releaseCountryFx = ConverterReleaseCountry.convertToReleaseCountryFx(a);
             releaseCountryFxObservableList.add(releaseCountryFx);
         });
-        DbManager.closeConnectionSource();
     }
 
     private void initGenreList() throws ApplicationException {
@@ -58,7 +57,6 @@ public class VinylModel {
             LabelFx labelFx = ConverterLabel.convertToLabelFx(a);
             labelFxObservableList.add(labelFx);
         });
-        DbManager.closeConnectionSource();
 
     }
 
@@ -71,7 +69,6 @@ public class VinylModel {
             AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(a);
             authorFxObservableList.add(authorFx);
         });
-        DbManager.closeConnectionSource();
 
     }
     public void saveVinylInDatabase() throws ApplicationException {
@@ -92,7 +89,6 @@ public class VinylModel {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         ReleaseCountry releaseCountry = releaseCountryDao.findById(ReleaseCountry.class, this.getVinylFxObjectProperty().getCountryFx().getId());
         vinyl.setReleaseCountry(releaseCountry);
-
 
         VinylDao vinylDao = new VinylDao();
         vinylDao.createOrUpdate(vinyl);

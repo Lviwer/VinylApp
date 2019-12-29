@@ -22,11 +22,10 @@ public class LabelModel {
     private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
-        LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
+        LabelDao labelDao = new LabelDao();
         List<Label> labels = labelDao.queryForAll(Label.class);
         initLabelList(labels);
         initRoot(labels);
-        DbManager.closeConnectionSource();
 
     }
 
@@ -52,18 +51,16 @@ public class LabelModel {
     }
 
     public void deleteLabelById() throws ApplicationException {
-        LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
+        LabelDao labelDao = new LabelDao();
         labelDao.deleteById(Label.class, label.getValue().getId());
-        DbManager.closeConnectionSource();
         init();
     }
 
     public void saveLabelInDataBase(String name) throws ApplicationException {
-        LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
+        LabelDao labelDao = new LabelDao();
         Label label = new Label();
         label.setNameOfLabel(name);
         labelDao.createOrUpdate(label);
-        DbManager.closeConnectionSource();
         init();
 
     }
@@ -89,11 +86,10 @@ public class LabelModel {
     }
 
     public void updateLabelInDatabase() throws ApplicationException {
-        LabelDao labelDao = new LabelDao((DbManager.getConnectionSource()));
+        LabelDao labelDao = new LabelDao();
         Label tempLabel = labelDao.findById(Label.class, this.getLabel().getId());
         tempLabel.setNameOfLabel(getLabel().getNameOfLabel());
         labelDao.createOrUpdate(tempLabel);
-        DbManager.closeConnectionSource();
         init();
     }
 

@@ -22,11 +22,10 @@ public class GenreModel {
     private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
-        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        GenreDao genreDao = new GenreDao();
         List<Genre> genres = genreDao.queryForAll(Genre.class);
         initGenreList(genres);
         initRoot(genres);
-        DbManager.closeConnectionSource();
 
     }
 
@@ -52,29 +51,26 @@ public class GenreModel {
 
 
     public void saveGenreInDataBase(String name) throws ApplicationException {
-        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        GenreDao genreDao = new GenreDao();
         Genre genre = new Genre();
         genre.setNameOfGenre(name);
         genreDao.createOrUpdate(genre);
-        DbManager.getConnectionSource();
         init();
     }
 
 
     public void deleteGenreById() throws ApplicationException {
-        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        GenreDao genreDao = new GenreDao();
         genreDao.deleteById(Genre.class, genre.getValue().getId());
-        DbManager.closeConnectionSource();
         init();
     }
 
 
     public void updateGenreInDataBase() throws ApplicationException {
-        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        GenreDao genreDao = new GenreDao();
         Genre tempGenre = genreDao.findById(Genre.class, this.getGenre().getId());
         tempGenre.setNameOfGenre(getGenre().getNameOfGenre());
         genreDao.createOrUpdate(tempGenre);
-        DbManager.closeConnectionSource();
         init();
 
 

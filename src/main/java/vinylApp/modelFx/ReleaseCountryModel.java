@@ -23,11 +23,10 @@ public class ReleaseCountryModel {
     private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
-        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         List<ReleaseCountry> releaseCountries = releaseCountryDao.queryForAll(ReleaseCountry.class);
         initReleaseCountryList(releaseCountries);
         initRoot(releaseCountries);
-        DbManager.closeConnectionSource();
     }
 
     private void initRoot(List<ReleaseCountry> releaseCountries) {
@@ -51,19 +50,25 @@ public class ReleaseCountryModel {
     }
 
     public void deleteReleaseCountryById() throws ApplicationException {
-        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         releaseCountryDao.deleteById(ReleaseCountry.class, releaseCountry.getValue().getId());
-        DbManager.closeConnectionSource();
         init();
     }
 
 
     public void saveCountryInDataBase(String name) throws ApplicationException {
-        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         ReleaseCountry releaseCountry = new ReleaseCountry();
         releaseCountry.setNameOfCountry(name);
         releaseCountryDao.createOrUpdate(releaseCountry);
-        DbManager.closeConnectionSource();
+        init();
+    }
+
+    public void updateReleaseCountryInDataBase() throws ApplicationException {
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
+        ReleaseCountry tempReleaseCountry = releaseCountryDao.findById(ReleaseCountry.class, this.getReleaseCountry().getId());
+        tempReleaseCountry.setNameOfCountry(getReleaseCountry().getNameOfCountry());
+        releaseCountryDao.createOrUpdate(tempReleaseCountry);
         init();
     }
 
@@ -87,14 +92,6 @@ public class ReleaseCountryModel {
         this.releaseCountry.set(releaseCountry);
     }
 
-    public void updateReleaseCountryInDataBase() throws ApplicationException {
-        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
-        ReleaseCountry tempReleaseCountry = releaseCountryDao.findById(ReleaseCountry.class, this.getReleaseCountry().getId());
-        tempReleaseCountry.setNameOfCountry(getReleaseCountry().getNameOfCountry());
-        releaseCountryDao.createOrUpdate(tempReleaseCountry);
-        DbManager.closeConnectionSource();
-        init();
-    }
 
     public TreeItem<String> getRoot() {
         return root;

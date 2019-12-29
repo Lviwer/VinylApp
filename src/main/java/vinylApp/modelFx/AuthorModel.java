@@ -22,12 +22,10 @@ public class AuthorModel {
     private TreeItem<String> root = new TreeItem<>();
 
     public void init() throws ApplicationException {
-        AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
+        AuthorDao authorDao = new AuthorDao();
         List<Author> authors = authorDao.queryForAll(Author.class);
         initAuthorList(authors);
         initRoot(authors);
-        DbManager.closeConnectionSource();
-
     }
 
     private void initRoot(List<Author> authors) {
@@ -54,29 +52,26 @@ public class AuthorModel {
 
 
     public void saveAuthorInDataBase(String name) throws ApplicationException {
-        AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
+        AuthorDao authorDao = new AuthorDao();
         Author author = new Author();
         author.setNameOfAuthor(name);
         authorDao.createOrUpdate(author);
-        DbManager.getConnectionSource();
         init();
     }
 
 
     public void deleteAuthorById() throws ApplicationException {
-        AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
+        AuthorDao authorDao = new AuthorDao();
         authorDao.deleteById(Author.class, author.getValue().getId());
-        DbManager.closeConnectionSource();
         init();
     }
 
 
     public void updateAuthorInDataBase() throws ApplicationException {
-        AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
+        AuthorDao authorDao = new AuthorDao();
         Author tempAuthor = authorDao.findById(Author.class, this.getAuthor().getId());
         tempAuthor.setNameOfAuthor(getAuthor().getNameOfAuthor());
         authorDao.createOrUpdate(tempAuthor);
-        DbManager.closeConnectionSource();
         init();
 
 

@@ -19,7 +19,7 @@ public class FillDatabase {
         Genre genre3 = new Genre();
         genre3.setNameOfGenre("Blues");
 
-        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        GenreDao genreDao = new GenreDao();
 
         try {
             genreDao.createOrUpdate(genre1);
@@ -37,7 +37,7 @@ public class FillDatabase {
         Label label3 = new Label();
         label3.setNameOfLabel("Polskie Nagrania");
 
-        LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
+        LabelDao labelDao = new LabelDao();
 
 
         try {
@@ -55,7 +55,7 @@ public class FillDatabase {
         ReleaseCountry releaseCountry2 = new ReleaseCountry();
         releaseCountry2.setNameOfCountry("USA");
 
-        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
 
 
         try {
@@ -72,7 +72,7 @@ public class FillDatabase {
         Author author2 = new Author();
         author2.setNameOfAuthor("Jaskier");
 
-        AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
+        AuthorDao authorDao = new AuthorDao();
 
         try {
             authorDao.createOrUpdate(author1);
@@ -118,7 +118,7 @@ public class FillDatabase {
 
 
 
-        VinylDao vinylDao = new VinylDao(DbManager.getConnectionSource());
+        VinylDao vinylDao = new VinylDao();
 
 
         try {

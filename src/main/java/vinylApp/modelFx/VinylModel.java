@@ -4,19 +4,10 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import vinylApp.database.dao.AuthorDao;
-import vinylApp.database.dao.GenreDao;
-import vinylApp.database.dao.LabelDao;
-import vinylApp.database.dao.ReleaseCountryDao;
+import vinylApp.database.dao.*;
 import vinylApp.database.dbUtils.DbManager;
-import vinylApp.database.dbUtils.converters.ConverterAuthor;
-import vinylApp.database.dbUtils.converters.ConverterGenre;
-import vinylApp.database.dbUtils.converters.ConverterLabel;
-import vinylApp.database.dbUtils.converters.ConverterReleaseCountry;
-import vinylApp.database.models.Author;
-import vinylApp.database.models.Genre;
-import vinylApp.database.models.Label;
-import vinylApp.database.models.ReleaseCountry;
+import vinylApp.database.dbUtils.converters.*;
+import vinylApp.database.models.*;
 import vinylApp.utils.exceptions.ApplicationException;
 
 import java.util.List;
@@ -36,12 +27,10 @@ public class VinylModel {
         initGenreList();
         initReleaseCountryList();
 
-
-
     }
 
     private void initReleaseCountryList() throws ApplicationException {
-        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao(DbManager.getConnectionSource());
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         List<ReleaseCountry> releaseCountryList = releaseCountryDao.queryForAll(ReleaseCountry.class);
         releaseCountryFxObservableList.clear();
         releaseCountryList.forEach(a->{
@@ -49,22 +38,20 @@ public class VinylModel {
             releaseCountryFxObservableList.add(releaseCountryFx);
         });
         DbManager.closeConnectionSource();
-
     }
 
     private void initGenreList() throws ApplicationException {
-        GenreDao genreDao = new GenreDao(DbManager.getConnectionSource());
+        GenreDao genreDao = new GenreDao();
         List<Genre> genreList = genreDao.queryForAll(Genre.class);
         genreFxObservableList.clear();
         genreList.forEach(a->{
             GenreFx genreFx = ConverterGenre.convertToGenreFx(a);
             genreFxObservableList.add(genreFx);
         });
-        DbManager.closeConnectionSource();
     }
 
     private void initLabelList() throws ApplicationException {
-        LabelDao labelDao = new LabelDao(DbManager.getConnectionSource());
+        LabelDao labelDao = new LabelDao();
         List<Label> labelList = labelDao.queryForAll(Label.class);
         labelFxObservableList.clear();
         labelList.forEach(a->{
@@ -77,7 +64,7 @@ public class VinylModel {
 
     private void initAuthorList() throws ApplicationException {
 
-        AuthorDao authorDao = new AuthorDao(DbManager.getConnectionSource());
+        AuthorDao authorDao = new AuthorDao();
         List<Author> authorList = authorDao.queryForAll(Author.class);
         authorFxObservableList.clear();
         authorList.forEach(a->{
@@ -85,8 +72,33 @@ public class VinylModel {
             authorFxObservableList.add(authorFx);
         });
         DbManager.closeConnectionSource();
-    }
 
+    }
+    public void saveVinylInDatabase() throws ApplicationException {
+        Vinyl vinyl = ConverterVinyl.convertToVinyl(this.getVinylFxObjectProperty());
+
+        AuthorDao authorDao = new AuthorDao();
+        Author author = authorDao.findById(Author.class, this.getVinylFxObjectProperty().getAuthorFx().getId());
+        vinyl.setAuthor(author);
+
+        GenreDao genreDao = new GenreDao();
+        Genre genre = genreDao.findById(Genre.class, this.getVinylFxObjectProperty().getGenreFx().getId());
+        vinyl.setGenre(genre);
+
+        LabelDao labelDao = new LabelDao();
+        Label label = labelDao.findById(Label.class, this.getVinylFxObjectProperty().getLabelFx().getId());
+        vinyl.setLabel(label);
+
+        ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
+        ReleaseCountry releaseCountry = releaseCountryDao.findById(ReleaseCountry.class, this.getVinylFxObjectProperty().getCountryFx().getId());
+        vinyl.setReleaseCountry(releaseCountry);
+
+
+        VinylDao vinylDao = new VinylDao();
+        vinylDao.createOrUpdate(vinyl);
+
+
+    }
 
     public VinylFx getVinylFxObjectProperty() {
         return vinylFxObjectProperty.get();

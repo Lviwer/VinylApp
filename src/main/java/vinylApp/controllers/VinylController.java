@@ -82,7 +82,11 @@ public class VinylController {
 
     public void addVinylOnAction() {
 
-        System.out.println(this.vinylModel.getVinylFxObjectProperty().toString());
+        try {
+            this.vinylModel.saveVinylInDatabase();
+        } catch (ApplicationException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
 
 
     }

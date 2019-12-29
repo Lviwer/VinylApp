@@ -20,7 +20,7 @@ public class Vinyl implements BaseModel {
     private String title;
 
     @DatabaseField(columnName = "RELEASE_DATE")
-    private Date releaseDate;
+    private int releaseDate;
 
     @DatabaseField(columnName = "LABEL", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Label label;
@@ -74,11 +74,11 @@ public class Vinyl implements BaseModel {
         this.title = title;
     }
 
-    public Date getReleaseDate() {
+    public int getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(int releaseDate) {
         this.releaseDate = releaseDate;
     }
 

@@ -6,11 +6,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import javafx.util.StringConverter;
+import javafx.util.converter.NumberStringConverter;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
 public class VinylController {
+
     @FXML
     private ComboBox<AuthorFx> authorComboBox;
     @FXML
@@ -24,7 +27,7 @@ public class VinylController {
     @FXML
     private TextField conditionAccessoriesTextField;
     @FXML
-    private DatePicker releasedDatePicker;
+    public TextField releasedTextField;
     @FXML
     private DatePicker dateOfPurchasePicker;
     @FXML
@@ -69,7 +72,8 @@ public class VinylController {
         this.vinylModel.getVinylFxObjectProperty().genreFxProperty().bind(this.genreComboBox.valueProperty());
         this.vinylModel.getVinylFxObjectProperty().vinylConditionProperty().bind(this.vinylConditionTextField.textProperty());
         this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty().bind(this.conditionAccessoriesTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedDatePicker.valueProperty());
+        this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedTextField.textProperty());
+        //this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedDatePicker.valueProperty());
         this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty().bind(this.dateOfPurchasePicker.valueProperty());
         this.vinylModel.getVinylFxObjectProperty().priceProperty().bind(this.priceTextField.textProperty());
         this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty().bind(this.sellingPriceTextField.textProperty());

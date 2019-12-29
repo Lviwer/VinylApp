@@ -12,7 +12,8 @@ public class VinylFx {
  private ObjectProperty<AuthorFx> authorFx = new SimpleObjectProperty<>();
  private ObjectProperty<LabelFx> labelFx = new SimpleObjectProperty<>();
  private ObjectProperty<ReleaseCountryFx> countryFx = new SimpleObjectProperty<>();
- private ObjectProperty<LocalDate> released = new SimpleObjectProperty<>();
+ private SimpleStringProperty released = new SimpleStringProperty();
+ //private IntegerProperty released = new SimpleIntegerProperty();
  private ObjectProperty<GenreFx> genreFx = new SimpleObjectProperty<>();
  private SimpleStringProperty catalogNumber = new SimpleStringProperty();
  private ObjectProperty<LocalDate> dateOfPurchase = new SimpleObjectProperty<>();
@@ -156,15 +157,15 @@ public class VinylFx {
         this.wantList.set(wantList);
     }
 
-    public LocalDate getReleased() {
+    public String getReleased() {
         return released.get();
     }
 
-    public ObjectProperty<LocalDate> releasedProperty() {
+    public SimpleStringProperty releasedProperty() {
         return released;
     }
 
-    public void setReleased(LocalDate released) {
+    public void setReleased(String released) {
         this.released.set(released);
     }
 

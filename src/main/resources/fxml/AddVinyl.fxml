@@ -56,7 +56,6 @@
             <ComboBox fx:id="genreComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="vinylConditionTextField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <TextField fx:id="conditionAccessoriesTextField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <DatePicker fx:id="releasedDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <DatePicker fx:id="dateOfPurchasePicker" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <TextField fx:id="priceTextField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <TextField fx:id="sellingPriceTextField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
@@ -65,6 +64,7 @@
             <CheckBox fx:id="availableCheckBox" mnemonicParsing="false" text="Available" GridPane.columnIndex="1" GridPane.rowIndex="12" />
             <CheckBox fx:id="wantListCheckBox" mnemonicParsing="false" text="Want List" GridPane.columnIndex="1" GridPane.rowIndex="13" />
             <Button mnemonicParsing="false" onAction="#addVinylOnAction" text="%add.vinyl" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <TextField fx:id="releasedTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

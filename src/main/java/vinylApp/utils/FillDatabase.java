@@ -97,7 +97,7 @@ public class FillDatabase {
         vinyl1.setTitle("W");
         vinyl1.setAuthor(author1);
         vinyl1.setSellPrice(12.0);
-        vinyl1.setReleaseDate(new Date());
+        vinyl1.setReleaseDate(2000);
 
 
         Vinyl vinyl2 = new Vinyl();
@@ -114,7 +114,7 @@ public class FillDatabase {
         vinyl2.setTitle("Winchester");
         vinyl2.setAuthor(author2);
         vinyl2.setSellPrice(112.2);
-        vinyl2.setReleaseDate(new Date());
+        vinyl2.setReleaseDate(2001);
 
 
 

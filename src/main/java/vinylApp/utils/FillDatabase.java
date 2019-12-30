@@ -113,8 +113,27 @@ public class FillDatabase {
         vinyl2.setWantTo(true);
         vinyl2.setTitle("Winchester");
         vinyl2.setAuthor(author2);
-        vinyl2.setSellPrice(112.2);
+        vinyl2.setSellPrice(112.5454);
         vinyl2.setReleaseDate(2001);
+
+
+
+
+        Vinyl vinyl3 = new Vinyl();
+        vinyl3.setGenre(genre1);
+        vinyl3.setLabel(label1);
+        vinyl3.setReleaseCountry(releaseCountry2);
+        vinyl3.setAvailable(true);
+        vinyl3.setBuyDate(new Date(22-11-2019));
+        vinyl3.setCatalogNumber("21222422");
+        vinyl3.setCondition("VG");
+        vinyl3.setConditionAccessories("G");
+        vinyl3.setPrice(14442.31230);
+        vinyl3.setWantTo(true);
+        vinyl3.setTitle("MisioDusz");
+        vinyl3.setAuthor(author2);
+        vinyl3.setSellPrice(11232.123123);
+        vinyl3.setReleaseDate(2010);
 
 
 
@@ -124,6 +143,7 @@ public class FillDatabase {
         try {
             vinylDao.createOrUpdate(vinyl1);
             vinylDao.createOrUpdate(vinyl2);
+            vinylDao.createOrUpdate(vinyl3);
             DbManager.closeConnectionSource();
         } catch (ApplicationException e) {
             e.printStackTrace();

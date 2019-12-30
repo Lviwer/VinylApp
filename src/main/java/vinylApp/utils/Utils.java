@@ -12,6 +12,12 @@ public class Utils {
         return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 
+
+    public static LocalDate convertToLocalDate (Date date){
+        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    }
+
+
     public static double convertToDouble(String string) {
         return Double.parseDouble(string);
     }
@@ -23,3 +29,5 @@ public class Utils {
 
 
 }
+
+//DOUBLE TO STRING

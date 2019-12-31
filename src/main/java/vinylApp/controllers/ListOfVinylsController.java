@@ -1,8 +1,11 @@
 package vinylApp.controllers;
 
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import vinylApp.database.models.Label;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DialogsUtils;
@@ -12,6 +15,14 @@ import java.time.LocalDate;
 
 public class ListOfVinylsController {
 
+    @FXML
+    private ComboBox genreComboBox;
+    @FXML
+    private ComboBox labelComboBox;
+    @FXML
+    private ComboBox countryComboBox;
+    @FXML
+    private ComboBox artistComboBox;
     @FXML
     private TableView<VinylFx> vinylsTableView;
     @FXML
@@ -42,6 +53,8 @@ public class ListOfVinylsController {
     private TableColumn<VinylFx, Boolean> availableColumn;
     @FXML
     private TableColumn<VinylFx, Boolean> wantToColumn;
+    @FXML
+    private TableColumn<VinylFx, VinylFx> deleteColumn;
 
     private ListVinylsModel listVinylsModel;
 
@@ -54,6 +67,18 @@ public class ListOfVinylsController {
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
+
+        this.artistComboBox.setItems(this.listVinylsModel.getAuthorFxObservableList());
+        this.genreComboBox.setItems(this.listVinylsModel.getGenreFxObservableList());
+        this.countryComboBox.setItems(this.listVinylsModel.getReleaseCountryFxObservableList());
+        this.labelComboBox.setItems(this.listVinylsModel.getLabelFxObservableList());
+
+        //binding with my choosen one
+        this.listVinylsModel.authorFxObjectPropertyProperty().bind(this.artistComboBox.valueProperty());
+        this.listVinylsModel.genreFxObjectPropertyProperty().bind(this.genreComboBox.valueProperty());
+        this.listVinylsModel.releaseCountryFxObjectPropertyProperty().bind(this.countryComboBox.valueProperty());
+        this.listVinylsModel.labelFxObjectPropertyProperty().bind(this.labelComboBox.valueProperty());
+
 
         this.vinylsTableView.setItems(this.listVinylsModel.getVinylFxObservableList());
         this.titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
@@ -70,16 +95,62 @@ public class ListOfVinylsController {
         this.conditionOfAcColumn.setCellValueFactory(cellData -> cellData.getValue().accessoriesConditionProperty());
         this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
         this.wantToColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
+//---------------------Delete--Column-------------------------------------------------------------------//
+        this.deleteColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 
+        this.deleteColumn.setCellFactory(param -> new TableCell<VinylFx, VinylFx>() {
+            Button button = createDeleteButton();
+
+            @Override
+            protected void updateItem(VinylFx item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if(empty){  //buttons don't disaapear without this
+                    setGraphic(null);
+                    return;
+                }
+                if (!empty) {
+                    setGraphic(button);
+                    button.setOnAction(event -> {
+                        try {
+                            listVinylsModel.deleteVinyl(item);
+                        } catch (ApplicationException e) {
+                            DialogsUtils.errorDialog(e.getMessage());
+                        }
+                    });
+                }
+
+            }
+        });
+    }
+
+    private Button createDeleteButton() {
+        Button button = new Button();
+        Image image = new Image(this.getClass().getResource("/icons/trashIcon.png").toString());
+        ImageView imageView = new ImageView(image);
+        button.setGraphic(imageView);
+        return button;
     }
 
 
+    public void filterOnActionComboBox() {
+        this.listVinylsModel.filterVinylList();
+    }
 
+    public void clearAtristComboBox() {
+        this.artistComboBox.getSelectionModel().clearSelection();
 
+    }
 
+    public void clearGenreCOmboBox() {
+        this.genreComboBox.getSelectionModel().clearSelection();
+    }
 
+    public void clearLabelComboBox() {
+        this.labelComboBox.getSelectionModel().clearSelection();
+    }
 
-
-
-
+    public void clearCountryComboBox() {
+        this.countryComboBox.getSelectionModel().clearSelection();
+    }
 }

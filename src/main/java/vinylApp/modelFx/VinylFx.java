@@ -205,6 +205,7 @@ public class VinylFx {
         this.sellingPrice.set(sellingPrice);
     }
 
+
     @Override
     public String toString() {
         return "VinylFx{" +

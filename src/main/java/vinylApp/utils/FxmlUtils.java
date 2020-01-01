@@ -1,5 +1,6 @@
 package vinylApp.utils;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Loader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
@@ -23,13 +24,16 @@ public class FxmlUtils {
         return null;
     }
 
+    public static FXMLLoader getLoader(String fxmlPath) {
+        FXMLLoader loader = new FXMLLoader(FxmlUtils.class.getResource(fxmlPath));
+        loader.setResources(getResourceBundle());
+        return loader;
+
+    }
 
     public static ResourceBundle getResourceBundle() {
         return ResourceBundle.getBundle("bundles.messages");
     }
-
-
-
 
 
 }

@@ -1,16 +1,21 @@
 package vinylApp.controllers;
 
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import vinylApp.database.models.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DialogsUtils;
+import vinylApp.utils.FxmlUtils;
+import vinylApp.utils.Utils;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class ListOfVinylsController {
@@ -55,6 +60,8 @@ public class ListOfVinylsController {
     private TableColumn<VinylFx, Boolean> wantToColumn;
     @FXML
     private TableColumn<VinylFx, VinylFx> deleteColumn;
+    @FXML
+    private TableColumn<VinylFx, VinylFx> editColumn;
 
     private ListVinylsModel listVinylsModel;
 
@@ -95,17 +102,19 @@ public class ListOfVinylsController {
         this.conditionOfAcColumn.setCellValueFactory(cellData -> cellData.getValue().accessoriesConditionProperty());
         this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
         this.wantToColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
+//--------Edit--Column-----------------------------------------------------------------------------------//
+        this.editColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 //---------------------Delete--Column-------------------------------------------------------------------//
         this.deleteColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 
         this.deleteColumn.setCellFactory(param -> new TableCell<VinylFx, VinylFx>() {
-            Button button = createDeleteButton();
+            Button button = createButton("/icons/trashIcon.png");
 
             @Override
             protected void updateItem(VinylFx item, boolean empty) {
                 super.updateItem(item, empty);
 
-                if(empty){  //buttons don't disaapear without this
+                if (empty) {  //buttons don't disaapear without this
                     setGraphic(null);
                     return;
                 }
@@ -122,11 +131,46 @@ public class ListOfVinylsController {
 
             }
         });
+
+        this.editColumn.setCellFactory(param -> new TableCell<VinylFx, VinylFx>() {
+            Button button = createButton("/icons/edit.png");
+
+            @Override
+            protected void updateItem(VinylFx item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty) {  //buttons don't disaapear without this
+                    setGraphic(null);
+                    return;
+                }
+                if (!empty) {
+                    setGraphic(button);
+                    button.setOnAction(event -> {
+                        FXMLLoader loader = FxmlUtils.getLoader("/fxml/AddVinyl.fxml");
+                        Scene scene = null;
+                        try {
+                            scene = new Scene(loader.load());
+                        } catch (IOException e) {
+
+                        }
+                        VinylController controller = loader.getController();
+                        controller.getVinylModel().setVinylFxObjectProperty(item);
+                        controller.bindings();
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.showAndWait();
+
+                    });
+                }
+
+            }
+        });
     }
 
-    private Button createDeleteButton() {
+    private Button createButton(String path) {
         Button button = new Button();
-        Image image = new Image(this.getClass().getResource("/icons/trashIcon.png").toString());
+        Image image = new Image(this.getClass().getResource(path).toString());
         ImageView imageView = new ImageView(image);
         button.setGraphic(imageView);
         return button;

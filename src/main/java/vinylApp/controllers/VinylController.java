@@ -61,28 +61,49 @@ public class VinylController {
 
     }
 
-    private void bindings() {
+    public void bindings() {
         this.authorComboBox.setItems(this.vinylModel.getAuthorFxObservableList());
         this.labelComboBox.setItems(this.vinylModel.getLabelFxObservableList());
         this.countryComboBox.setItems(this.vinylModel.getReleaseCountryFxObservableList());
         this.genreComboBox.setItems(this.vinylModel.getGenreFxObservableList());
-        this.vinylModel.getVinylFxObjectProperty().authorFxProperty().bind(this.authorComboBox.valueProperty());
-        this.vinylModel.getVinylFxObjectProperty().labelFxProperty().bind(this.labelComboBox.valueProperty());
-        this.vinylModel.getVinylFxObjectProperty().countryFxProperty().bind(this.countryComboBox.valueProperty());
-        this.vinylModel.getVinylFxObjectProperty().genreFxProperty().bind(this.genreComboBox.valueProperty());
-        this.vinylModel.getVinylFxObjectProperty().vinylConditionProperty().bind(this.vinylConditionTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty().bind(this.conditionAccessoriesTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedTextField.textProperty());
-        //this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedDatePicker.valueProperty());
-        this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty().bind(this.dateOfPurchasePicker.valueProperty());
-        this.vinylModel.getVinylFxObjectProperty().priceProperty().bind(this.priceTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty().bind(this.sellingPriceTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().titleProperty().bind(this.titleTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().catalogNumberProperty().bind(this.catalogTextField.textProperty());
-        this.vinylModel.getVinylFxObjectProperty().isAvailableProperty().bind(this.availableCheckBox.selectedProperty());
-        this.vinylModel.getVinylFxObjectProperty().wantListProperty().bind(this.wantListCheckBox.selectedProperty());
+
+        this.authorComboBox.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().authorFxProperty());
+        this.labelComboBox.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().labelFxProperty());
+        this.countryComboBox.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().countryFxProperty());
+        this.genreComboBox.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().genreFxProperty());
+        this.vinylConditionTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().vinylConditionProperty());
+        this.conditionAccessoriesTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty());
+        this.releasedTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().releasedProperty());
+        this.dateOfPurchasePicker.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty());
+        this.priceTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().priceProperty());
+        this.sellingPriceTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty());
+        this.titleTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().titleProperty());
+        this.catalogTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().catalogNumberProperty());
+        this.availableCheckBox.selectedProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().isAvailableProperty());
+        this.wantListCheckBox.selectedProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().wantListProperty());
+
+
+    //   this.vinylModel.getVinylFxObjectProperty().authorFxProperty().bind(this.authorComboBox.valueProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().labelFxProperty().bind(this.labelComboBox.valueProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().countryFxProperty().bind(this.countryComboBox.valueProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().genreFxProperty().bind(this.genreComboBox.valueProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().vinylConditionProperty().bind(this.vinylConditionTextField.textProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty().bind(this.conditionAccessoriesTextField.textProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedTextField.textProperty());
+    //   //this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedDatePicker.valueProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty().bind(this.dateOfPurchasePicker.valueProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().priceProperty().bind(this.priceTextField.textProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty().bind(this.sellingPriceTextField.textProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().titleProperty().bind(this.titleTextField.textProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().catalogNumberProperty().bind(this.catalogTextField.textProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().isAvailableProperty().bind(this.availableCheckBox.selectedProperty());
+    //   this.vinylModel.getVinylFxObjectProperty().wantListProperty().bind(this.wantListCheckBox.selectedProperty());
     }
 
+
+    public VinylModel getVinylModel() {
+        return vinylModel;
+    }
 
     public void addVinylOnAction() {
 

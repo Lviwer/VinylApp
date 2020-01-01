@@ -39,8 +39,8 @@
       </HBox>
       <TableView fx:id="vinylsTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="516.0" prefWidth="1074.0">
         <columns>
-          <TableColumn fx:id="titleColumn" prefWidth="75.0" text="%add.vinyl.title" />
-          <TableColumn fx:id="artistColumn" prefWidth="75.0" text="%add.vinyl.artist" />
+          <TableColumn fx:id="titleColumn" prefWidth="83.0" text="%add.vinyl.title" />
+          <TableColumn fx:id="artistColumn" prefWidth="60.0" text="%add.vinyl.artist" />
             <TableColumn fx:id="labelColumn" prefWidth="98.0" text="%add.vinyl.label" />
             <TableColumn fx:id="countryColumn" prefWidth="70.0" text="%add.vinyl.releasecountry" />
             <TableColumn fx:id="releasedColumn" prefWidth="78.0" text="%add.vinyl.releasedate" />
@@ -54,6 +54,7 @@
             <TableColumn fx:id="availableColumn" prefWidth="101.0" text="%add.vinyl.available" />
             <TableColumn fx:id="wantToColumn" prefWidth="126.0" text="%vinyl.wantList" />
             <TableColumn fx:id="deleteColumn" prefWidth="75.0" text="%delete" />
+            <TableColumn fx:id="editColumn" prefWidth="75.0" text="%edit" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

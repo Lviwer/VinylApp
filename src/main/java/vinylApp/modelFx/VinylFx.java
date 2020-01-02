@@ -13,12 +13,13 @@ public class VinylFx {
  private ObjectProperty<LabelFx> labelFx = new SimpleObjectProperty<>();
  private ObjectProperty<ReleaseCountryFx> countryFx = new SimpleObjectProperty<>();
  private SimpleStringProperty released = new SimpleStringProperty();
- //private IntegerProperty released = new SimpleIntegerProperty();
  private ObjectProperty<GenreFx> genreFx = new SimpleObjectProperty<>();
  private SimpleStringProperty catalogNumber = new SimpleStringProperty();
  private ObjectProperty<LocalDate> dateOfPurchase = new SimpleObjectProperty<>();
- private SimpleStringProperty price = new SimpleStringProperty();
- private SimpleStringProperty sellingPrice = new SimpleStringProperty();
+ //PRICE
+ private SimpleDoubleProperty price = new SimpleDoubleProperty();
+ private SimpleDoubleProperty sellingPrice = new SimpleDoubleProperty();
+
  private SimpleStringProperty vinylCondition = new SimpleStringProperty();
  private SimpleStringProperty accessoriesCondition = new SimpleStringProperty();
  private SimpleBooleanProperty isAvailable = new SimpleBooleanProperty();
@@ -181,30 +182,29 @@ public class VinylFx {
         this.dateOfPurchase.set(dateOfPurchase);
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price.get();
     }
 
-    public SimpleStringProperty priceProperty() {
+    public SimpleDoubleProperty priceProperty() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price.set(price);
     }
 
-    public String getSellingPrice() {
+    public double getSellingPrice() {
         return sellingPrice.get();
     }
 
-    public SimpleStringProperty sellingPriceProperty() {
+    public SimpleDoubleProperty sellingPriceProperty() {
         return sellingPrice;
     }
 
-    public void setSellingPrice(String sellingPrice) {
+    public void setSellingPrice(double sellingPrice) {
         this.sellingPrice.set(sellingPrice);
     }
-
 
     @Override
     public String toString() {

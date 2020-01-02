@@ -1,5 +1,6 @@
 package vinylApp.controllers;
 
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -57,8 +58,6 @@ public class VinylController {
 
         bindings();
         validation();
-        
-
     }
 
     private void validation() {
@@ -72,8 +71,6 @@ public class VinylController {
         .or(this.priceTextField.textProperty().isEmpty())
         .or(this.titleTextField.textProperty().isEmpty())
         .or(this.catalogTextField.textProperty().isEmpty()));
-
-
     }
 
     public void bindings() {
@@ -90,8 +87,11 @@ public class VinylController {
         this.conditionAccessoriesTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty());
         this.releasedTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().releasedProperty());
         this.dateOfPurchasePicker.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty());
-        this.priceTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().priceProperty());
-        this.sellingPriceTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty());
+        //PRICE
+        StringConverter<Number> converter = new NumberStringConverter();
+        Bindings.bindBidirectional(this.priceTextField.textProperty(),this.vinylModel.getVinylFxObjectProperty().priceProperty(),converter);
+        Bindings.bindBidirectional(this.sellingPriceTextField.textProperty(),this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty(),converter);
+
         this.titleTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().titleProperty());
         this.catalogTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().catalogNumberProperty());
         this.availableCheckBox.selectedProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().isAvailableProperty());
@@ -128,8 +128,6 @@ public class VinylController {
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
-
-
     }
 
     private void clearFields() {

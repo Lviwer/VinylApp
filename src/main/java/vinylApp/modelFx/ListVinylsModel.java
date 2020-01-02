@@ -1,7 +1,6 @@
 package vinylApp.modelFx;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import vinylApp.database.dao.*;
@@ -9,8 +8,10 @@ import vinylApp.database.dbUtils.converters.*;
 import vinylApp.database.models.*;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -33,6 +34,7 @@ public class ListVinylsModel {
     private List<VinylFx> vinylFxList = new ArrayList<>(); //do przetrzymywania książek w liście
 
 
+
     public void init() throws ApplicationException {
         VinylDao vinylDao = new VinylDao();
         List<Vinyl> vinyls = vinylDao.queryForAll(Vinyl.class);
@@ -40,6 +42,7 @@ public class ListVinylsModel {
         vinyls.forEach(vinyl -> {
             this.vinylFxList.add(ConverterVinyl.convertToVinylFx(vinyl));
             // this.vinylFxObservableList.add(ConverterVinyl.convertToVinylFx(vinyl));
+
         });
 
         this.vinylFxObservableList.setAll(vinylFxList);
@@ -48,9 +51,9 @@ public class ListVinylsModel {
         initGenres();
         initCountries();
         initLabels();
-
-
     }
+
+
     //przebuduj dla 4 wartości switch / case
     public void filterVinylList() {
         if (getAuthorFxObjectProperty() != null && getGenreFxObjectProperty() != null && getLabelFxObjectProperty() != null
@@ -71,6 +74,7 @@ public class ListVinylsModel {
         } else {
             this.vinylFxObservableList.setAll(this.vinylFxList);
         }
+
 
     }
 
@@ -151,6 +155,25 @@ public class ListVinylsModel {
         init();
     }
 
+    //i add this
+    public int countAllVinyls() {
+        return vinylFxList.size() - 1;
+    }
+
+    public double countSpendOnVinyls(){
+
+        double oneMonthPrice = 0;
+        for (VinylFx a : vinylFxList) {
+            if (a.getDateOfPurchase().getMonth() == LocalDate.now().getMonth() &&
+                    a.getDateOfPurchase().getYear() == LocalDate.now().getYear()) {
+                oneMonthPrice += a.getPrice();
+            }
+        }
+        return oneMonthPrice;
+    }
+
+
+    //do tąd ! ! !
 
 
 

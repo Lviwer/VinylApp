@@ -1,5 +1,6 @@
 package vinylApp.controllers;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
+import javafx.util.converter.DoubleStringConverter;
+import javafx.util.converter.NumberStringConverter;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.FxmlUtils;
@@ -18,8 +22,15 @@ import vinylApp.utils.exceptions.ApplicationException;
 import java.io.IOException;
 import java.time.LocalDate;
 
+
 public class ListOfVinylsController {
 
+    @FXML
+    private Label allVinylsLabel;
+    @FXML
+    private Label spendMonthLabel;
+    @FXML
+    private Label buyedInMonthLabel;
     @FXML
     private ComboBox genreComboBox;
     @FXML
@@ -96,8 +107,10 @@ public class ListOfVinylsController {
         this.genreColumn.setCellValueFactory(cellData -> cellData.getValue().genreFxProperty());
         this.catalogNumberColumn.setCellValueFactory(cellData -> cellData.getValue().catalogNumberProperty());
         this.dateOfPurchaseColumn.setCellValueFactory(cellData -> cellData.getValue().dateOfPurchaseProperty());
-        this.priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
-        this.sellingPriceColumn.setCellValueFactory(cellData -> cellData.getValue().sellingPriceProperty());
+//PRICE
+        this.priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asString());
+        this.sellingPriceColumn.setCellValueFactory(cellData -> cellData.getValue().sellingPriceProperty().asString());
+
         this.vinylConditionColumn.setCellValueFactory(cellData -> cellData.getValue().vinylConditionProperty());
         this.conditionOfAcColumn.setCellValueFactory(cellData -> cellData.getValue().accessoriesConditionProperty());
         this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
@@ -151,7 +164,7 @@ public class ListOfVinylsController {
                         try {
                             scene = new Scene(loader.load());
                         } catch (IOException e) {
-
+                            DialogsUtils.errorDialog(e.getMessage());
                         }
                         VinylController controller = loader.getController();
                         controller.getVinylModel().setVinylFxObjectProperty(item);
@@ -160,12 +173,13 @@ public class ListOfVinylsController {
                         stage.setScene(scene);
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.showAndWait();
-
+                        initialize();
                     });
                 }
 
             }
         });
+
     }
 
     private Button createButton(String path) {
@@ -181,7 +195,7 @@ public class ListOfVinylsController {
         this.listVinylsModel.filterVinylList();
     }
 
-    public void clearAtristComboBox() {
+    public void clearArtistComboBox() {
         this.artistComboBox.getSelectionModel().clearSelection();
 
     }

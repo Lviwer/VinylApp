@@ -10,6 +10,8 @@ import vinylApp.modelFx.GenreModel;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 public class GenreController {
 
     @FXML
@@ -61,7 +63,7 @@ public class GenreController {
     public void onActionDeleteButton() {
         try {
             this.genreModel.deleteGenreById();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
     }

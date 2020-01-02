@@ -63,7 +63,7 @@
             <TextField fx:id="catalogTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <CheckBox fx:id="availableCheckBox" mnemonicParsing="false" text="Available" GridPane.columnIndex="1" GridPane.rowIndex="12" />
             <CheckBox fx:id="wantListCheckBox" mnemonicParsing="false" text="Want List" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <Button mnemonicParsing="false" onAction="#addVinylOnAction" text="%save" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Button mnemonicParsing="false" fx:id="addButton" onAction="#addVinylOnAction" text="%save" GridPane.columnIndex="1" GridPane.rowIndex="14" />
             <TextField fx:id="releasedTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>

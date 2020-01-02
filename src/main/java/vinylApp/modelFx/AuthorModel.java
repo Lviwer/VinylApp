@@ -6,11 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.AuthorDao;
+import vinylApp.database.dao.VinylDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterAuthor;
 import vinylApp.database.models.Author;
+import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -51,9 +54,11 @@ public class AuthorModel {
     }
 
 
-    public void deleteAuthorById() throws ApplicationException {
+    public void deleteAuthorById() throws ApplicationException, SQLException {
         AuthorDao authorDao = new AuthorDao();
         authorDao.deleteById(Author.class, author.getValue().getId());
+        VinylDao vinylDao = new VinylDao();
+        vinylDao.deleteByColumnName(Vinyl.AUTHOR, author.getValue().getId());
         init();
     }
     public void saveAuthorInDataBase(String name) throws ApplicationException {

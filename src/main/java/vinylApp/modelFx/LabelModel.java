@@ -7,12 +7,15 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.LabelDao;
+import vinylApp.database.dao.VinylDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterLabel;
 import vinylApp.database.models.Genre;
 import vinylApp.database.models.Label;
+import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class LabelModel {
@@ -50,9 +53,11 @@ public class LabelModel {
         });
     }
 
-    public void deleteLabelById() throws ApplicationException {
+    public void deleteLabelById() throws ApplicationException, SQLException {
         LabelDao labelDao = new LabelDao();
         labelDao.deleteById(Label.class, label.getValue().getId());
+        VinylDao vinylDao = new VinylDao();
+        vinylDao.deleteByColumnName(Vinyl.LABEL, label.getValue().getId());
         init();
     }
 

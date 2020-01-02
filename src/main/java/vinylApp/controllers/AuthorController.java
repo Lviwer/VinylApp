@@ -11,6 +11,8 @@ import vinylApp.modelFx.AuthorModel;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 public class AuthorController {
 
     @FXML
@@ -78,7 +80,7 @@ public class AuthorController {
     public void onActionDeleteButton() {
         try {
             this.authorModel.deleteAuthorById();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
     }

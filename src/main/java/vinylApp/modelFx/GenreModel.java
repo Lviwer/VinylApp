@@ -6,11 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.GenreDao;
+import vinylApp.database.dao.VinylDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterGenre;
 import vinylApp.database.models.Genre;
+import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -57,9 +60,11 @@ public class GenreModel {
     }
 
 
-    public void deleteGenreById() throws ApplicationException {
+    public void deleteGenreById() throws ApplicationException, SQLException {
         GenreDao genreDao = new GenreDao();
         genreDao.deleteById(Genre.class, genre.getValue().getId());
+        VinylDao vinylDao = new VinylDao();
+        vinylDao.deleteByColumnName(Vinyl.GENRE, genre.getValue().getId());
         init();
     }
 

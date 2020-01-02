@@ -9,6 +9,11 @@ import java.util.Date;
 @DatabaseTable(tableName = "VINYLS")
 public class Vinyl implements BaseModel {
 
+    public static final String LABEL = "LABEL";
+    public static final String GENRE = "GENRE";
+    public static final String RELEASE_COUNTRY = "RELEASE_COUNTRY";
+    public static final String AUTHOR = "AUTHOR";
+
     public Vinyl() {
 
     }
@@ -22,16 +27,16 @@ public class Vinyl implements BaseModel {
     @DatabaseField(columnName = "RELEASE_DATE")
     private int releaseDate;
 
-    @DatabaseField(columnName = "LABEL", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = LABEL, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Label label;
 
-    @DatabaseField(columnName = "GENRE", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = GENRE, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Genre genre;
 
-    @DatabaseField(columnName = "RELEASE_COUNTRY", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = RELEASE_COUNTRY, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private ReleaseCountry releaseCountry;
 
-    @DatabaseField(columnName = "AUTHOR", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = true)
+    @DatabaseField(columnName = AUTHOR, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = true)
     private Author author;
 
     @DatabaseField(columnName = "CATALOG_NUMBER")

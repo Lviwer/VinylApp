@@ -7,12 +7,15 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.ReleaseCountryDao;
+import vinylApp.database.dao.VinylDao;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterReleaseCountry;
 import vinylApp.database.models.Genre;
 import vinylApp.database.models.ReleaseCountry;
+import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ReleaseCountryModel {
@@ -49,9 +52,11 @@ public class ReleaseCountryModel {
         });
     }
 
-    public void deleteReleaseCountryById() throws ApplicationException {
+    public void deleteReleaseCountryById() throws ApplicationException, SQLException {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         releaseCountryDao.deleteById(ReleaseCountry.class, releaseCountry.getValue().getId());
+        VinylDao vinylDao = new VinylDao();
+        vinylDao.deleteByColumnName(Vinyl.RELEASE_COUNTRY, releaseCountry.getValue().getId());
         init();
     }
 

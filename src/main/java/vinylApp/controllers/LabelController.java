@@ -12,6 +12,8 @@ import vinylApp.modelFx.LabelModel;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 public class LabelController {
 
 
@@ -66,7 +68,7 @@ public class LabelController {
     public void onActionDeleteButton(ActionEvent actionEvent) {
         try {
             this.labelModel.deleteLabelById();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
     }

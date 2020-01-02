@@ -12,6 +12,8 @@ import vinylApp.modelFx.ReleaseCountryModel;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 public class ReleaseCountryController {
 
     @FXML
@@ -63,7 +65,7 @@ public class ReleaseCountryController {
     public void onActionDeleteButton(ActionEvent actionEvent) {
         try {
             this.releaseCountryModel.deleteReleaseCountryById();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
     }

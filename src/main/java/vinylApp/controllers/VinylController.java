@@ -1,10 +1,7 @@
 package vinylApp.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
@@ -14,6 +11,8 @@ import vinylApp.utils.exceptions.ApplicationException;
 
 public class VinylController {
 
+    @FXML
+    private Button addButton;
     @FXML
     private ComboBox<AuthorFx> authorComboBox;
     @FXML
@@ -57,6 +56,22 @@ public class VinylController {
         }
 
         bindings();
+        validation();
+        
+
+    }
+
+    private void validation() {
+        this.addButton.disableProperty().bind(this.authorComboBox.valueProperty().isNull()
+        .or(this.genreComboBox.valueProperty().isNull())
+        .or(this.countryComboBox.valueProperty().isNull())
+        .or(this.labelComboBox.valueProperty().isNull())
+        .or(this.vinylConditionTextField.textProperty().isEmpty())
+        .or(this.releasedTextField.textProperty().isEmpty())
+        .or(this.dateOfPurchasePicker.valueProperty().isNull())
+        .or(this.priceTextField.textProperty().isEmpty())
+        .or(this.titleTextField.textProperty().isEmpty())
+        .or(this.catalogTextField.textProperty().isEmpty()));
 
 
     }
@@ -109,10 +124,29 @@ public class VinylController {
 
         try {
             this.vinylModel.saveVinylInDatabase();
+            clearFields();
         } catch (ApplicationException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }
 
+
+    }
+
+    private void clearFields() {
+        this.genreComboBox.getSelectionModel().clearSelection();
+        this.countryComboBox.getSelectionModel().clearSelection();
+        this.labelComboBox.getSelectionModel().clearSelection();
+        this.authorComboBox.getSelectionModel().clearSelection();
+        this.titleTextField.clear();
+        this.releasedTextField.clear();
+        this.catalogTextField.clear();
+        this.dateOfPurchasePicker.getEditor().clear();
+        this.priceTextField.clear();
+        this.sellingPriceTextField.clear();
+        this.vinylConditionTextField.clear();
+        this.conditionAccessoriesTextField.clear();
+        this.availableCheckBox.setSelected(false);
+        this.wantListCheckBox.setSelected(false);
 
     }
 }

@@ -7,6 +7,7 @@ import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
 
 import javax.script.Bindings;
+import java.awt.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -16,14 +17,22 @@ public class Utils {
 
 
     public static Date convertToDate(LocalDate localDate) {
-        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        if (localDate == null) {
+            return null;
+        } else {
+            return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        }
+
     }
 
 
-    public static LocalDate convertToLocalDate (Date date){
-        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    public static LocalDate convertToLocalDate(Date date) {
+        if (date == null) {
+            return null;
+        } else {
+            return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        }
     }
-
 
 
     public static double convertToDouble(String string) {
@@ -36,8 +45,15 @@ public class Utils {
     }
 
 
+  // public static double textFieldToDouble(TextField textField){
+  //          DecimalFormat decimalFormat = new DecimalFormat("%,##");
+  //          try
+  //          {
+  //              return textField.p
+  //          }
+//
+  // }
+
 
 
 }
-
-//DOUBLE TO STRING

@@ -71,7 +71,7 @@ public class VinylModel {
         });
 
     }
-    public void saveVinylInDatabase() throws ApplicationException {
+    public void saveVinylInDatabase() throws ApplicationException, NumberFormatException{
         Vinyl vinyl = ConverterVinyl.convertToVinyl(this.getVinylFxObjectProperty());
 
         AuthorDao authorDao = new AuthorDao();

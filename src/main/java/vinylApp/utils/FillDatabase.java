@@ -93,6 +93,7 @@ public class FillDatabase {
         vinyl1.setCondition("G+");
         vinyl1.setConditionAccessories("-");
         vinyl1.setPrice(22.30);
+        vinyl1.setSellDate(new Date(22-10-2012));
         vinyl1.setWantTo(true);
         vinyl1.setTitle("W");
         vinyl1.setAuthor(author1);
@@ -110,6 +111,7 @@ public class FillDatabase {
         vinyl2.setCondition("VG");
         vinyl2.setConditionAccessories("G");
         vinyl2.setPrice(122.30);
+        vinyl2.setSellDate(new Date(22-10-2012));
         vinyl2.setWantTo(true);
         vinyl2.setTitle("Winchester");
         vinyl2.setAuthor(author2);
@@ -133,6 +135,7 @@ public class FillDatabase {
         vinyl3.setTitle("MisioDusz");
         vinyl3.setAuthor(author2);
         vinyl3.setSellPrice(11232.123123);
+        vinyl3.setSellDate(new Date(22-10-2012));
         vinyl3.setReleaseDate(2010);
 
 

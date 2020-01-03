@@ -20,6 +20,7 @@ public class VinylFx {
  private SimpleDoubleProperty price = new SimpleDoubleProperty();
  private SimpleDoubleProperty sellingPrice = new SimpleDoubleProperty();
 
+ private ObjectProperty<LocalDate> dateOfSelling = new SimpleObjectProperty<>();
  private SimpleStringProperty vinylCondition = new SimpleStringProperty();
  private SimpleStringProperty accessoriesCondition = new SimpleStringProperty();
  private SimpleBooleanProperty isAvailable = new SimpleBooleanProperty();
@@ -206,6 +207,18 @@ public class VinylFx {
         this.sellingPrice.set(sellingPrice);
     }
 
+    public LocalDate getDateOfSelling() {
+        return dateOfSelling.get();
+    }
+
+    public ObjectProperty<LocalDate> dateOfSellingProperty() {
+        return dateOfSelling;
+    }
+
+    public void setDateOfSelling(LocalDate dateOfSelling) {
+        this.dateOfSelling.set(dateOfSelling);
+    }
+
     @Override
     public String toString() {
         return "VinylFx{" +
@@ -219,6 +232,7 @@ public class VinylFx {
                 ", catalogNumber=" + catalogNumber.get() +
                 ", dateOfPurchase=" + dateOfPurchase.get() +
                 ", price=" + price.get() +
+                ", dateOfSelling" + dateOfSelling.get() +
                 ", sellingPrice=" + sellingPrice.get() +
                 ", vinylCondition=" + vinylCondition.get() +
                 ", accessoriesCondition=" + accessoriesCondition.get() +

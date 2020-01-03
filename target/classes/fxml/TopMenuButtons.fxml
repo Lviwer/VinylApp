@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 
@@ -11,15 +12,53 @@
       <ToggleButton mnemonicParsing="false" onAction="#openVinylList" prefHeight="80.0" prefWidth="150.0" text="%list.vinyls">
          <toggleGroup>
             <ToggleGroup fx:id="toggleButtons" />
-         </toggleGroup></ToggleButton>
+         </toggleGroup>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/listIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></ToggleButton>
       <ToggleButton mnemonicParsing="false" onAction="#addVinyl" prefHeight="80.0" prefWidth="150.0" text="%add.vinyl" toggleGroup="$toggleButtons">
          <graphic>
-            <ImageView fitHeight="51.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/vinylIcon.png" />
+               </image></ImageView>
          </graphic></ToggleButton>
-      <ToggleButton mnemonicParsing="false" onAction="#addReleaseCountry" prefHeight="80.0" prefWidth="150.0" text="%add.release.country" toggleGroup="$toggleButtons" />
-      <ToggleButton mnemonicParsing="false" onAction="#addLabel" prefHeight="80.0" prefWidth="150.0" text="%add.label" toggleGroup="$toggleButtons" />
-      <ToggleButton mnemonicParsing="false" onAction="#addGenre" prefHeight="80.0" prefWidth="150.0" text="%add.genre" toggleGroup="$toggleButtons" />
-      <ToggleButton minHeight="80.0" mnemonicParsing="false" onAction="#addAuthor" prefWidth="150.0" text="%add.author" toggleGroup="$toggleButtons" />
+      <ToggleButton mnemonicParsing="false" onAction="#addReleaseCountry" prefHeight="80.0" prefWidth="150.0" text="%add.release.country" toggleGroup="$toggleButtons">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/countryIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></ToggleButton>
+      <ToggleButton mnemonicParsing="false" onAction="#addLabel" prefHeight="80.0" prefWidth="150.0" text="%add.label" toggleGroup="$toggleButtons">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/labelIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></ToggleButton>
+      <ToggleButton mnemonicParsing="false" onAction="#addGenre" prefHeight="80.0" prefWidth="150.0" text="%add.genre" toggleGroup="$toggleButtons">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/genreIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></ToggleButton>
+      <ToggleButton minHeight="80.0" mnemonicParsing="false" onAction="#addAuthor" prefWidth="150.0" text="%add.author" toggleGroup="$toggleButtons">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/artistIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></ToggleButton>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

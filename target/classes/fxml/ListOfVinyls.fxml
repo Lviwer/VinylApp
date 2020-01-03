@@ -48,6 +48,7 @@
             <TableColumn fx:id="dateOfPurchaseColumn" prefWidth="55.0" text="%add.vinyl.buydate" />
             <TableColumn fx:id="priceColumn" prefWidth="45.0" text="%add.vinyl.price" />
             <TableColumn fx:id="sellingPriceColumn" prefWidth="48.0" text="%add.vinyl.sellprice" />
+            <TableColumn fx:id="dateOfSellingColumn" prefWidth="75.0" text="%sell.date" />
             <TableColumn fx:id="vinylConditionColumn" prefWidth="76.0" text="%add.vinyl.lpconditon" />
             <TableColumn fx:id="conditionOfAcColumn" prefWidth="73.0" text="%add.vinyl.accesoriescondition" />
             <TableColumn fx:id="availableColumn" prefWidth="101.0" text="%add.vinyl.available" />
@@ -69,22 +70,47 @@
          <children>
             <VBox prefHeight="53.0" prefWidth="457.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Label text="Twoja kolekcja winyli liczy: " />
+                        <Label text="%all.vinyls" />
                         <Label fx:id="allVinylsLabel" />
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                      <children>
-                        <Label text="W tym miesiącu wydałeś" />
+                        <Label text="%number.of.vinyls.buyed.in.month" />
+                        <Label fx:id="buyedInMonthLabel" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="%this.month.price" />
                         <Label fx:id="spendMonthLabel" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="53.0" prefWidth="513.0">
+               <children>
+                  <HBox prefHeight="27.0" prefWidth="369.0">
+                     <children>
+                        <Label text="%sold.this.month" />
+                        <Label fx:id="allSoldVinylsInMonth" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label text="Kupiłeś" />
-                        <Label fx:id="buyedInMonthLabel" />
+                        <Label text="%vinyls.sold.for.price" />
+                        <Label fx:id="priceSoldVinylsInMonth" />
                      </children>
                   </HBox>
                </children>

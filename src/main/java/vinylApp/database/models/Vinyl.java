@@ -45,8 +45,11 @@ public class Vinyl implements BaseModel {
     @DatabaseField(columnName = "PRICE", canBeNull = false)
     private double price;
 
-    @DatabaseField(columnName = "SELL_PRICE")
+    @DatabaseField(columnName = "SELL_PRICE", canBeNull = true)
     private double sellPrice;
+
+    @DatabaseField(columnName = "SELL_DATE", canBeNull = true)
+    private Date sellDate;
 
     @DatabaseField(columnName = "BUY_DATE")
     private Date buyDate;
@@ -181,5 +184,13 @@ public class Vinyl implements BaseModel {
 
     public void setSellPrice(double sellPrice) {
         this.sellPrice = sellPrice;
+    }
+
+    public Date getSellDate() {
+        return sellDate;
+    }
+
+    public void setSellDate(Date sellDate) {
+        this.sellDate = sellDate;
     }
 }

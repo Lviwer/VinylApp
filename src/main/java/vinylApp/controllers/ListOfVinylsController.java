@@ -24,7 +24,10 @@ import java.time.LocalDate;
 
 
 public class ListOfVinylsController {
-
+    @FXML
+    private Label allSoldVinylsInMonth;
+    @FXML
+    private Label priceSoldVinylsInMonth;
     @FXML
     private Label allVinylsLabel;
     @FXML
@@ -61,6 +64,8 @@ public class ListOfVinylsController {
     private TableColumn<VinylFx, String> priceColumn;
     @FXML
     private TableColumn<VinylFx, String> sellingPriceColumn;
+    @FXML
+    private TableColumn<VinylFx, LocalDate> dateOfSellingColumn;
     @FXML
     private TableColumn<VinylFx, String> vinylConditionColumn;
     @FXML
@@ -111,13 +116,20 @@ public class ListOfVinylsController {
         this.priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asString());
         this.sellingPriceColumn.setCellValueFactory(cellData -> cellData.getValue().sellingPriceProperty().asString());
 
+        this.dateOfSellingColumn.setCellValueFactory(cellData -> cellData.getValue().dateOfSellingProperty());
         this.vinylConditionColumn.setCellValueFactory(cellData -> cellData.getValue().vinylConditionProperty());
         this.conditionOfAcColumn.setCellValueFactory(cellData -> cellData.getValue().accessoriesConditionProperty());
         this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
         this.wantToColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
-//--------Edit--Column-----------------------------------------------------------------------------------//
+//-------Extra informations-----------------------------------------------------------------------------
+        this.buyedInMonthLabel.setText(String.valueOf(listVinylsModel.getThisMonthBuyed()));
+        this.allVinylsLabel.setText(String.valueOf(listVinylsModel.getAllVinyls()));
+        this.spendMonthLabel.setText(String.valueOf(listVinylsModel.getOneMonthSpend()));
+        this.allSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthSoldVinyl()));
+        this.priceSoldVinylsInMonth .setText(String.valueOf(listVinylsModel.getOneMonthEarn()));
+//--------Edit--Column-----------------------------------------------------------------------------------
         this.editColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
-//---------------------Delete--Column-------------------------------------------------------------------//
+//---------------------Delete--Column--------------------------------------------------------------------
         this.deleteColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 
         this.deleteColumn.setCellFactory(param -> new TableCell<VinylFx, VinylFx>() {
@@ -146,13 +158,13 @@ public class ListOfVinylsController {
         });
 
         this.editColumn.setCellFactory(param -> new TableCell<VinylFx, VinylFx>() {
-            Button button = createButton("/icons/edit.png");
+            Button button = createButton("/icons/editIcon.png");
 
             @Override
             protected void updateItem(VinylFx item, boolean empty) {
                 super.updateItem(item, empty);
 
-                if (empty) {  //buttons don't disaapear without this
+                if (empty) {  //buttons don't dissapear without this
                     setGraphic(null);
                     return;
                 }
@@ -173,7 +185,7 @@ public class ListOfVinylsController {
                         stage.setScene(scene);
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.showAndWait();
-                        initialize();
+                        initialize();//i need this ti refresh vinylTab
                     });
                 }
 

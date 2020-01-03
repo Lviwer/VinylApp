@@ -11,7 +11,6 @@ import vinylApp.utils.exceptions.ApplicationException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -32,25 +31,62 @@ public class ListVinylsModel {
     private ObjectProperty<LabelFx> labelFxObjectProperty = new SimpleObjectProperty<>();
 
     private List<VinylFx> vinylFxList = new ArrayList<>(); //do przetrzymywania książek w liście
-
-
+//moje
+    private double oneMonthSpend;
+    private int thisMonthBuyed;
+    private int allVinyls;
+    private double oneMonthEarn;
+    private int oneMonthSoldVinyl;
+//here
 
     public void init() throws ApplicationException {
         VinylDao vinylDao = new VinylDao();
         List<Vinyl> vinyls = vinylDao.queryForAll(Vinyl.class);
         vinylFxList.clear();
+
         vinyls.forEach(vinyl -> {
             this.vinylFxList.add(ConverterVinyl.convertToVinylFx(vinyl));
-            // this.vinylFxObservableList.add(ConverterVinyl.convertToVinylFx(vinyl));
 
+       //  if (vinylFxList.get(vinyl.getId()).getDateOfPurchase().getMonth() == LocalDate.now().getMonth() &&
+       //          vinylFxList.get(vinyl.getId()).getDateOfPurchase().getYear() == LocalDate.now().getYear())
+       //  {
+       //      oneMonthSpend +=   vinyl.getPrice();
+       //  }
         });
 
-        this.vinylFxObservableList.setAll(vinylFxList);
+        getMoneyAndVinylsBuyInMonth();
+        getMoneyVinylsSoldInMonth();
+        allVinyls = vinylFxList.size();
 
+        this.vinylFxObservableList.setAll(vinylFxList);
         initAuthors();
         initGenres();
         initCountries();
         initLabels();
+    }
+
+    private void getMoneyVinylsSoldInMonth() {
+        for (VinylFx a : vinylFxList) {
+            if (a.getDateOfSelling()==null){
+                continue;
+            }
+           else if (a.getDateOfSelling().getYear() == LocalDate.now().getYear() &&
+                    a.getDateOfSelling().getMonth() == LocalDate.now().getMonth()) {
+                oneMonthEarn += a.getSellingPrice();
+                oneMonthSoldVinyl++;
+            }
+        }
+    }
+
+    private void getMoneyAndVinylsBuyInMonth() {
+        for (VinylFx a : vinylFxList) {
+            if (a.getDateOfPurchase().getYear() == LocalDate.now().getYear() &&
+                    a.getDateOfPurchase().getMonth() == LocalDate.now().getMonth()) {
+                oneMonthSpend += a.getPrice();
+                thisMonthBuyed++;
+
+            }
+        }
     }
 
 
@@ -153,14 +189,12 @@ public class ListVinylsModel {
         VinylDao vinylDao = new VinylDao();
         vinylDao.deleteById(Vinyl.class, vinylFx.getId());
         init();
+
     }
 
     //i add this
-    public int countAllVinyls() {
-        return vinylFxList.size() - 1;
-    }
 
-    public double countSpendOnVinyls(){
+    public double monthSpendMoney(){
 
         double oneMonthPrice = 0;
         for (VinylFx a : vinylFxList) {
@@ -172,6 +206,16 @@ public class ListVinylsModel {
         return oneMonthPrice;
     }
 
+    public int buyedThisMonth(){
+        int oneMonthBuy = 0;
+        for (VinylFx a : vinylFxList) {
+            if (a.getDateOfPurchase().getMonth() == LocalDate.now().getMonth() &&
+                    a.getDateOfPurchase().getYear() == LocalDate.now().getYear()) {
+                oneMonthBuy++;
+            }
+        }
+        return oneMonthBuy;
+    }
 
     //do tąd ! ! !
 
@@ -267,4 +311,23 @@ public class ListVinylsModel {
         this.labelFxObjectProperty.set(labelFxObjectProperty);
     }
 
+    public double getOneMonthSpend() {
+        return oneMonthSpend;
+    }
+
+    public int getThisMonthBuyed() {
+        return thisMonthBuyed;
+    }
+
+    public int getAllVinyls() {
+        return allVinyls;
+    }
+
+    public double getOneMonthEarn() {
+        return oneMonthEarn;
+    }
+
+    public int getOneMonthSoldVinyl() {
+        return oneMonthSoldVinyl;
+    }
 }

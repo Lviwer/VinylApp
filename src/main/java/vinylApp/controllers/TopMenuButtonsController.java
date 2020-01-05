@@ -1,10 +1,8 @@
 package vinylApp.controllers;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
-import vinylApp.modelFx.ListVinylsModel;
+
 
 public class TopMenuButtonsController {
 
@@ -60,11 +58,6 @@ public class TopMenuButtonsController {
         resetToggleButtons();
         mainController.setCenter(ADD_AUTHOR_FXML);
     }
-
-
-
-
-
 
 
 }

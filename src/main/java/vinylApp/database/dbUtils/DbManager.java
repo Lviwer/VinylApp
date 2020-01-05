@@ -10,15 +10,22 @@ import vinylApp.database.models.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class DbManager {
 
 
+
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
+    public static List<String> logins;
+
+
+    private static String user = "admin";
+    private static String pass = "admin";
     private static final String JDBC_DRIVER_HD = "jdbc:h2:./databases/vinylDB";
-    private static final String USER = "admin";
-    private static final String PASS = "admin";
+    //private static final String JDBC_DRIVER_HD = "jdbc:h2:./databases/".concat(user).concat("DB");
+
 
     private static ConnectionSource connectionSource;
 
@@ -33,7 +40,7 @@ public class DbManager {
 
     private static void createConnectionSource() {
         try {
-            connectionSource = new JdbcConnectionSource(JDBC_DRIVER_HD, USER, PASS);
+            connectionSource = new JdbcConnectionSource(JDBC_DRIVER_HD, user, pass);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }
@@ -82,4 +89,11 @@ public class DbManager {
         return connectionSource;
     }
 
+    public static void setUser(String user) {
+        DbManager.user = user;
+    }
+
+    public static void setPass(String pass) {
+        DbManager.pass = pass;
+    }
 }

@@ -12,9 +12,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import vinylApp.Main;
+import vinylApp.database.dbUtils.DbManager;
+import vinylApp.utils.DialogsUtils;
+import vinylApp.utils.FillDatabase;
 import vinylApp.utils.FxmlUtils;
+
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class LoginWindowController implements Initializable {
@@ -27,6 +32,7 @@ public class LoginWindowController implements Initializable {
     private TextField passwordTextField;
 
     public static final String NEW_USER_WINDOW_FXML = "/fxml/NewUserWindow.fxml";
+    public static int loginIndex;
 
     private MainController mainController;
 
@@ -51,23 +57,54 @@ public class LoginWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        try {
+            DbManager.readAllLoginsAndPasswordsFromTxt();
+        } catch (IOException e) {
+            DialogsUtils.errorDialog(e.getMessage());
+        }
     }
 
-    public void enterOnAction() throws IOException {
-//---close first window--------------------------------------------------------
-        Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
-        thisStage.close();
+    public void enterOnAction() {
 
-//---open new with application-------------------------------------------------
-        Main main = new Main();
-        Stage stage = new Stage();
-        Pane pane = FxmlUtils.fxmlLoader("/fxml/BorderPaneMain.fxml");
+//if / check login and pass from textFields. If everything ok we can enter into app
+        if (isTextFieldsEmpty() && (isTxtContainsThisLogAndPass() && isLogIndexEqualPassIndex())) {
+//set LOGIN AND PASS INDEX
+            DbManager.setLogAndPassIndex(DbManager.logins.indexOf(usernameTextField.getText()));
+            DbManager.setLoginPassDatabase();
+// loading data from database
+            DbManager.initDatabase();
+            FillDatabase.fillDatabase();
+//open new window with APP
+            Main main = new Main();
+            Stage stage = new Stage();
+            Pane pane = FxmlUtils.fxmlLoader("/fxml/BorderPaneMain.fxml");
 
-        Scene scene = new Scene(pane);
-        stage.setTitle(FxmlUtils.getResourceBundle().getString("title.application"));
-        stage.setScene(scene);
-        stage.show();
+            Scene scene = new Scene(pane);
+            String vinylAppAndName = FxmlUtils.getResourceBundle().getString("title.application.with.login").concat(DbManager.getUser());
+            stage.setTitle(vinylAppAndName);
+            stage.setScene(scene);
+            stage.show();
+
+//close login window
+            Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
+            thisStage.close();
+        } else {
+            DialogsUtils.loginError();
+        }
     }
+
+    private boolean isLogIndexEqualPassIndex() {
+        return DbManager.logins.indexOf(usernameTextField.getText()) == DbManager.passwords.indexOf(passwordTextField.getText());
+    }
+
+    private boolean isTxtContainsThisLogAndPass() {
+        return DbManager.logins.contains(usernameTextField.getText()) && DbManager.passwords.contains(passwordTextField.getText());
+    }
+
+    private boolean isTextFieldsEmpty() {
+        return (!usernameTextField.getText().equals("")) && !passwordTextField.getText().equals("");
+    }
+
 
     public void newUserOnAction() throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource(NEW_USER_WINDOW_FXML));
@@ -80,4 +117,11 @@ public class LoginWindowController implements Initializable {
         System.exit(0);
     }
 
+    public void polishOnAction(ActionEvent actionEvent) {
+        Locale.setDefault(new Locale("pl"));
+    }
+
+    public void englishOnAction(ActionEvent actionEvent) {
+        Locale.setDefault(new Locale("en"));
+    }
 }

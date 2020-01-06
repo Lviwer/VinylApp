@@ -53,5 +53,30 @@ public class DialogsUtils {
         return null;
     }
 
+    public static void createdNewAccount()
+    {
+        Alert informationAlert = new Alert(Alert.AlertType.INFORMATION);
+        informationAlert.setTitle(bundle.getString("create.new.acc.title"));
+        informationAlert.setHeaderText(bundle.getString("create.new.acc.header"));
+        informationAlert.setContentText(bundle.getString("create.new.acc.text"));
+        informationAlert.showAndWait();
+    }
 
+    public static void loginError()
+    {
+        Alert informationAlert = new Alert(Alert.AlertType.ERROR);
+        informationAlert.setTitle(bundle.getString("login.error.title"));
+        informationAlert.setHeaderText(bundle.getString("login.error.header"));
+        informationAlert.setContentText(bundle.getString("login.error.text"));
+        informationAlert.showAndWait();
+    }
+
+
+    public static void createdNewAccountExist() {
+        Alert informationAlert = new Alert(Alert.AlertType.INFORMATION);
+        informationAlert.setTitle(bundle.getString("account.exist.title"));
+        informationAlert.setHeaderText(bundle.getString("account.exist.header"));
+        informationAlert.setContentText(bundle.getString("account.exist.text"));
+        informationAlert.showAndWait();
+    }
 }

@@ -9,15 +9,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import vinylApp.database.dbUtils.DbManager;
+import vinylApp.utils.DialogsUtils;
+import vinylApp.utils.SaveReadFile;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class NewUserWindowController implements Initializable {
+
     @FXML
     private AnchorPane anchorPaneIdNewUser;
-    private LoginWindowController loginWindowController;
 
     @FXML
     private TextField newUsernameTextField;
@@ -45,19 +49,36 @@ public class NewUserWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
 
-    public void saveNewUserOnAction(ActionEvent actionEvent) {
+    public void saveNewUserOnAction(ActionEvent actionEvent){
+        String newLogin = newUsernameTextField.getText();
+        System.out.println(newLogin);;
+        String newPass = newPasswordTextField.getText();
+        if (!DbManager.logins.contains(newLogin)) {
 
+            try {
+                SaveReadFile.saveOneMoreInFile(newLogin, SaveReadFile.LOG_FILE_PATH);
+                SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
+                DialogsUtils.createdNewAccount();
+            } catch (FileNotFoundException e) {
+                DialogsUtils.errorDialog(e.getMessage());
+            }
+
+        }
+        else DialogsUtils.createdNewAccountExist();
 
     }
-
-    public void backOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
-        anchorPaneIdNewUser.getChildren().setAll(pane);
+        public void backOnAction (ActionEvent actionEvent)  {
+            AnchorPane pane = null;
+            try {
+                pane = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+            } catch (IOException e) {
+                DialogsUtils.errorDialog(e.getMessage());
+            }
+            anchorPaneIdNewUser.getChildren().setAll(pane);
+        }
     }
-}
 
 

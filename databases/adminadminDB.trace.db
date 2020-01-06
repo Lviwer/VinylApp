@@ -1,0 +1,20 @@
+2020-01-06 18:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "GENRE" nie istnieje
+Table "GENRE" not found; SQL statement:
+DROP TABLE `GENRE`  [42102-200]
+2020-01-06 18:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "LABEL" nie istnieje
+Table "LABEL" not found; SQL statement:
+DROP TABLE `LABEL`  [42102-200]
+2020-01-06 18:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "RELEASE_COUNTRY" nie istnieje
+Table "RELEASE_COUNTRY" not found; SQL statement:
+DROP TABLE `RELEASE_COUNTRY`  [42102-200]
+2020-01-06 18:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "VINYLS" nie istnieje
+Table "VINYLS" not found; SQL statement:
+DROP TABLE `VINYLS`  [42102-200]
+2020-01-06 18:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "AUTHOR" nie istnieje
+Table "AUTHOR" not found; SQL statement:
+DROP TABLE `AUTHOR`  [42102-200]

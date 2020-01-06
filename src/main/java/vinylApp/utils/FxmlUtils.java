@@ -1,15 +1,10 @@
 package vinylApp.utils;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Loader;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
-import java.io.IOException;
 import java.util.ResourceBundle;
 
-//here i can load all fxmls in my app
 public class FxmlUtils {
 
     public static Pane fxmlLoader(String fxmlPath) {
@@ -28,7 +23,6 @@ public class FxmlUtils {
         FXMLLoader loader = new FXMLLoader(FxmlUtils.class.getResource(fxmlPath));
         loader.setResources(getResourceBundle());
         return loader;
-
     }
 
     public static ResourceBundle getResourceBundle() {

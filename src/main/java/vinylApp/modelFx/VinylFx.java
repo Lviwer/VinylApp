@@ -7,24 +7,24 @@ import java.time.LocalDate;
 public class VinylFx {
 
 
- private IntegerProperty id = new SimpleIntegerProperty();
- private SimpleStringProperty title = new SimpleStringProperty();
- private ObjectProperty<AuthorFx> authorFx = new SimpleObjectProperty<>();
- private ObjectProperty<LabelFx> labelFx = new SimpleObjectProperty<>();
- private ObjectProperty<ReleaseCountryFx> countryFx = new SimpleObjectProperty<>();
- private SimpleStringProperty released = new SimpleStringProperty();
- private ObjectProperty<GenreFx> genreFx = new SimpleObjectProperty<>();
- private SimpleStringProperty catalogNumber = new SimpleStringProperty();
- private ObjectProperty<LocalDate> dateOfPurchase = new SimpleObjectProperty<>();
- //PRICE
- private SimpleDoubleProperty price = new SimpleDoubleProperty();
- private SimpleDoubleProperty sellingPrice = new SimpleDoubleProperty();
+    private IntegerProperty id = new SimpleIntegerProperty();
+    private SimpleStringProperty title = new SimpleStringProperty();
+    private ObjectProperty<AuthorFx> authorFx = new SimpleObjectProperty<>();
+    private ObjectProperty<LabelFx> labelFx = new SimpleObjectProperty<>();
+    private ObjectProperty<ReleaseCountryFx> countryFx = new SimpleObjectProperty<>();
+    private SimpleStringProperty released = new SimpleStringProperty();
+    private ObjectProperty<GenreFx> genreFx = new SimpleObjectProperty<>();
+    private SimpleStringProperty catalogNumber = new SimpleStringProperty();
+    private ObjectProperty<LocalDate> dateOfPurchase = new SimpleObjectProperty<>();
+//PRICE--------------------------------------------------------------------------------
+    private SimpleDoubleProperty price = new SimpleDoubleProperty();
+    private SimpleDoubleProperty sellingPrice = new SimpleDoubleProperty();
 
- private ObjectProperty<LocalDate> dateOfSelling = new SimpleObjectProperty<>();
- private SimpleStringProperty vinylCondition = new SimpleStringProperty();
- private SimpleStringProperty accessoriesCondition = new SimpleStringProperty();
- private SimpleBooleanProperty isAvailable = new SimpleBooleanProperty();
- private SimpleBooleanProperty wantList = new SimpleBooleanProperty();
+    private ObjectProperty<LocalDate> dateOfSelling = new SimpleObjectProperty<>();
+    private SimpleStringProperty vinylCondition = new SimpleStringProperty();
+    private SimpleStringProperty accessoriesCondition = new SimpleStringProperty();
+    private SimpleBooleanProperty isAvailable = new SimpleBooleanProperty();
+    private SimpleBooleanProperty wantList = new SimpleBooleanProperty();
 
 
     public int getId() {

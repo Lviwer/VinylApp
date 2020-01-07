@@ -4,6 +4,9 @@ package vinylApp.database.models;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import javax.script.Bindings;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @DatabaseTable(tableName = "VINYLS")
@@ -193,4 +196,5 @@ public class Vinyl implements BaseModel {
     public void setSellDate(Date sellDate) {
         this.sellDate = sellDate;
     }
+
 }

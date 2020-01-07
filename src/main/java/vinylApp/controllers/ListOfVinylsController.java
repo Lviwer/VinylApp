@@ -1,6 +1,7 @@
 package vinylApp.controllers;
 
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,7 @@ import vinylApp.utils.Utils;
 import vinylApp.utils.exceptions.ApplicationException;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
@@ -61,9 +63,9 @@ public class ListOfVinylsController {
     @FXML
     private TableColumn<VinylFx, LocalDate> dateOfPurchaseColumn;
     @FXML
-    private TableColumn<VinylFx, String> priceColumn;
+    private TableColumn<VinylFx, Double> priceColumn;
     @FXML
-    private TableColumn<VinylFx, String> sellingPriceColumn;
+    private TableColumn<VinylFx, Double> sellingPriceColumn;
     @FXML
     private TableColumn<VinylFx, LocalDate> dateOfSellingColumn;
     @FXML
@@ -96,7 +98,7 @@ public class ListOfVinylsController {
         this.countryComboBox.setItems(this.listVinylsModel.getReleaseCountryFxObservableList());
         this.labelComboBox.setItems(this.listVinylsModel.getLabelFxObservableList());
 
-        //binding with my choosen one
+        //bindings
         this.listVinylsModel.authorFxObjectPropertyProperty().bind(this.artistComboBox.valueProperty());
         this.listVinylsModel.genreFxObjectPropertyProperty().bind(this.genreComboBox.valueProperty());
         this.listVinylsModel.releaseCountryFxObjectPropertyProperty().bind(this.countryComboBox.valueProperty());
@@ -112,13 +114,16 @@ public class ListOfVinylsController {
         this.genreColumn.setCellValueFactory(cellData -> cellData.getValue().genreFxProperty());
         this.catalogNumberColumn.setCellValueFactory(cellData -> cellData.getValue().catalogNumberProperty());
         this.dateOfPurchaseColumn.setCellValueFactory(cellData -> cellData.getValue().dateOfPurchaseProperty());
-//PRICE
-        this.priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asString());
-        this.sellingPriceColumn.setCellValueFactory(cellData -> cellData.getValue().sellingPriceProperty().asString());
+//PRICE -----------
 
+        this.priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+        this.sellingPriceColumn.setCellValueFactory(cellData -> cellData.getValue().sellingPriceProperty().asObject());
+//-----------------
         this.dateOfSellingColumn.setCellValueFactory(cellData -> cellData.getValue().dateOfSellingProperty());
         this.vinylConditionColumn.setCellValueFactory(cellData -> cellData.getValue().vinylConditionProperty());
         this.conditionOfAcColumn.setCellValueFactory(cellData -> cellData.getValue().accessoriesConditionProperty());
+//-----------------Boolean colums
+
         this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
         this.wantToColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
 //-------Extra informations-----------------------------------------------------------------------------
@@ -185,7 +190,8 @@ public class ListOfVinylsController {
                         stage.setScene(scene);
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.showAndWait();
-                        initialize();//i need this ti refresh vinylTab
+                        initialize();//to refresh vinylTab
+
                     });
                 }
 
@@ -202,17 +208,15 @@ public class ListOfVinylsController {
         return button;
     }
 
-
     public void filterOnActionComboBox() {
         this.listVinylsModel.filterVinylList();
     }
 
     public void clearArtistComboBox() {
         this.artistComboBox.getSelectionModel().clearSelection();
-
     }
 
-    public void clearGenreCOmboBox() {
+    public void clearGenreComboBox() {
         this.genreComboBox.getSelectionModel().clearSelection();
     }
 

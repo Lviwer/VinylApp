@@ -3,14 +3,12 @@ package vinylApp.controllers;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
-import java.text.DecimalFormat;
 
 public class VinylController {
 
@@ -80,6 +78,7 @@ public class VinylController {
                 .or(this.catalogTextField.textProperty().isEmpty()));
     }
 
+
     public void bindings() {
         this.authorComboBox.setItems(this.vinylModel.getAuthorFxObservableList());
         this.labelComboBox.setItems(this.vinylModel.getLabelFxObservableList());
@@ -94,42 +93,23 @@ public class VinylController {
         this.conditionAccessoriesTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty());
         this.releasedTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().releasedProperty());
         this.dateOfPurchasePicker.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty());
-        //PRICE TO DO ! ! !
-       // DecimalFormat decimalFormat = new DecimalFormat(",##");
-
-
-      // Bindings.bindBidirectional(this.priceTextField.textProperty(), this.vinylModel.getVinylFxObjectProperty().priceProperty(), decimalFormat);
-      // Bindings.bindBidirectional(this.sellingPriceTextField.textProperty(), this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty(), decimalFormat);
-
-      //TextFormatter<Double>textFormatter=new TextFormatter<Double>("#.##");
-     // DecimalFormat decimalFormat = new DecimalFormat("#,##");
-     //   priceTextField.setTextFormatter(decimalFormat);
-        StringConverter<Number> converter = new NumberStringConverter("#.#");//change converter ! ! !
-      Bindings.bindBidirectional(this.priceTextField.textProperty(), this.vinylModel.getVinylFxObjectProperty().priceProperty(), converter);
-      Bindings.bindBidirectional(this.sellingPriceTextField.textProperty(), this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty(), converter);
+//PRICE AND SELLING PRICE CONVERTER TO 0,00 -------------------------------------------
+// I had to create second textFormatter - with one common it doesn't work for two textfields!------------
+        StringConverter<Number> converter = new NumberStringConverter("#.##");
+        TextFormatter textFormatterPrice = new TextFormatter(converter);
+        TextFormatter textFormatterSell = new TextFormatter(converter);
+        priceTextField.setTextFormatter(textFormatterPrice);
+        sellingPriceTextField.setTextFormatter(textFormatterSell);
+        //------------------------------------------------------------------------------------
+        Bindings.bindBidirectional(this.priceTextField.textProperty(), this.vinylModel.getVinylFxObjectProperty().priceProperty(), converter);
+        Bindings.bindBidirectional(this.sellingPriceTextField.textProperty(), this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty(), converter);
 
         this.dateOfSellingPicker.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().dateOfSellingProperty());
         this.titleTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().titleProperty());
         this.catalogTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().catalogNumberProperty());
+
         this.availableCheckBox.selectedProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().isAvailableProperty());
         this.wantListCheckBox.selectedProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().wantListProperty());
-
-
-        //   this.vinylModel.getVinylFxObjectProperty().authorFxProperty().bind(this.authorComboBox.valueProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().labelFxProperty().bind(this.labelComboBox.valueProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().countryFxProperty().bind(this.countryComboBox.valueProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().genreFxProperty().bind(this.genreComboBox.valueProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().vinylConditionProperty().bind(this.vinylConditionTextField.textProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().accessoriesConditionProperty().bind(this.conditionAccessoriesTextField.textProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedTextField.textProperty());
-        //   //this.vinylModel.getVinylFxObjectProperty().releasedProperty().bind(this.releasedDatePicker.valueProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty().bind(this.dateOfPurchasePicker.valueProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().priceProperty().bind(this.priceTextField.textProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().sellingPriceProperty().bind(this.sellingPriceTextField.textProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().titleProperty().bind(this.titleTextField.textProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().catalogNumberProperty().bind(this.catalogTextField.textProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().isAvailableProperty().bind(this.availableCheckBox.selectedProperty());
-        //   this.vinylModel.getVinylFxObjectProperty().wantListProperty().bind(this.wantListCheckBox.selectedProperty());
     }
 
 
@@ -169,7 +149,6 @@ public class VinylController {
 
     private void validationSelling() {
         this.dateOfSellingPicker.disableProperty().bind(this.sellCheckBox.selectedProperty().not());
-        //this.dateOfSellingPicker.getEditor().clear();
         this.sellingPriceTextField.disableProperty().bind(this.sellCheckBox.selectedProperty().not());
     }
 

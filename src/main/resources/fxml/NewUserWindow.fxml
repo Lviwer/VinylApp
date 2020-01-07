@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPaneIdNewUser" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vinylApp.controllers.NewUserWindowController">
+<AnchorPane fx:id="anchorPaneIdNewUser" onKeyPressed="#enterPressed" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vinylApp.controllers.NewUserWindowController">
    <children>
       <VBox style="-fx-background-color: transparent;" stylesheets="@../css/style.css">
          <children>

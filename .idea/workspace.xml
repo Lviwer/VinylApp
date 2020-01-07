@@ -2,39 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/databases/adminadminDB.mv.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/databases/adminadminDB.trace.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/databases/logAndPass/logDataBase.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/databases/logAndPass/passDataBase.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/SaveReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/plFlag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons/usaFlag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/databases/marekpijakDB.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/databases/marekpijakDB.trace.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/databases/mismisDB.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/databases/mismisDB.trace.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/orangeVinyl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/orangeVinyl112.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/styleApp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/vinylDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/vinylDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/vinylDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/vinylDB.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/adminadminDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/adminadminDB.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/logAndPass/logDataBase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/databases/logAndPass/logDataBase.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/logAndPass/passDataBase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/databases/logAndPass/passDataBase.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LoginWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/NewUserWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/NewUserWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/DbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/DbManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/DialogsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/DialogsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FxmlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FxmlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/VinylController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/VinylController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterAuthor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterVinyl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/dbUtils/converters/ConverterVinyl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/database/models/Vinyl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/VinylFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/SaveReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/SaveReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddVinyl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddVinyl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BorderPaneMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/LoadingPane.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/LoginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/NewUserWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/NewUserWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/editIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/icons/editIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/BorderPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/BorderPaneMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/LoadingPane.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fxml/LoginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/LoginWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fxml/NewUserWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/NewUserWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/icons/editIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/icons/editIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LoginWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LoginWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/NewUserWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/NewUserWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/database/dbUtils/DbManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/database/dbUtils/DbManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/utils/DialogsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/utils/DialogsUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/utils/FxmlUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/utils/FxmlUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/VinylController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/VinylController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/database/dbUtils/converters/ConverterVinyl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/database/dbUtils/converters/ConverterVinyl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/database/models/Vinyl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/database/models/Vinyl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/utils/SaveReadFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/utils/SaveReadFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/utils/Utils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,21 +88,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/fxml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/css" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\_WorkSpace_\VinylApp\databases\logAndPas" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\icons" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\css" />
-      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="vinylApp.database.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\css" />
       <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
       <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\photos" />
     </key>
@@ -97,8 +108,12 @@
       <recent name="vinylApp.database.models" />
       <recent name="vinylApp.modelFx" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="vinylApp.database.models" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\_WorkSpace_\VinylApp\databases\logAndPas" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\icons" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\css" />
+      <recent name="C:\_WorkSpace_\VinylApp\src\main\resources\fxml" />
     </key>
   </component>
   <component name="RunManager">
@@ -166,12 +181,12 @@
       <screen x="0" y="0" width="1600" height="870" />
     </state>
     <state x="546" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.870@0.0.1600.870" timestamp="1578329406905" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1578351391893">
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1578416194478">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="1184" y="37" key="#com.intellij.ide.util.MemberChooser/0.0.1600.870@0.0.1600.870" timestamp="1578330385724" />
     <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1576531418018" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351391893" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578416194478" />
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1576268616357">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -190,30 +205,30 @@
     </state>
     <state x="622" y="336" key="Github.CreateGistDialog/0.0.1600.870@0.0.1600.870" timestamp="1578225347607" />
     <state x="2542" y="625" key="Github.CreateGistDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351165972" />
-    <state width="1556" height="247" key="GridCell.Tab.0.bottom" timestamp="1578351854790">
-      <screen x="1920" y="277" width="1600" height="900" />
+    <state width="1556" height="143" key="GridCell.Tab.0.bottom" timestamp="1578438320300">
+      <screen x="0" y="0" width="1600" height="870" />
     </state>
-    <state width="1556" height="245" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1578334426688" />
+    <state width="1556" height="143" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1578438320300" />
     <state width="1876" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="1556" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351854790" />
-    <state width="1556" height="247" key="GridCell.Tab.0.center" timestamp="1578351854790">
-      <screen x="1920" y="277" width="1600" height="900" />
+    <state width="1556" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578426299461" />
+    <state width="1556" height="143" key="GridCell.Tab.0.center" timestamp="1578438320300">
+      <screen x="0" y="0" width="1600" height="870" />
     </state>
-    <state width="1556" height="245" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1578334426688" />
+    <state width="1556" height="143" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1578438320300" />
     <state width="1876" height="254" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="1556" height="247" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351854790" />
-    <state width="1556" height="247" key="GridCell.Tab.0.left" timestamp="1578351854790">
-      <screen x="1920" y="277" width="1600" height="900" />
+    <state width="1556" height="247" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578426299461" />
+    <state width="1556" height="143" key="GridCell.Tab.0.left" timestamp="1578438320300">
+      <screen x="0" y="0" width="1600" height="870" />
     </state>
-    <state width="1556" height="245" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1578334426688" />
+    <state width="1556" height="143" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1578438320300" />
     <state width="1876" height="254" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="1556" height="247" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351854790" />
-    <state width="1556" height="247" key="GridCell.Tab.0.right" timestamp="1578351854790">
-      <screen x="1920" y="277" width="1600" height="900" />
+    <state width="1556" height="247" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578426299461" />
+    <state width="1556" height="143" key="GridCell.Tab.0.right" timestamp="1578438320300">
+      <screen x="0" y="0" width="1600" height="870" />
     </state>
-    <state width="1556" height="245" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1578334426688" />
+    <state width="1556" height="143" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1578438320300" />
     <state width="1876" height="254" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="1556" height="247" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351854790" />
+    <state width="1556" height="247" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578426299461" />
     <state width="1556" height="285" key="GridCell.Tab.1.bottom" timestamp="1578350821423">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
@@ -256,11 +271,11 @@
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577620286306" />
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1578350853886">
+    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1578383460706">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="594" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578219472935" />
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578350853886" />
+    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578383460706" />
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1" timestamp="1576933863575">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
@@ -275,15 +290,16 @@
     <state x="182" y="139" key="new project wizard/0.0.1600.870@0.0.1600.870" timestamp="1578325329335" />
     <state x="218" y="187" key="new project wizard/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578084466769" />
     <state x="2102" y="421" key="new project wizard/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577622401380" />
-    <state x="2426" y="354" key="refactoring.ChangeSignatureDialog" timestamp="1578138950783">
-      <screen x="1920" y="277" width="1600" height="900" />
-    </state>
-    <state x="2426" y="354" key="refactoring.ChangeSignatureDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578138950783" />
-    <state x="456" y="59" key="run.anything.popup" timestamp="1578322487203">
+    <state x="506" y="74" key="refactoring.ChangeSignatureDialog" timestamp="1578435990610">
       <screen x="0" y="0" width="1600" height="870" />
     </state>
+    <state x="506" y="74" key="refactoring.ChangeSignatureDialog/0.0.1600.870@0.0.1600.870" timestamp="1578435990610" />
+    <state x="2426" y="354" key="refactoring.ChangeSignatureDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578138950783" />
+    <state x="2376" y="338" key="run.anything.popup" timestamp="1578416689249">
+      <screen x="1920" y="277" width="1600" height="900" />
+    </state>
     <state x="456" y="59" key="run.anything.popup/0.0.1600.870@0.0.1600.870" timestamp="1578322487203" />
-    <state x="2376" y="338" key="run.anything.popup/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577135747756" />
+    <state x="2376" y="338" key="run.anything.popup/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578416689249" />
     <state x="2184" y="347" width="672" height="678" key="search.everywhere.popup" timestamp="1578351525191">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>

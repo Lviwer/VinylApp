@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -64,11 +66,18 @@ public class LoginWindowController implements Initializable {
         }
     }
 
+    //enter to log in
+    public void enterPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            enterOnAction();
+        }
+    }
+
     public void enterOnAction() {
 
-//if / check login and pass from textFields. If everything ok we can enter into app
+//if / check login and pass from textFields. If everything ok we can run app
         if (isTextFieldsEmpty() && (isTxtContainsThisLogAndPass() && isLogIndexEqualPassIndex())) {
-//set LOGIN AND PASS INDEX
+//set login adn pass index
             DbManager.setLogAndPassIndex(DbManager.logins.indexOf(usernameTextField.getText()));
             DbManager.setLoginPassDatabase();
 // loading data from database
@@ -84,7 +93,6 @@ public class LoginWindowController implements Initializable {
             stage.setTitle(vinylAppAndName);
             stage.setScene(scene);
             stage.show();
-
 //close login window
             Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
             thisStage.close();
@@ -124,4 +132,5 @@ public class LoginWindowController implements Initializable {
     public void englishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("en"));
     }
+
 }

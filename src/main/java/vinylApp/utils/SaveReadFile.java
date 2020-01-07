@@ -42,7 +42,6 @@ public class SaveReadFile {
         FileReader fileReader = new FileReader(filePath);
         BufferedReader reader = new BufferedReader(fileReader);
         String readOneLineFromFile= reader.readLine();
-        //copyList.add(readOneLineFromFile);
 
         while(readOneLineFromFile != null)
         {

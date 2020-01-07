@@ -6,23 +6,22 @@ import vinylApp.utils.Utils;
 
 public class ConverterVinyl {
 
-    public static Vinyl convertToVinyl(VinylFx vinylFx) throws NumberFormatException{
-            Vinyl vinyl = new Vinyl();
-            vinyl.setId(vinylFx.getId());
-            vinyl.setTitle(vinylFx.getTitle());
-            vinyl.setReleaseDate(Integer.parseInt(vinylFx.getReleased()));
-            vinyl.setCatalogNumber(vinylFx.getCatalogNumber());
-            vinyl.setBuyDate(Utils.convertToDate(vinylFx.getDateOfPurchase()));
-//PRICE
-            vinyl.setPrice(vinylFx.getPrice());
-            vinyl.setSellPrice(vinylFx.getSellingPrice());
+    public static Vinyl convertToVinyl(VinylFx vinylFx) throws NumberFormatException {
+        Vinyl vinyl = new Vinyl();
+        vinyl.setId(vinylFx.getId());
+        vinyl.setTitle(vinylFx.getTitle());
+        vinyl.setReleaseDate(Integer.parseInt(vinylFx.getReleased()));
+        vinyl.setCatalogNumber(vinylFx.getCatalogNumber());
+        vinyl.setBuyDate(Utils.convertToDate(vinylFx.getDateOfPurchase()));
+//PRICE------------------------------------------------------------
+        vinyl.setPrice(vinylFx.getPrice());
+        vinyl.setSellPrice(vinylFx.getSellingPrice());
 
-            vinyl.setSellDate(Utils.convertToDate(vinylFx.getDateOfSelling()));
-            vinyl.setCondition(vinylFx.getVinylCondition());
-            vinyl.setConditionAccessories(vinylFx.getAccessoriesCondition());
-            vinyl.setAvailable(vinylFx.isIsAvailable());
-            vinyl.setWantTo(vinylFx.isWantList());
-
+        vinyl.setSellDate(Utils.convertToDate(vinylFx.getDateOfSelling()));
+        vinyl.setCondition(vinylFx.getVinylCondition());
+        vinyl.setConditionAccessories(vinylFx.getAccessoriesCondition());
+        vinyl.setAvailable(vinylFx.isIsAvailable());
+        vinyl.setWantTo(vinylFx.isWantList());
 
         return vinyl;
     }
@@ -36,7 +35,7 @@ public class ConverterVinyl {
         vinylFx.setReleased(Integer.toString(vinyl.getReleaseDate()));
         vinylFx.setCatalogNumber(vinyl.getCatalogNumber());
         vinylFx.setDateOfPurchase(Utils.convertToLocalDate(vinyl.getBuyDate()));
-//PRICE
+//PRICE------------------------------------------------------------------
         vinylFx.setPrice(vinyl.getPrice());
         vinylFx.setSellingPrice(vinyl.getSellPrice());
 

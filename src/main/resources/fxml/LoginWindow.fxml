@@ -20,7 +20,7 @@
    <children>
       <VBox style="-fx-background-color: transparent;" stylesheets="@../css/style.css">
          <children>
-            <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="670.0" prefWidth="1050.0" styleClass="back">
+            <AnchorPane onKeyPressed="#enterPressed" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="670.0" prefWidth="1050.0" styleClass="back">
                <children>
                   <HBox layoutY="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <padding>

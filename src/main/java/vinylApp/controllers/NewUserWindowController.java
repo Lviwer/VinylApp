@@ -1,11 +1,12 @@
 package vinylApp.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -52,33 +53,48 @@ public class NewUserWindowController implements Initializable {
     }
 
 
-    public void saveNewUserOnAction(ActionEvent actionEvent){
+    public void enterPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            saveNewUserOnAction();
+        }
+    }
+
+
+    public void saveNewUserOnAction() {
         String newLogin = newUsernameTextField.getText();
-        System.out.println(newLogin);;
+        System.out.println(newLogin);
+        ;
         String newPass = newPasswordTextField.getText();
-        if (!DbManager.logins.contains(newLogin)) {
+        if ((!DbManager.logins.contains(newLogin)) && (!newLogin.equals("")) && (!newPass.equals(""))) {
 
             try {
                 SaveReadFile.saveOneMoreInFile(newLogin, SaveReadFile.LOG_FILE_PATH);
                 SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
                 DialogsUtils.createdNewAccount();
+                newPasswordTextField.clear();
+                newPasswordTextField.clear();
             } catch (FileNotFoundException e) {
                 DialogsUtils.errorDialog(e.getMessage());
             }
 
+        } else if (DbManager.logins.contains(newLogin)) {
+            DialogsUtils.createdNewAccountExist();
+        } else {
+            DialogsUtils.loginError();
         }
-        else DialogsUtils.createdNewAccountExist();
+    }
 
-    }
-        public void backOnAction (ActionEvent actionEvent)  {
-            AnchorPane pane = null;
-            try {
-                pane = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
-            } catch (IOException e) {
-                DialogsUtils.errorDialog(e.getMessage());
-            }
-            anchorPaneIdNewUser.getChildren().setAll(pane);
+    public void backOnAction() {
+        AnchorPane pane = null;
+        try {
+            pane = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+        } catch (IOException e) {
+            DialogsUtils.errorDialog(e.getMessage());
         }
+        anchorPaneIdNewUser.getChildren().setAll(pane);
     }
+
+}
+
 
 

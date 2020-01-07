@@ -3,6 +3,7 @@ package vinylApp.utils;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.Property;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.TextFormatter;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
 
@@ -33,27 +34,6 @@ public class Utils {
             return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         }
     }
-
-
-    public static double convertToDouble(String string) {
-        return Double.parseDouble(string);
-    }
-
-    public static String cutDoubleToDecimal(double number) {
-
-        return String.format("%.2f", number);
-    }
-
-
-  // public static double textFieldToDouble(TextField textField){
-  //          DecimalFormat decimalFormat = new DecimalFormat("%,##");
-  //          try
-  //          {
-  //              return textField.p
-  //          }
-//
-  // }
-
 
 
 }

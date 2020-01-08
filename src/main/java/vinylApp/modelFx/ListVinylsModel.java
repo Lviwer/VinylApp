@@ -24,20 +24,20 @@ public class ListVinylsModel {
     private ObservableList<ReleaseCountryFx> releaseCountryFxObservableList = FXCollections.observableArrayList();
     private ObservableList<LabelFx> labelFxObservableList = FXCollections.observableArrayList();
 
-    //for choosen in comboBox
+//for choosen in comboBox
     private ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<GenreFx> genreFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<ReleaseCountryFx> releaseCountryFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<LabelFx> labelFxObjectProperty = new SimpleObjectProperty<>();
 
-    private List<VinylFx> vinylFxList = new ArrayList<>(); //do przetrzymywania książek w liście
-//moje
+    private List<VinylFx> vinylFxList = new ArrayList<>(); //do przetrzymywania vinyli w liście
+//price fields
     private double oneMonthSpend;
     private int thisMonthBuyed;
     private int allVinyls;
     private double oneMonthEarn;
     private int oneMonthSoldVinyl;
-//here
+//
 
     public void init() throws ApplicationException {
         VinylDao vinylDao = new VinylDao();
@@ -47,11 +47,6 @@ public class ListVinylsModel {
         vinyls.forEach(vinyl -> {
             this.vinylFxList.add(ConverterVinyl.convertToVinylFx(vinyl));
 
-       //  if (vinylFxList.get(vinyl.getId()).getDateOfPurchase().getMonth() == LocalDate.now().getMonth() &&
-       //          vinylFxList.get(vinyl.getId()).getDateOfPurchase().getYear() == LocalDate.now().getYear())
-       //  {
-       //      oneMonthSpend +=   vinyl.getPrice();
-       //  }
         });
 
         getMoneyAndVinylsBuyInMonth();
@@ -191,35 +186,6 @@ public class ListVinylsModel {
         init();
 
     }
-
-    //i add this
-
-    public double monthSpendMoney(){
-
-        double oneMonthPrice = 0;
-        for (VinylFx a : vinylFxList) {
-            if (a.getDateOfPurchase().getMonth() == LocalDate.now().getMonth() &&
-                    a.getDateOfPurchase().getYear() == LocalDate.now().getYear()) {
-                oneMonthPrice += a.getPrice();
-            }
-        }
-        return oneMonthPrice;
-    }
-
-    public int buyedThisMonth(){
-        int oneMonthBuy = 0;
-        for (VinylFx a : vinylFxList) {
-            if (a.getDateOfPurchase().getMonth() == LocalDate.now().getMonth() &&
-                    a.getDateOfPurchase().getYear() == LocalDate.now().getYear()) {
-                oneMonthBuy++;
-            }
-        }
-        return oneMonthBuy;
-    }
-
-    //do tąd ! ! !
-
-
 
     public ObservableList<VinylFx> getVinylFxObservableList() {
         return vinylFxObservableList;

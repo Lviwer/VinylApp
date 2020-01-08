@@ -1,7 +1,5 @@
 package vinylApp.controllers;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,17 +9,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
-import javafx.util.converter.DoubleStringConverter;
-import javafx.util.converter.NumberStringConverter;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.FxmlUtils;
-import vinylApp.utils.Utils;
 import vinylApp.utils.exceptions.ApplicationException;
-
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 

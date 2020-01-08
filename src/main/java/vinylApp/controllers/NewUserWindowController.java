@@ -10,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import vinylApp.Main;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.SaveReadFile;
@@ -54,7 +55,7 @@ public class NewUserWindowController implements Initializable {
 
 
     public void enterPressed(KeyEvent keyEvent) {
-        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER) & !newPasswordTextField.getText().isEmpty()) {
             saveNewUserOnAction();
         }
     }
@@ -72,7 +73,6 @@ public class NewUserWindowController implements Initializable {
                 SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
                 DialogsUtils.createdNewAccount();
                 newPasswordTextField.clear();
-                newPasswordTextField.clear();
             } catch (FileNotFoundException e) {
                 DialogsUtils.errorDialog(e.getMessage());
             }
@@ -87,7 +87,7 @@ public class NewUserWindowController implements Initializable {
     public void backOnAction() {
         AnchorPane pane = null;
         try {
-            pane = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+            pane = FXMLLoader.load(getClass().getResource(Main.LOGIN_WINDOW_FXML));
         } catch (IOException e) {
             DialogsUtils.errorDialog(e.getMessage());
         }

@@ -10,12 +10,12 @@ import vinylApp.utils.FxmlUtils;
 
 public class Main extends Application {
 
-    public static final String BORDER_PANE_MAIN_FXML = "/fxml/BorderPaneMain.fxml";
+  //  public static final String BORDER_PANE_MAIN_FXML = "/fxml/BorderPaneMain.fxml";
     public static final String LOGIN_WINDOW_FXML = "/fxml/LoginWindow.fxml";
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource(LOGIN_WINDOW_FXML));
 
         Scene scene = new Scene(root);
         stage.setTitle(FxmlUtils.getResourceBundle().getString("title.application"));

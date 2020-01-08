@@ -1,14 +1,2 @@
 admin
-kot
-pies
-dwa
-kamil
-malpka
-Marian
-marianna
-pijak
-maria
-
-
-
-mis
+test

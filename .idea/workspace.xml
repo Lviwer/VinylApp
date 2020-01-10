@@ -2,39 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/INFO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databases/adminadminDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/databases/adminadminDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/logAndPass/logDataBase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/databases/logAndPass/logDataBase.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/logAndPass/passDataBase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/databases/logAndPass/passDataBase.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/marekpijakDB.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/marekpijakDB.trace.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/mismisDB.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/mismisDB.trace.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/vinylDB.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/vinylDB.trace.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/NewUserWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/NewUserWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ListVinylsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ListVinylsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/FillDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/orangeVinyl112.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/piledVinyls.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/winPhoto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/orangeVinyl112.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/piledVinyls.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/winPhoto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddAuthor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddAuthor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/NewUserWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/NewUserWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ListVinylsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ListVinylsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/utils/FillDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/utils/FillDatabase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +120,19 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
@@ -192,30 +175,30 @@
     </state>
     <state x="622" y="336" key="Github.CreateGistDialog/0.0.1600.870@0.0.1600.870" timestamp="1578225347607" />
     <state x="2542" y="625" key="Github.CreateGistDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351165972" />
-    <state width="778" height="316" key="GridCell.Tab.0.bottom" timestamp="1578522084064">
+    <state width="778" height="286" key="GridCell.Tab.0.bottom" timestamp="1578689613887">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="778" height="143" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1578513221842" />
-    <state width="1876" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="778" height="316" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578522084064" />
-    <state width="778" height="316" key="GridCell.Tab.0.center" timestamp="1578522084064">
+    <state width="778" height="62" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1578525771624" />
+    <state width="778" height="316" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578523581499" />
+    <state width="778" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578689613887" />
+    <state width="778" height="286" key="GridCell.Tab.0.center" timestamp="1578689613887">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="778" height="143" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1578513221842" />
-    <state width="1876" height="254" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="778" height="316" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578522084064" />
-    <state width="778" height="316" key="GridCell.Tab.0.left" timestamp="1578522084064">
+    <state width="778" height="62" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1578525771624" />
+    <state width="778" height="316" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578523581499" />
+    <state width="778" height="286" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578689613887" />
+    <state width="778" height="286" key="GridCell.Tab.0.left" timestamp="1578689613887">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="778" height="143" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1578513221842" />
-    <state width="1876" height="254" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="778" height="316" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578522084064" />
-    <state width="778" height="316" key="GridCell.Tab.0.right" timestamp="1578522084064">
+    <state width="778" height="62" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1578525771624" />
+    <state width="778" height="316" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578523581499" />
+    <state width="778" height="286" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578689613887" />
+    <state width="778" height="286" key="GridCell.Tab.0.right" timestamp="1578689613887">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="778" height="143" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1578513221842" />
-    <state width="1876" height="254" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578138361181" />
-    <state width="778" height="316" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578522084064" />
+    <state width="778" height="62" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1578525771624" />
+    <state width="778" height="316" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578523581499" />
+    <state width="778" height="286" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578689613887" />
     <state width="1556" height="285" key="GridCell.Tab.1.bottom" timestamp="1578350821423">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
@@ -258,11 +241,11 @@
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577620286306" />
-    <state x="2415" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1578519597365">
-      <screen x="1920" y="277" width="1600" height="900" />
+    <state x="594" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1578680803754">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="495" y="263" key="com.intellij.ide.util.TipDialog/0.0.1600.870@0.0.1600.870" timestamp="1578507860084" />
-    <state x="594" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578219472935" />
+    <state x="495" y="263" key="com.intellij.ide.util.TipDialog/0.0.1600.870@0.0.1600.870" timestamp="1578602508477" />
+    <state x="594" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1578680803754" />
     <state x="2415" y="549" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578519597365" />
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1" timestamp="1576933863575">
       <screen x="1920" y="277" width="1600" height="900" />

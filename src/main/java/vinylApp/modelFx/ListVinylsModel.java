@@ -24,14 +24,14 @@ public class ListVinylsModel {
     private ObservableList<ReleaseCountryFx> releaseCountryFxObservableList = FXCollections.observableArrayList();
     private ObservableList<LabelFx> labelFxObservableList = FXCollections.observableArrayList();
 
-//for choosen in comboBox
+    //for choosen in comboBox
     private ObjectProperty<AuthorFx> authorFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<GenreFx> genreFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<ReleaseCountryFx> releaseCountryFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<LabelFx> labelFxObjectProperty = new SimpleObjectProperty<>();
 
     private List<VinylFx> vinylFxList = new ArrayList<>(); //do przetrzymywania vinyli w liście
-//price fields
+    //price fields
     private double oneMonthSpend;
     private int thisMonthBuyed;
     private int allVinyls;
@@ -62,10 +62,9 @@ public class ListVinylsModel {
 
     private void getMoneyVinylsSoldInMonth() {
         for (VinylFx a : vinylFxList) {
-            if (a.getDateOfSelling()==null){
+            if (a.getDateOfSelling() == null) {
                 continue;
-            }
-           else if (a.getDateOfSelling().getYear() == LocalDate.now().getYear() &&
+            } else if (a.getDateOfSelling().getYear() == LocalDate.now().getYear() &&
                     a.getDateOfSelling().getMonth() == LocalDate.now().getMonth()) {
                 oneMonthEarn += a.getSellingPrice();
                 oneMonthSoldVinyl++;
@@ -85,11 +84,45 @@ public class ListVinylsModel {
     }
 
 
-    //przebuduj dla 4 wartości switch / case
+    //filterVinylList works with ifs ;|
     public void filterVinylList() {
         if (getAuthorFxObjectProperty() != null && getGenreFxObjectProperty() != null && getLabelFxObjectProperty() != null
                 && getReleaseCountryFxObjectProperty() != null) {
             filterPredicate(predicateAuthor().and(predicateGenre().and(predicateLabel().and(predicateReleaseCountry()))));
+
+        } else if (getGenreFxObjectProperty() != null && getLabelFxObjectProperty() != null && getReleaseCountryFxObjectProperty() != null) {
+            filterPredicate(predicateGenre().and(predicateLabel().and(predicateReleaseCountry())));
+
+        } else if (getAuthorFxObjectProperty() != null && getLabelFxObjectProperty() != null && getReleaseCountryFxObjectProperty()
+                != null) {
+            filterPredicate(predicateAuthor().and(predicateLabel().and(predicateReleaseCountry())));
+
+        } else if (getAuthorFxObjectProperty() != null && getGenreFxObjectProperty() != null && getLabelFxObjectProperty()
+                != null) {
+            filterPredicate(predicateAuthor().and(predicateGenre().and(predicateLabel())));
+
+        } else if (getAuthorFxObjectProperty() != null && getGenreFxObjectProperty() != null &&
+                getReleaseCountryFxObjectProperty() != null) {
+            filterPredicate(predicateAuthor().and(predicateLabel().and(predicateReleaseCountry())));
+
+        } else if (getAuthorFxObjectProperty() != null && getGenreFxObjectProperty() != null) {
+            filterPredicate(predicateAuthor().and(predicateGenre()));
+
+        } else if (getAuthorFxObjectProperty() != null && getLabelFxObjectProperty() != null) {
+            filterPredicate(predicateAuthor().and(predicateLabel()));
+
+        } else if (getAuthorFxObjectProperty() != null && getReleaseCountryFxObjectProperty() != null) {
+            filterPredicate(predicateAuthor().and(predicateReleaseCountry()));
+
+        } else if (getGenreFxObjectProperty() != null && getLabelFxObjectProperty() != null) {
+            filterPredicate(predicateGenre().and(predicateLabel()));
+
+        } else if (getGenreFxObjectProperty() != null && getReleaseCountryFxObjectProperty() != null) {
+            filterPredicate(predicateGenre().and(predicateReleaseCountry()));
+
+        } else if (getLabelFxObjectProperty() != null && getReleaseCountryFxObjectProperty() != null) {
+            filterPredicate(predicateLabel().and(predicateReleaseCountry()));
+
         } else if (getAuthorFxObjectProperty() != null) {
             filterPredicate(predicateAuthor());
 
@@ -102,11 +135,8 @@ public class ListVinylsModel {
         } else if (getReleaseCountryFxObjectProperty() != null) {
             filterPredicate(predicateReleaseCountry());
 
-        } else {
+        } else
             this.vinylFxObservableList.setAll(this.vinylFxList);
-        }
-
-
     }
 
 

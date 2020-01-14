@@ -5,15 +5,15 @@ import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.models.*;
 import vinylApp.utils.exceptions.ApplicationException;
 
-import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class FillDatabase {
 
 
     public static void fillDatabase() {
+
+
 
         Genre disco = new Genre();
         disco.setNameOfGenre("Disco");

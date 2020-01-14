@@ -1,29 +1,23 @@
 package vinylApp.database.dbUtils;
 
-import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.logger.Logger;
 import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import org.h2.engine.Database;
-import vinylApp.controllers.LoginWindowController;
+import vinylApp.controllers.NewUserWindowController;
 import vinylApp.database.models.*;
 import vinylApp.utils.SaveReadFile;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DbManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
+    private static SaveReadFile saveReadFile = new SaveReadFile();
 
     public static ArrayList<String> logins;
     public static ArrayList<String> passwords;
@@ -32,10 +26,9 @@ public class DbManager {
     private static String user;
     private static String pass;
 
-    //--------------default name for database when app run can change it -------------------------------------
+    //--------------default name for database when app run we can change it -------------------------------------
     private static String databaseName = "vinyl";
-    private static String JDBC_DRIVER_HD = "jdbc:h2:./databases/".concat(getDatabaseName()).concat("DB");
-
+    private static String JDBC_DRIVER_HD = "jdbc:h2:./src/main/resources/databases/".concat(getDatabaseName()).concat("DB");
 
     private static ConnectionSource connectionSource;
 
@@ -49,14 +42,14 @@ public class DbManager {
     private static void createConnectionSource() {
         try {
 //-------------i need to refresh new name for database---------------------------------------------------------
-            JDBC_DRIVER_HD = "jdbc:h2:./databases/".concat(getDatabaseName()).concat("DB");
+            JDBC_DRIVER_HD = "jdbc:h2:./src/main/resources/databases/".concat(getDatabaseName()).concat("DB");
             connectionSource = new JdbcConnectionSource(JDBC_DRIVER_HD, user, pass);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }
     }
 
-    private static void dropTable() {
+    public static void dropTable() {
 
         try {
             TableUtils.dropTable(connectionSource, Genre.class, true);
@@ -106,8 +99,8 @@ public class DbManager {
 //---------------methods responsible for validate log/pass and databases------------------
 
     public static void readAllLoginsAndPasswordsFromTxt() throws IOException {
-        logins = SaveReadFile.readAllFromFile(SaveReadFile.LOG_FILE_PATH);
-        passwords = SaveReadFile.readAllFromFile(SaveReadFile.PASS_FILE_PATH);
+        logins = SaveReadFile.readAllFromFile(saveReadFile.logFilePathStream);
+        passwords = SaveReadFile.readAllFromFile(saveReadFile.passFilePathStream);
     }
 
     public static void setLogAndPassIndex(int logIndex) {
@@ -115,8 +108,11 @@ public class DbManager {
     }
 
     public static void setLoginPassDatabase() {
+
         user = logins.get(loginAndPassIndex);
         pass = passwords.get(loginAndPassIndex);
+        //setUser(logins.get(loginAndPassIndex));
+       // setPass(passwords.get(loginAndPassIndex));
         setDatabaseName(user.concat(pass));
     }
 

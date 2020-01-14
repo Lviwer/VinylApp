@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
 
 public class NewUserWindowController implements Initializable {
 
+    private SaveReadFile saveReadFile = new SaveReadFile();
+
     @FXML
     private AnchorPane anchorPaneIdNewUser;
 
@@ -63,8 +65,7 @@ public class NewUserWindowController implements Initializable {
 
     public void saveNewUserOnAction() {
         String newLogin = newUsernameTextField.getText();
-        System.out.println(newLogin);
-        ;
+
         String newPass = newPasswordTextField.getText();
         if ((!DbManager.logins.contains(newLogin)) && (!newLogin.equals("")) && (!newPass.equals(""))) {
 
@@ -73,6 +74,11 @@ public class NewUserWindowController implements Initializable {
                 SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
                 DialogsUtils.createdNewAccount();
                 newPasswordTextField.clear();
+//TO DO: add to new account +.concat login. When account with + will log in first time then you run DbManager init with
+//                drop table and then you have to change login to login without + . Account which log second time won't have + in login
+
+
+
             } catch (FileNotFoundException e) {
                 DialogsUtils.errorDialog(e.getMessage());
             }
@@ -90,6 +96,7 @@ public class NewUserWindowController implements Initializable {
             pane = FXMLLoader.load(getClass().getResource(Main.LOGIN_WINDOW_FXML));
         } catch (IOException e) {
             DialogsUtils.errorDialog(e.getMessage());
+
         }
         anchorPaneIdNewUser.getChildren().setAll(pane);
     }

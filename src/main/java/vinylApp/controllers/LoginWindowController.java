@@ -26,6 +26,9 @@ import java.util.ResourceBundle;
 
 public class LoginWindowController implements Initializable {
 
+    public static final String BORDER_PANE_MAIN_FXML = "/fxml/BorderPaneMain.fxml";
+    public static final String NEW_USER_WINDOW_FXML = "/fxml/NewUserWindow.fxml";
+
     @FXML
     public AnchorPane anchorPaneId;
     @FXML
@@ -33,10 +36,6 @@ public class LoginWindowController implements Initializable {
     @FXML
     private TextField passwordTextField;
 
-    public static final String NEW_USER_WINDOW_FXML = "/fxml/NewUserWindow.fxml";
-    public static int loginIndex;
-
-    private MainController mainController;
 
     double x = 0;
     double y = 0;
@@ -62,7 +61,9 @@ public class LoginWindowController implements Initializable {
         try {
             DbManager.readAllLoginsAndPasswordsFromTxt();
         } catch (IOException e) {
+            e.printStackTrace();
             DialogsUtils.errorDialog(e.getMessage());
+            System.out.println("WIELKA DUPA");
         }
     }
 
@@ -78,6 +79,8 @@ public class LoginWindowController implements Initializable {
 //if / check login and pass from textFields. If everything ok we can run app
         if (isTextFieldsEmpty() && (isTxtContainsThisLogAndPass() && isLogIndexEqualPassIndex())) {
 //set login adn pass index
+
+
             DbManager.setLogAndPassIndex(DbManager.logins.indexOf(usernameTextField.getText()));
             DbManager.setLoginPassDatabase();
 // loading data from database
@@ -86,7 +89,7 @@ public class LoginWindowController implements Initializable {
 //open new window with APP
             Main main = new Main();
             Stage stage = new Stage();
-            Pane pane = FxmlUtils.fxmlLoader("/fxml/BorderPaneMain.fxml");
+            Pane pane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
 
             Scene scene = new Scene(pane);
             String vinylAppAndName = FxmlUtils.getResourceBundle().getString("title.application.with.login").concat(DbManager.getUser());

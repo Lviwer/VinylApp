@@ -9,7 +9,6 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Genre implements BaseModel {
 
     public Genre() {
-
     }
 
     @DatabaseField(generatedId = true)
@@ -20,7 +19,6 @@ public class Genre implements BaseModel {
 
     @ForeignCollectionField(columnName = "VINYL_ID")
     private ForeignCollection<Vinyl> vinylsGenre;
-
 
 
     public int getId() {

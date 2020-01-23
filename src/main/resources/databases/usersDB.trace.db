@@ -1,0 +1,4 @@
+2020-01-22 19:48:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "USERS" nie istnieje
+Table "USERS" not found; SQL statement:
+DROP TABLE `USERS`  [42102-200]

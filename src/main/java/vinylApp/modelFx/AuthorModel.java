@@ -7,7 +7,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.AuthorDao;
 import vinylApp.database.dao.VinylDao;
-import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterAuthor;
 import vinylApp.database.models.Author;
 import vinylApp.database.models.Vinyl;
@@ -17,7 +16,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-//separate javaFx from database
 public class AuthorModel {
 
     private ObservableList<AuthorFx> authorList = FXCollections.observableArrayList();//connect with comboBox
@@ -36,7 +34,7 @@ public class AuthorModel {
         this.root.getChildren().clear();
         authors.forEach(a -> {
             TreeItem<String> authorItem = new TreeItem<>(a.getNameOfAuthor());
-            a.getVinylsAuthor().forEach(b->{
+            a.getVinylsAuthor().forEach(b -> {
                 authorItem.getChildren().add(new TreeItem<>(b.getTitle())); // title from vinyls list
             });
             root.getChildren().add(authorItem);
@@ -61,6 +59,7 @@ public class AuthorModel {
         vinylDao.deleteByColumnName(Vinyl.AUTHOR, author.getValue().getId());
         init();
     }
+
     public void saveAuthorInDataBase(String name) throws ApplicationException {
         AuthorDao authorDao = new AuthorDao();
         Author author = new Author();
@@ -76,8 +75,6 @@ public class AuthorModel {
         tempAuthor.setNameOfAuthor(getAuthor().getNameOfAuthor());
         authorDao.createOrUpdate(tempAuthor);
         init();
-
-
     }
 
 
@@ -100,7 +97,6 @@ public class AuthorModel {
     public void setAuthor(AuthorFx author) {
         this.author.set(author);
     }
-
 
     public TreeItem<String> getRoot() {
         return root;

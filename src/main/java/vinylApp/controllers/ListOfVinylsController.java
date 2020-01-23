@@ -150,7 +150,6 @@ public class ListOfVinylsController {
                         }
                     });
                 }
-
             }
         });
 
@@ -186,7 +185,6 @@ public class ListOfVinylsController {
 
                     });
                 }
-
             }
         });
 

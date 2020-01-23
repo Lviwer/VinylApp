@@ -1,10 +1,13 @@
 vinylApp\modelFx\VinylFx.class
+vinylApp\modelFx\UserModel.class
 vinylApp\database\models\ReleaseCountry.class
 vinylApp\database\dao\GenreDao.class
+vinylApp\database\models\User.class
 vinylApp\modelFx\GenreModel.class
 vinylApp\database\dao\CommonDao.class
 vinylApp\controllers\MainController.class
 vinylApp\modelFx\AuthorModel.class
+vinylApp\modelFx\UserFx.class
 vinylApp\controllers\VinylController.class
 vinylApp\database\models\Vinyl.class
 vinylApp\Main.class
@@ -18,7 +21,6 @@ vinylApp\controllers\LoginWindowController.class
 vinylApp\controllers\ListOfVinylsController$2.class
 vinylApp\database\dao\AuthorDao.class
 vinylApp\database\models\Label.class
-vinylApp\utils\SaveReadFile.class
 vinylApp\controllers\NewUserWindowController.class
 vinylApp\utils\DialogsUtils.class
 vinylApp\modelFx\VinylModel.class
@@ -26,9 +28,11 @@ vinylApp\database\dbUtils\converters\ConverterLabel.class
 vinylApp\modelFx\ReleaseCountryModel.class
 vinylApp\modelFx\GenreFx.class
 vinylApp\database\dbUtils\converters\ConverterVinyl.class
+vinylApp\database\dbUtils\converters\ConverterUser.class
 vinylApp\controllers\ListOfVinylsController.class
 vinylApp\modelFx\LabelModel.class
 vinylApp\database\models\Author.class
+vinylApp\database\dao\UserDao.class
 vinylApp\modelFx\AuthorFx.class
 vinylApp\utils\exceptions\ApplicationException.class
 vinylApp\database\dao\VinylDao.class

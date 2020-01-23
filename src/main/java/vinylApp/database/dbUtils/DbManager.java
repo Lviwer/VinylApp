@@ -5,9 +5,8 @@ import com.j256.ormlite.logger.Logger;
 import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import vinylApp.controllers.NewUserWindowController;
 import vinylApp.database.models.*;
-import vinylApp.utils.SaveReadFile;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,22 +16,30 @@ public class DbManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
-    private static SaveReadFile saveReadFile = new SaveReadFile();
-
     public static ArrayList<String> logins;
     public static ArrayList<String> passwords;
 
-    public static int loginAndPassIndex;
     private static String user;
     private static String pass;
 
+
+
     //--------------default name for database when app run we can change it -------------------------------------
+
     private static String databaseName = "vinyl";
     private static String JDBC_DRIVER_HD = "jdbc:h2:./src/main/resources/databases/".concat(getDatabaseName()).concat("DB");
 
     private static ConnectionSource connectionSource;
 
     public static void initDatabase() {
+        createConnectionSource();
+        //dropTable();
+        createTable();
+        closeConnectionSource();
+    }
+
+
+    public static void initDatabaseForNewAccount() {
         createConnectionSource();
         dropTable();
         createTable();
@@ -92,29 +99,47 @@ public class DbManager {
         return connectionSource;
     }
 
-    public static void setUser(String user) {
-        DbManager.user = user;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Database for users
+
+    private static String JDBC_USERS_DRIVER_HD = "jdbc:h2:./src/main/resources/databases/usersDB";
+    private static String adminUser = "admin";
+    private static String adminPass = "admin";
+
+
+    private static void createConnectionSourceForUser() {
+        try {
+            connectionSource = new JdbcConnectionSource(JDBC_USERS_DRIVER_HD, adminUser, adminPass);
+        } catch (SQLException e) {
+            LOGGER.warn(e.getMessage());
+        }
     }
 
-//---------------methods responsible for validate log/pass and databases------------------
-
-    public static void readAllLoginsAndPasswordsFromTxt() throws IOException {
-        logins = SaveReadFile.readAllFromFile(saveReadFile.logFilePathStream);
-        passwords = SaveReadFile.readAllFromFile(saveReadFile.passFilePathStream);
+    private static void createUserTable() {
+        try {
+            TableUtils.createTableIfNotExists(connectionSource, User.class);
+        } catch (SQLException e) {
+            LOGGER.warn(e.getMessage());
+        }
     }
 
-    public static void setLogAndPassIndex(int logIndex) {
-        loginAndPassIndex = logIndex;
+    private static void dropUserTable() {
+
+        try {
+            TableUtils.dropTable(connectionSource, User.class, true);
+        } catch (SQLException e) {
+            LOGGER.warn(e.getMessage());
+        }
     }
 
-    public static void setLoginPassDatabase() {
 
-        user = logins.get(loginAndPassIndex);
-        pass = passwords.get(loginAndPassIndex);
-        //setUser(logins.get(loginAndPassIndex));
-       // setPass(passwords.get(loginAndPassIndex));
-        setDatabaseName(user.concat(pass));
+    public static void initDatabaseUser() {
+        createConnectionSourceForUser();
+        //dropUserTable();
+        createUserTable();
+        closeConnectionSource();
     }
+
 
     public static void setPass(String pass) {
         DbManager.pass = pass;
@@ -132,3 +157,39 @@ public class DbManager {
         return user;
     }
 }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ //  public static void setUser(String user) {
+ //      DbManager.user = user;
+ //  }
+
+///---------------methods responsible for validate log/pass and databases------------------
+
+ //  public static void readAllLoginsAndPasswordsFromTxt() throws IOException {
+ //      logins = SaveReadFile.readAll(SaveReadFile.LOG_FILE_PATH);
+ //      passwords = SaveReadFile.readAll(SaveReadFile.PASS_FILE_PATH);
+
+
+ //      //logins = SaveReadFile.readAllFromFile(saveReadFile.logFilePathStream);
+ //      //passwords = SaveReadFile.readAllFromFile(saveReadFile.passFilePathStream);
+ //  }
+
+ //  public static void setLogAndPassIndex(int logIndex) {
+ //      loginAndPassIndex = logIndex;
+ //  }
+
+   // public static void setLoginPassDatabase() {
+
+        //setUser(logins.get(loginAndPassIndex));
+        //setPass(passwords.get(loginAndPassIndex));
+       // setDatabaseName(logins.get(loginAndPassIndex).concat(passwords.get(loginAndPassIndex)));
+
+
+        // user.concat(pass));
+   // }
+

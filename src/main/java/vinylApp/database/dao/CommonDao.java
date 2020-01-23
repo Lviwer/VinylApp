@@ -6,7 +6,6 @@ import com.j256.ormlite.logger.Logger;
 import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.support.ConnectionSource;
-import javafx.beans.property.IntegerProperty;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.models.BaseModel;
 import vinylApp.utils.FxmlUtils;
@@ -132,6 +131,5 @@ public abstract class CommonDao {
             throw new ApplicationException(FxmlUtils.getResourceBundle().getString("error.get.dao"));
         }
     }
-
 
 }

@@ -2,7 +2,6 @@ package vinylApp.database.dao;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.DeleteBuilder;
-import com.j256.ormlite.support.ConnectionSource;
 import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
 

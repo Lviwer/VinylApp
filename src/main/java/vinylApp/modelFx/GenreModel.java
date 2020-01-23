@@ -7,7 +7,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.VinylDao;
-import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterGenre;
 import vinylApp.database.models.Genre;
 import vinylApp.database.models.Vinyl;
@@ -75,8 +74,6 @@ public class GenreModel {
         tempGenre.setNameOfGenre(getGenre().getNameOfGenre());
         genreDao.createOrUpdate(tempGenre);
         init();
-
-
     }
 
 
@@ -99,7 +96,6 @@ public class GenreModel {
     public void setGenre(GenreFx genre) {
         this.genre.set(genre);
     }
-
 
     public TreeItem<String> getRoot() {
         return root;

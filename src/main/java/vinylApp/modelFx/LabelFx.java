@@ -38,6 +38,6 @@ public class LabelFx {
 
     @Override
     public String toString() {
-        return  nameOfLabel.getValue();
+        return nameOfLabel.getValue();
     }
 }

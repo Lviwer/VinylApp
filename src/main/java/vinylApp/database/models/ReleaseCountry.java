@@ -9,7 +9,6 @@ import com.j256.ormlite.table.DatabaseTable;
 public class ReleaseCountry implements BaseModel {
 
     public ReleaseCountry() {
-
     }
 
     @DatabaseField(generatedId = true)
@@ -38,7 +37,6 @@ public class ReleaseCountry implements BaseModel {
     public void setNameOfCountry(String nameOfCountry) {
         this.nameOfCountry = nameOfCountry;
     }
-
 
     public ForeignCollection<Vinyl> getVinylsRelease() {
         return vinylsRelease;

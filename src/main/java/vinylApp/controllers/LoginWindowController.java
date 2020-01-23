@@ -15,9 +15,10 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import vinylApp.Main;
 import vinylApp.database.dbUtils.DbManager;
+import vinylApp.modelFx.UserModel;
 import vinylApp.utils.DialogsUtils;
-import vinylApp.utils.FillDatabase;
 import vinylApp.utils.FxmlUtils;
+import vinylApp.utils.exceptions.ApplicationException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,6 +37,7 @@ public class LoginWindowController implements Initializable {
     @FXML
     private TextField passwordTextField;
 
+    UserModel userModel;
 
     double x = 0;
     double y = 0;
@@ -58,16 +60,17 @@ public class LoginWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        DbManager.initDatabaseUser();
+        userModel = new UserModel();
         try {
-            DbManager.readAllLoginsAndPasswordsFromTxt();
-        } catch (IOException e) {
+            userModel.init();
+        } catch (ApplicationException e) {
             e.printStackTrace();
-            DialogsUtils.errorDialog(e.getMessage());
-            System.out.println("WIELKA DUPA");
         }
+
+
     }
 
-    //enter to log in
     public void enterPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
             enterOnAction();
@@ -76,43 +79,69 @@ public class LoginWindowController implements Initializable {
 
     public void enterOnAction() {
 
-//if / check login and pass from textFields. If everything ok we can run app
-        if (isTextFieldsEmpty() && (isTxtContainsThisLogAndPass() && isLogIndexEqualPassIndex())) {
-//set login adn pass index
+        if (isTextFieldsNotEmpty() && isDatabaseContainsThisLogAndPass() && isLogIndexEqualPassIndex()) {
 
+            DbManager.setDatabaseName(this.passwordTextField.getText().concat(this.passwordTextField.getText()));
 
-            DbManager.setLogAndPassIndex(DbManager.logins.indexOf(usernameTextField.getText()));
-            DbManager.setLoginPassDatabase();
 // loading data from database
             DbManager.initDatabase();
-            FillDatabase.fillDatabase();
-//open new window with APP
-            Main main = new Main();
-            Stage stage = new Stage();
-            Pane pane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
+            //FillDatabase.fillDatabase(); napełnianie bazy danymi z klasy FillDatabase
+            openNewWindowWithApp();
 
-            Scene scene = new Scene(pane);
-            String vinylAppAndName = FxmlUtils.getResourceBundle().getString("title.application.with.login").concat(DbManager.getUser());
-            stage.setTitle(vinylAppAndName);
-            stage.setScene(scene);
-            stage.show();
-//close login window
             Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
             thisStage.close();
+        } else if (isTextFieldsNotEmpty() && isDatabaseContainsThisLogAndPassFirstLog() && isNewLogIndexEqualPassIndex()) {
+
+
+            String normalLogWithoutPlus = usernameTextField.getText();
+            String logWithPlus = "+".concat(usernameTextField.getText());
+
+            try {
+                userModel.updateUserInDataBase(logWithPlus, normalLogWithoutPlus); // zmiana w baziedanych zapisu z + na normalny
+
+            } catch (ApplicationException e) {
+                e.printStackTrace();
+            }
+
+            DbManager.setDatabaseName(this.passwordTextField.getText().concat(this.passwordTextField.getText()));
+            DbManager.initDatabase();
+            openNewWindowWithApp();
+            Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
+            thisStage.close();
+
         } else {
+
             DialogsUtils.loginError();
+
         }
+
+
     }
 
     private boolean isLogIndexEqualPassIndex() {
-        return DbManager.logins.indexOf(usernameTextField.getText()) == DbManager.passwords.indexOf(passwordTextField.getText());
+
+        return userModel.getLoginList().indexOf(usernameTextField.getText()) == userModel.getPasswordList().indexOf(passwordTextField.getText());
     }
 
-    private boolean isTxtContainsThisLogAndPass() {
-        return DbManager.logins.contains(usernameTextField.getText()) && DbManager.passwords.contains(passwordTextField.getText());
+
+    private boolean isDatabaseContainsThisLogAndPass() {
+        return (userModel.getLoginList().contains(usernameTextField.getText()) && userModel.getPasswordList().contains(passwordTextField.getText()));
+
     }
 
-    private boolean isTextFieldsEmpty() {
+
+    private boolean isDatabaseContainsThisLogAndPassFirstLog() {
+
+        return (userModel.getLoginList().contains("+".concat(usernameTextField.getText())) && userModel.getPasswordList().contains(passwordTextField.getText()));
+    }
+
+    private boolean isNewLogIndexEqualPassIndex() {
+
+        return userModel.getLoginList().indexOf("+".concat(usernameTextField.getText())) == userModel.getPasswordList().indexOf(passwordTextField.getText());
+    }
+
+
+    private boolean isTextFieldsNotEmpty() {
         return (!usernameTextField.getText().equals("")) && !passwordTextField.getText().equals("");
     }
 
@@ -128,12 +157,139 @@ public class LoginWindowController implements Initializable {
         System.exit(0);
     }
 
+
+    private void openNewWindowWithApp() {
+
+        Main main = new Main();
+        Stage stage = new Stage();
+        Pane pane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
+
+        Scene scene = new Scene(pane);
+        String vinylAppAndName = FxmlUtils.getResourceBundle().getString("title.application.with.login").concat(this.passwordTextField.getText());
+        stage.setTitle(vinylAppAndName);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     public void polishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("pl"));
     }
 
+
     public void englishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("en"));
     }
-
 }
+
+
+
+/*
+
+
+//new account działa pojawia się tylko ten sam problem z zamkniętym strumieniem dlatego wyskakuje błąd
+        //new account
+        else if (isTextFieldsNotEmpty() && isTxtContainsThisLogAndPassFirstLog() && isNewLogIndexEqualPassIndex()) {
+
+            String normalLogWithoutPlus = usernameTextField.getText();
+            String logWithPlus = "+".concat(usernameTextField.getText());
+            try {
+                SaveReadFile.changeLoginWithPlusToNormal(normalLogWithoutPlus);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            //      // try { //PO CO TO WCZYTYWANIE  ? KURWA
+            //        //   DbManager.readAllLoginsAndPasswordsFromTxt();
+            //       } catch (IOException e) {
+            //           e.printStackTrace();
+            //       }
+//set login adn pass index
+            DbManager.setLogAndPassIndex(DbManager.logins.indexOf(normalLogWithoutPlus));
+            DbManager.setLoginPassDatabase();
+// loading data from database
+            DbManager.initDatabase();
+
+            // DbManager.initDatabaseForNewAccount();  dla nowych kont było to ale wyłaczam bo nie działa
+            openNewWindowWithApp();
+//close login window
+            Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
+            thisStage.close();
+        } else {
+            DialogsUtils.loginError();
+        }
+    }
+*/
+
+
+//wyłaczam to :
+    /*
+
+
+//if / check login and pass from textFields. If everything ok we can run app
+          if (isTextFieldsNotEmpty() && (isTxtContainsThisLogAndPass() && isLogIndexEqualPassIndex())) {
+//set login adn pass index
+            DbManager.setLogAndPassIndex(DbManager.logins.indexOf(usernameTextField.getText()));
+            DbManager.setLoginPassDatabase();
+// loading data from database
+            DbManager.initDatabase();
+            //FillDatabase.fillDatabase();
+            openNewWindowWithApp();
+//close login window
+           Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
+           thisStage.close();
+       }
+
+//new account działa pojawia się tylko ten sam problem z zamkniętym strumieniem dlatego wyskakuje błąd
+        //new account
+       else if (isTextFieldsNotEmpty() && isTxtContainsThisLogAndPassFirstLog() && isNewLogIndexEqualPassIndex()) {
+
+            String normalLogWithoutPlus = usernameTextField.getText();
+            String logWithPlus = "+".concat(usernameTextField.getText());
+            try {
+                SaveReadFile.changeLoginWithPlusToNormal(normalLogWithoutPlus);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+     //      // try { //PO CO TO WCZYTYWANIE  ? KURWA
+     //        //   DbManager.readAllLoginsAndPasswordsFromTxt();
+     //       } catch (IOException e) {
+     //           e.printStackTrace();
+     //       }
+//set login adn pass index
+            DbManager.setLogAndPassIndex(DbManager.logins.indexOf(normalLogWithoutPlus));
+            DbManager.setLoginPassDatabase();
+// loading data from database
+              DbManager.initDatabase();
+
+             // DbManager.initDatabaseForNewAccount();  dla nowych kont było to ale wyłaczam bo nie działa
+            openNewWindowWithApp();
+//close login window
+            Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
+            thisStage.close();
+        } else {
+            DialogsUtils.loginError();
+        }
+    }
+*/
+
+
+// private boolean isLogIndexEqualPassIndex() {
+//     return DbManager.logins.indexOf(usernameTextField.getText()) == DbManager.passwords.indexOf(passwordTextField.getText());
+// }
+/*
+    private boolean isTxtContainsThisLogAndPass() {
+        return (DbManager.logins.contains(usernameTextField.getText()) && DbManager.passwords.contains(passwordTextField.getText()));
+    }
+
+    private boolean isNewLogIndexEqualPassIndex() {
+        return DbManager.logins.indexOf("+".concat(usernameTextField.getText())) == DbManager.passwords.indexOf(passwordTextField.getText());
+    }
+*/
+
+
+//   private boolean isTxtContainsThisLogAndPassFirstLog() {
+//       return (DbManager.logins.contains("+".concat(usernameTextField.getText())) && DbManager.passwords.contains(passwordTextField.getText()));
+//   }
+
+
+

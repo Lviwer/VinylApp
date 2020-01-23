@@ -1,6 +1,5 @@
 package vinylApp.controllers;
 
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,10 +24,8 @@ public class LabelController {
     private Button deleteButton;
     @FXML
     private TextField labelTextField;
-
     @FXML
     private Button addLabelButton;
-
     @FXML
     private ComboBox<LabelFx> labelComboBox;
 
@@ -50,9 +47,6 @@ public class LabelController {
         addLabelButton.disableProperty().bind(labelTextField.textProperty().isEmpty());
         this.deleteButton.disableProperty().bind(this.labelModel.labelProperty().isNull());
         this.editLabelButton.disableProperty().bind(this.labelModel.labelProperty().isNull());
-
-
-
     }
 
 

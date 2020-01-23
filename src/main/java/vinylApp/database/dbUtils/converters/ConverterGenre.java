@@ -13,6 +13,4 @@ public class ConverterGenre {
 
         return genreFx;
     }
-
-
 }

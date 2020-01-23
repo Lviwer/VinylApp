@@ -13,6 +13,4 @@ public class ConverterAuthor {
 
         return authorFx;
     }
-
-
 }

@@ -1,7 +1,6 @@
 package vinylApp.modelFx;
 
 import javafx.beans.property.*;
-
 import java.time.LocalDate;
 
 public class VinylFx {

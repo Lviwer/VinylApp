@@ -5,7 +5,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import vinylApp.database.dao.*;
-import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.*;
 import vinylApp.database.models.*;
 import vinylApp.utils.exceptions.ApplicationException;
@@ -33,7 +32,7 @@ public class VinylModel {
         ReleaseCountryDao releaseCountryDao = new ReleaseCountryDao();
         List<ReleaseCountry> releaseCountryList = releaseCountryDao.queryForAll(ReleaseCountry.class);
         releaseCountryFxObservableList.clear();
-        releaseCountryList.forEach(a->{
+        releaseCountryList.forEach(a -> {
             ReleaseCountryFx releaseCountryFx = ConverterReleaseCountry.convertToReleaseCountryFx(a);
             releaseCountryFxObservableList.add(releaseCountryFx);
         });
@@ -43,7 +42,7 @@ public class VinylModel {
         GenreDao genreDao = new GenreDao();
         List<Genre> genreList = genreDao.queryForAll(Genre.class);
         genreFxObservableList.clear();
-        genreList.forEach(a->{
+        genreList.forEach(a -> {
             GenreFx genreFx = ConverterGenre.convertToGenreFx(a);
             genreFxObservableList.add(genreFx);
         });
@@ -53,7 +52,7 @@ public class VinylModel {
         LabelDao labelDao = new LabelDao();
         List<Label> labelList = labelDao.queryForAll(Label.class);
         labelFxObservableList.clear();
-        labelList.forEach(a->{
+        labelList.forEach(a -> {
             LabelFx labelFx = ConverterLabel.convertToLabelFx(a);
             labelFxObservableList.add(labelFx);
         });
@@ -65,13 +64,14 @@ public class VinylModel {
         AuthorDao authorDao = new AuthorDao();
         List<Author> authorList = authorDao.queryForAll(Author.class);
         authorFxObservableList.clear();
-        authorList.forEach(a->{
+        authorList.forEach(a -> {
             AuthorFx authorFx = ConverterAuthor.convertToAuthorFx(a);
             authorFxObservableList.add(authorFx);
         });
 
     }
-    public void saveVinylInDatabase() throws ApplicationException, NumberFormatException{
+
+    public void saveVinylInDatabase() throws ApplicationException, NumberFormatException {
         Vinyl vinyl = ConverterVinyl.convertToVinyl(this.getVinylFxObjectProperty());
 
         AuthorDao authorDao = new AuthorDao();
@@ -92,8 +92,6 @@ public class VinylModel {
 
         VinylDao vinylDao = new VinylDao();
         vinylDao.createOrUpdate(vinyl);
-
-
     }
 
     public VinylFx getVinylFxObjectProperty() {

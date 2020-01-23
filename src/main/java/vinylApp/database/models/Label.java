@@ -37,7 +37,6 @@ public class Label implements BaseModel {
         this.nameOfLabel = nameOfLabel;
     }
 
-
     public ForeignCollection<Vinyl> getVinylsLabel() {
         return vinylsLabel;
     }

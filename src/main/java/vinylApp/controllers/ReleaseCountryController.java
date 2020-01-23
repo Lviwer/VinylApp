@@ -1,6 +1,5 @@
 package vinylApp.controllers;
 
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -24,10 +23,8 @@ public class ReleaseCountryController {
     private Button deleteButton;
     @FXML
     private TextField releaseCountryTextField;
-
     @FXML
     private Button addReleaseCountryButton;
-
     @FXML
     private ComboBox<ReleaseCountryFx> releaseCountryComboBox;
 

@@ -11,7 +11,7 @@ public class ConverterLabel {
         LabelFx labelFx = new LabelFx();
         labelFx.setId(label.getId());
         labelFx.setNameOfLabel(label.getNameOfLabel());
+
         return labelFx;
     }
-
 }

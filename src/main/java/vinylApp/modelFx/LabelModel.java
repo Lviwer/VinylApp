@@ -5,12 +5,9 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
-import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.LabelDao;
 import vinylApp.database.dao.VinylDao;
-import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterLabel;
-import vinylApp.database.models.Genre;
 import vinylApp.database.models.Label;
 import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
@@ -67,7 +64,6 @@ public class LabelModel {
         label.setNameOfLabel(name);
         labelDao.createOrUpdate(label);
         init();
-
     }
 
 
@@ -99,7 +95,6 @@ public class LabelModel {
     public void setLabel(LabelFx label) {
         this.label.set(label);
     }
-
 
     public TreeItem<String> getRoot() {
         return root;

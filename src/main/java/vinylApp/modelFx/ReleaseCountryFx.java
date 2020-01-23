@@ -35,7 +35,6 @@ public class ReleaseCountryFx {
     }
 
 
-
     @Override
     public String toString() {
         return nameOfCountry.getValue();

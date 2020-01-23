@@ -11,22 +11,21 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import vinylApp.Main;
-import vinylApp.database.dbUtils.DbManager;
+import vinylApp.modelFx.UserModel;
 import vinylApp.utils.DialogsUtils;
-import vinylApp.utils.SaveReadFile;
+import vinylApp.utils.exceptions.ApplicationException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class NewUserWindowController implements Initializable {
 
-    private SaveReadFile saveReadFile = new SaveReadFile();
+
+    UserModel userModel;
 
     @FXML
     private AnchorPane anchorPaneIdNewUser;
-
     @FXML
     private TextField newUsernameTextField;
     @FXML
@@ -39,7 +38,6 @@ public class NewUserWindowController implements Initializable {
     void dragged(MouseEvent event) {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-
         stage.setX(event.getScreenX() - x);
         stage.setY(event.getScreenY() - y);
     }
@@ -50,9 +48,14 @@ public class NewUserWindowController implements Initializable {
         y = event.getSceneY();
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        userModel = new UserModel();
+        try {
+            userModel.init();
+        } catch (ApplicationException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -64,31 +67,23 @@ public class NewUserWindowController implements Initializable {
 
 
     public void saveNewUserOnAction() {
-        String newLogin = newUsernameTextField.getText();
 
+        String newLogin = newUsernameTextField.getText();
         String newPass = newPasswordTextField.getText();
-        if ((!DbManager.logins.contains(newLogin)) && (!newLogin.equals("")) && (!newPass.equals(""))) {
+
+        if ((!newLogin.equals("") && (!newPass.equals(""))) && (!userModel.getLoginList().contains(newLogin))) {
 
             try {
-                SaveReadFile.saveOneMoreInFile(newLogin, SaveReadFile.LOG_FILE_PATH);
-                SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
+                userModel.saveUserInDataBase(newLogin, newPass);
                 DialogsUtils.createdNewAccount();
                 newPasswordTextField.clear();
-//TO DO: add to new account +.concat login. When account with + will log in first time then you run DbManager init with
-//                drop table and then you have to change login to login without + . Account which log second time won't have + in login
 
-
-
-            } catch (FileNotFoundException e) {
-                DialogsUtils.errorDialog(e.getMessage());
+            } catch (ApplicationException e) {
+                e.printStackTrace();
             }
-
-        } else if (DbManager.logins.contains(newLogin)) {
-            DialogsUtils.createdNewAccountExist();
-        } else {
-            DialogsUtils.loginError();
         }
     }
+
 
     public void backOnAction() {
         AnchorPane pane = null;
@@ -96,7 +91,6 @@ public class NewUserWindowController implements Initializable {
             pane = FXMLLoader.load(getClass().getResource(Main.LOGIN_WINDOW_FXML));
         } catch (IOException e) {
             DialogsUtils.errorDialog(e.getMessage());
-
         }
         anchorPaneIdNewUser.getChildren().setAll(pane);
     }
@@ -104,4 +98,30 @@ public class NewUserWindowController implements Initializable {
 }
 
 
+//      String newLogin = newUsernameTextField.getText();
 
+//      String newPass = newPasswordTextField.getText();
+//      if ((!DbManager.logins.contains(newLogin)) && (!newLogin.equals("")) && (!newPass.equals(""))) {
+
+//          try {
+//              //+ add only for new accounts login after first log in i delete it
+//              SaveReadFile.saveOneMoreInFile("+".concat(newLogin), SaveReadFile.LOG_FILE_PATH);
+
+//              SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
+
+//              DialogsUtils.createdNewAccount();
+//              newPasswordTextField.clear();
+///TO DO: add to new account +.concat login. When account with + will log in first time then you run DbManager init with
+///                drop table and then you have to change login to login without + . Account which log second time won't have + in login
+
+
+//          } catch (FileNotFoundException e) {
+//              DialogsUtils.errorDialog(e.getMessage());
+//          }
+
+//      } else if (DbManager.logins.contains(newLogin)) {
+//          DialogsUtils.createdNewAccountExist();
+//      } else {
+//          DialogsUtils.loginError();
+//      }
+//  }

@@ -225,7 +225,6 @@ public class ListVinylsModel {
         this.vinylFxObservableList = vinylFxObservableList;
     }
 
-
     public ObservableList<AuthorFx> getAuthorFxObservableList() {
         return authorFxObservableList;
     }

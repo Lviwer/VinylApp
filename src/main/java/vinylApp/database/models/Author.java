@@ -9,7 +9,6 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Author implements BaseModel {
 
     public Author() {
-
     }
 
     @DatabaseField(generatedId = true)

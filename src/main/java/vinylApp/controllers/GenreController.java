@@ -9,7 +9,6 @@ import vinylApp.modelFx.GenreFx;
 import vinylApp.modelFx.GenreModel;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.exceptions.ApplicationException;
-
 import java.sql.SQLException;
 
 public class GenreController {
@@ -22,10 +21,8 @@ public class GenreController {
     private Button deleteButton;
     @FXML
     private TextField genreTextField;
-
     @FXML
     private Button addGenreButton;
-
     @FXML
     private ComboBox<GenreFx> genreComboBox;
 

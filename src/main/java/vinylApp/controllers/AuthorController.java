@@ -1,6 +1,5 @@
 package vinylApp.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -74,7 +73,6 @@ public class AuthorController {
                 DialogsUtils.errorDialog(e.getMessage());
             }
         }
-
     }
 
     public void onActionDeleteButton() {

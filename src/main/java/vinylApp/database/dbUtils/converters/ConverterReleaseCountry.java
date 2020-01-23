@@ -10,6 +10,7 @@ public class ConverterReleaseCountry {
         ReleaseCountryFx releaseCountryFx = new ReleaseCountryFx();
         releaseCountryFx.setId(releaseCountry.getId());
         releaseCountryFx.setNameOfCountry(releaseCountry.getNameOfCountry());
+
         return releaseCountryFx;
     }
 

@@ -5,12 +5,9 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
-import vinylApp.database.dao.GenreDao;
 import vinylApp.database.dao.ReleaseCountryDao;
 import vinylApp.database.dao.VinylDao;
-import vinylApp.database.dbUtils.DbManager;
 import vinylApp.database.dbUtils.converters.ConverterReleaseCountry;
-import vinylApp.database.models.Genre;
 import vinylApp.database.models.ReleaseCountry;
 import vinylApp.database.models.Vinyl;
 import vinylApp.utils.exceptions.ApplicationException;
@@ -96,7 +93,6 @@ public class ReleaseCountryModel {
     public void setReleaseCountry(ReleaseCountryFx releaseCountry) {
         this.releaseCountry.set(releaseCountry);
     }
-
 
     public TreeItem<String> getRoot() {
         return root;

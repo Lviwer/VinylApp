@@ -26,7 +26,9 @@ vinylApp\utils\DialogsUtils.class
 vinylApp\modelFx\VinylModel.class
 vinylApp\database\dbUtils\converters\ConverterLabel.class
 vinylApp\modelFx\ReleaseCountryModel.class
+vinylApp\utils\DecimalColumnFactory.class
 vinylApp\modelFx\GenreFx.class
+vinylApp\utils\DecimalColumnFactory$1.class
 vinylApp\database\dbUtils\converters\ConverterVinyl.class
 vinylApp\database\dbUtils\converters\ConverterUser.class
 vinylApp\controllers\ListOfVinylsController.class

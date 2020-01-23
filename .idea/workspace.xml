@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/boolean" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vinylApp/utils/DecimalColumnFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/databases/adminadmin123DB.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LoginWindowController.java" afterDir="false" />
@@ -14,7 +16,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/databases/kotkotDB.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/databases/romekromekDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/adminadmin123DB.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/databases/romekromekDB.mv.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/databases/usersDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/usersDB.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAuthor.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AddGenre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddGenre.fxml" afterDir="false" />

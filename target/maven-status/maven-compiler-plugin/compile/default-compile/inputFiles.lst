@@ -12,6 +12,7 @@ C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\controllers\LabelController.java
 C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\controllers\TopMenuButtonsController.java
 C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\controllers\ReleaseCountryController.java
 C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\controllers\ListOfVinylsController.java
+C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\utils\DecimalColumnFactory.java
 C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\utils\DialogsUtils.java
 C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\database\models\BaseModel.java
 C:\_WorkSpace_\VinylApp\src\main\java\vinylApp\modelFx\ListVinylsModel.java

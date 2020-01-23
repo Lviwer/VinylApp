@@ -1,6 +1,7 @@
 package vinylApp.modelFx;
 
 import javafx.beans.property.*;
+
 import java.time.LocalDate;
 
 public class VinylFx {
@@ -15,7 +16,7 @@ public class VinylFx {
     private ObjectProperty<GenreFx> genreFx = new SimpleObjectProperty<>();
     private SimpleStringProperty catalogNumber = new SimpleStringProperty();
     private ObjectProperty<LocalDate> dateOfPurchase = new SimpleObjectProperty<>();
-//PRICE--------------------------------------------------------------------------------
+    //PRICE--------------------------------------------------------------------------------
     private SimpleDoubleProperty price = new SimpleDoubleProperty();
     private SimpleDoubleProperty sellingPrice = new SimpleDoubleProperty();
 
@@ -134,13 +135,15 @@ public class VinylFx {
         this.accessoriesCondition.set(accessoriesCondition);
     }
 
-    public boolean isIsAvailable() {
+    public boolean isAvailable() {
         return isAvailable.get();
     }
+
 
     public SimpleBooleanProperty isAvailableProperty() {
         return isAvailable;
     }
+
 
     public void setIsAvailable(boolean isAvailable) {
         this.isAvailable.set(isAvailable);

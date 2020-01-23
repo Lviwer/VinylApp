@@ -81,6 +81,8 @@ public class NewUserWindowController implements Initializable {
             } catch (ApplicationException e) {
                 e.printStackTrace();
             }
+        } else if (userModel.getLoginList().contains(newLogin)) {
+            DialogsUtils.createdNewAccountExist();
         }
     }
 
@@ -96,32 +98,3 @@ public class NewUserWindowController implements Initializable {
     }
 
 }
-
-
-//      String newLogin = newUsernameTextField.getText();
-
-//      String newPass = newPasswordTextField.getText();
-//      if ((!DbManager.logins.contains(newLogin)) && (!newLogin.equals("")) && (!newPass.equals(""))) {
-
-//          try {
-//              //+ add only for new accounts login after first log in i delete it
-//              SaveReadFile.saveOneMoreInFile("+".concat(newLogin), SaveReadFile.LOG_FILE_PATH);
-
-//              SaveReadFile.saveOneMoreInFile(newPass, SaveReadFile.PASS_FILE_PATH);
-
-//              DialogsUtils.createdNewAccount();
-//              newPasswordTextField.clear();
-///TO DO: add to new account +.concat login. When account with + will log in first time then you run DbManager init with
-///                drop table and then you have to change login to login without + . Account which log second time won't have + in login
-
-
-//          } catch (FileNotFoundException e) {
-//              DialogsUtils.errorDialog(e.getMessage());
-//          }
-
-//      } else if (DbManager.logins.contains(newLogin)) {
-//          DialogsUtils.createdNewAccountExist();
-//      } else {
-//          DialogsUtils.loginError();
-//      }
-//  }

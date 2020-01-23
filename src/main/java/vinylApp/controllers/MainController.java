@@ -25,7 +25,7 @@ public class MainController {
     @FXML
     private void initialize() {
 
-        topMenuButtonsController.setMainController(this); //przekazuje całą ref do topMenuButtons
+        topMenuButtonsController.setMainController(this); //reference to TopMenuButton
     }
 
     public void setCenter(String fxmlPath) {

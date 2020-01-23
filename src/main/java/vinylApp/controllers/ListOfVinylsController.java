@@ -1,5 +1,7 @@
 package vinylApp.controllers;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,12 +11,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import vinylApp.modelFx.*;
+import vinylApp.utils.DecimalColumnFactory;
 import vinylApp.utils.DialogsUtils;
 import vinylApp.utils.FxmlUtils;
 import vinylApp.utils.exceptions.ApplicationException;
+
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 
 public class ListOfVinylsController {
@@ -54,8 +61,15 @@ public class ListOfVinylsController {
     private TableColumn<VinylFx, String> catalogNumberColumn;
     @FXML
     private TableColumn<VinylFx, LocalDate> dateOfPurchaseColumn;
+
+
+
     @FXML
     private TableColumn<VinylFx, Double> priceColumn;
+
+
+
+
     @FXML
     private TableColumn<VinylFx, Double> sellingPriceColumn;
     @FXML
@@ -65,15 +79,17 @@ public class ListOfVinylsController {
     @FXML
     private TableColumn<VinylFx, String> conditionOfAcColumn;
     @FXML
-    private TableColumn<VinylFx, Boolean> availableColumn;
+    private TableColumn<VinylFx, String> availableColumn;
     @FXML
-    private TableColumn<VinylFx, Boolean> wantToColumn;
+    private TableColumn<VinylFx, String> wantToColumn;
     @FXML
     private TableColumn<VinylFx, VinylFx> deleteColumn;
     @FXML
     private TableColumn<VinylFx, VinylFx> editColumn;
 
     private ListVinylsModel listVinylsModel;
+
+    public static ResourceBundle bundle = FxmlUtils.getResourceBundle();
 
 
     public void initialize() {
@@ -106,24 +122,30 @@ public class ListOfVinylsController {
         this.genreColumn.setCellValueFactory(cellData -> cellData.getValue().genreFxProperty());
         this.catalogNumberColumn.setCellValueFactory(cellData -> cellData.getValue().catalogNumberProperty());
         this.dateOfPurchaseColumn.setCellValueFactory(cellData -> cellData.getValue().dateOfPurchaseProperty());
+
 //PRICE -----------
 
         this.priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+        this.priceColumn.setCellFactory(new DecimalColumnFactory<>(new DecimalFormat("0.00")));
         this.sellingPriceColumn.setCellValueFactory(cellData -> cellData.getValue().sellingPriceProperty().asObject());
+        this.sellingPriceColumn.setCellFactory(new DecimalColumnFactory<>(new DecimalFormat("0.00")));
 //-----------------
         this.dateOfSellingColumn.setCellValueFactory(cellData -> cellData.getValue().dateOfSellingProperty());
         this.vinylConditionColumn.setCellValueFactory(cellData -> cellData.getValue().vinylConditionProperty());
         this.conditionOfAcColumn.setCellValueFactory(cellData -> cellData.getValue().accessoriesConditionProperty());
-//-----------------Boolean colums
+//-----------------Boolean columns
 
-        this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
-        this.wantToColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty());
+        this.wantToColumn.setCellValueFactory(cellData -> cellData.getValue().wantListProperty().asString());
+        changeBooleanToStringWantToColumn();
+        this.availableColumn.setCellValueFactory(cellData -> cellData.getValue().isAvailableProperty().asString());
+        changeBooleanToStringAvailableColumn();
+
 //-------Extra informations-----------------------------------------------------------------------------
         this.buyedInMonthLabel.setText(String.valueOf(listVinylsModel.getThisMonthBuyed()));
         this.allVinylsLabel.setText(String.valueOf(listVinylsModel.getAllVinyls()));
         this.spendMonthLabel.setText(String.valueOf(listVinylsModel.getOneMonthSpend()));
         this.allSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthSoldVinyl()));
-        this.priceSoldVinylsInMonth .setText(String.valueOf(listVinylsModel.getOneMonthEarn()));
+        this.priceSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthEarn()));
 //--------Edit--Column-----------------------------------------------------------------------------------
         this.editColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 //---------------------Delete--Column--------------------------------------------------------------------
@@ -145,6 +167,7 @@ public class ListOfVinylsController {
                     button.setOnAction(event -> {
                         try {
                             listVinylsModel.deleteVinyl(item);
+                            initialize();
                         } catch (ApplicationException e) {
                             DialogsUtils.errorDialog(e.getMessage());
                         }
@@ -189,6 +212,33 @@ public class ListOfVinylsController {
         });
 
     }
+
+    private void changeBooleanToStringAvailableColumn() {
+        availableColumn.setCellValueFactory(cellData -> {
+            boolean available = cellData.getValue().isAvailable();
+            String availableAsString;
+            if (available) {
+                availableAsString = bundle.getString("yes");
+            } else {
+                availableAsString = bundle.getString("no");
+            }
+            return new ReadOnlyStringWrapper(availableAsString);
+        });
+    }
+
+    private void changeBooleanToStringWantToColumn() {
+        wantToColumn.setCellValueFactory(cellData -> {
+            boolean wantTo = cellData.getValue().isWantList();
+            String wantToAsString;
+            if (wantTo) {
+                wantToAsString = bundle.getString("yes");
+            } else {
+                wantToAsString = bundle.getString("no");
+            }
+            return new ReadOnlyStringWrapper(wantToAsString);
+        });
+    }
+
 
     private Button createButton(String path) {
         Button button = new Button();

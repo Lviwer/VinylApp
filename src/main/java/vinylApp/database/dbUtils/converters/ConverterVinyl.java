@@ -20,7 +20,7 @@ public class ConverterVinyl {
         vinyl.setSellDate(Utils.convertToDate(vinylFx.getDateOfSelling()));
         vinyl.setCondition(vinylFx.getVinylCondition());
         vinyl.setConditionAccessories(vinylFx.getAccessoriesCondition());
-        vinyl.setAvailable(vinylFx.isIsAvailable());
+        vinyl.setAvailable(vinylFx.isAvailable());
         vinyl.setWantTo(vinylFx.isWantList());
 
         return vinyl;

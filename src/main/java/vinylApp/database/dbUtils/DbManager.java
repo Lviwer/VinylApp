@@ -16,12 +16,11 @@ public class DbManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
-    public static ArrayList<String> logins;
-    public static ArrayList<String> passwords;
+    //public static ArrayList<String> logins;
+    //public static ArrayList<String> passwords;
 
     private static String user;
     private static String pass;
-
 
 
     //--------------default name for database when app run we can change it -------------------------------------
@@ -157,39 +156,3 @@ public class DbManager {
         return user;
     }
 }
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
- //  public static void setUser(String user) {
- //      DbManager.user = user;
- //  }
-
-///---------------methods responsible for validate log/pass and databases------------------
-
- //  public static void readAllLoginsAndPasswordsFromTxt() throws IOException {
- //      logins = SaveReadFile.readAll(SaveReadFile.LOG_FILE_PATH);
- //      passwords = SaveReadFile.readAll(SaveReadFile.PASS_FILE_PATH);
-
-
- //      //logins = SaveReadFile.readAllFromFile(saveReadFile.logFilePathStream);
- //      //passwords = SaveReadFile.readAllFromFile(saveReadFile.passFilePathStream);
- //  }
-
- //  public static void setLogAndPassIndex(int logIndex) {
- //      loginAndPassIndex = logIndex;
- //  }
-
-   // public static void setLoginPassDatabase() {
-
-        //setUser(logins.get(loginAndPassIndex));
-        //setPass(passwords.get(loginAndPassIndex));
-       // setDatabaseName(logins.get(loginAndPassIndex).concat(passwords.get(loginAndPassIndex)));
-
-
-        // user.concat(pass));
-   // }
-

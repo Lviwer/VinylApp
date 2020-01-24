@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -17,7 +18,6 @@ import vinylApp.Main;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.modelFx.UserModel;
 import vinylApp.utils.DialogsUtils;
-import vinylApp.utils.FillDatabase;
 import vinylApp.utils.FxmlUtils;
 import vinylApp.utils.exceptions.ApplicationException;
 
@@ -32,7 +32,11 @@ public class LoginWindowController implements Initializable {
     public static final String NEW_USER_WINDOW_FXML = "/fxml/NewUserWindow.fxml";
 
     @FXML
-    public AnchorPane anchorPaneId;
+    private AnchorPane anchorPaneId;
+    @FXML
+    private ToggleButton polishButton;
+    @FXML
+    private ToggleButton englishButton;
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -61,6 +65,7 @@ public class LoginWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        polishButton.setOpacity(0.5);
         DbManager.initDatabaseUser();
         userModel = new UserModel();
         try {
@@ -83,17 +88,13 @@ public class LoginWindowController implements Initializable {
         if (isTextFieldsNotEmpty() && isDatabaseContainsThisLogAndPass() && isLogIndexEqualPassIndex()) {
 
             DbManager.setDatabaseName(this.usernameTextField.getText().concat(this.passwordTextField.getText()));
-
-// loading data from database
             DbManager.initDatabase();
             //FillDatabase.fillDatabase(); //data from FillDatabase
             openNewWindowWithApp();
-
             Stage thisStage = (Stage) anchorPaneId.getScene().getWindow();
             thisStage.close();
+
         } else if (isTextFieldsNotEmpty() && isDatabaseContainsThisLogAndPassFirstLog() && isNewLogIndexEqualPassIndex()) {
-
-
 
 
             String normalLogWithoutPlus = usernameTextField.getText();
@@ -129,7 +130,6 @@ public class LoginWindowController implements Initializable {
 
     }
 
-
     private boolean isDatabaseContainsThisLogAndPassFirstLog() {
 
         return (userModel.getLoginList().contains("+".concat(usernameTextField.getText())) && userModel.getPasswordList().contains(passwordTextField.getText()));
@@ -140,23 +140,19 @@ public class LoginWindowController implements Initializable {
         return userModel.getLoginList().indexOf("+".concat(usernameTextField.getText())) == userModel.getPasswordList().indexOf(passwordTextField.getText());
     }
 
-
     private boolean isTextFieldsNotEmpty() {
         return (!usernameTextField.getText().equals("")) && !passwordTextField.getText().equals("");
     }
-
 
     public void newUserOnAction() throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource(NEW_USER_WINDOW_FXML));
         anchorPaneId.getChildren().setAll(pane);
     }
 
-
     public void exitOnAction(ActionEvent actionEvent) {
         Platform.exit();
         System.exit(0);
     }
-
 
     private void openNewWindowWithApp() {
 
@@ -174,11 +170,23 @@ public class LoginWindowController implements Initializable {
 
     public void polishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("pl"));
+        if (polishButton.isSelected()) {
+            polishButton.setOpacity(0.5);
+            englishButton.setOpacity(1);
+        }
+
     }
 
 
     public void englishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("en"));
+        if (englishButton.isSelected()) {
+            englishButton.setOpacity(0.5);
+            polishButton.setOpacity(1);
+        }
     }
+
+
 }
+
 

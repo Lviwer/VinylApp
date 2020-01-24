@@ -94,7 +94,7 @@ public class VinylController {
         this.releasedTextField.textProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().releasedProperty());
         this.dateOfPurchasePicker.valueProperty().bindBidirectional(this.vinylModel.getVinylFxObjectProperty().dateOfPurchaseProperty());
 //PRICE AND SELLING PRICE CONVERTER TO 0,00 -------------------------------------------
-// I had to create second textFormatter - with one common it doesn't work for two textfields!------------
+// I had to create second textFormatter - with one common it doesn't work for two textfields & there is error in addVinylFXML
         StringConverter<Number> converter = new NumberStringConverter("#.##");
         TextFormatter textFormatterPrice = new TextFormatter(converter);
         TextFormatter textFormatterSell = new TextFormatter(converter);

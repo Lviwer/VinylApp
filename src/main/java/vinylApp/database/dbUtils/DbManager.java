@@ -6,18 +6,14 @@ import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import vinylApp.database.models.*;
-
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 
 public class DbManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DbManager.class);
 
-    //public static ArrayList<String> logins;
-    //public static ArrayList<String> passwords;
 
     private static String user;
     private static String pass;
@@ -37,7 +33,7 @@ public class DbManager {
         closeConnectionSource();
     }
 
-
+    //with databases i don't need other init for newAccounts
     public static void initDatabaseForNewAccount() {
         createConnectionSource();
         dropTable();

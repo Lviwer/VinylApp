@@ -30,7 +30,7 @@
                         <Text fill="#fff9f9" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 2.4em; -fx-fill: white;" text="VinylApp" />
                         <HBox alignment="TOP_RIGHT" spacing="5.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <ToggleButton mnemonicParsing="false" onAction="#polishOnAction" prefHeight="38.0" prefWidth="55.0" selected="true" style="-fx-text-fill: black; -fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="Polish">
+                              <ToggleButton fx:id="polishButton" mnemonicParsing="false" onAction="#polishOnAction" prefHeight="38.0" prefWidth="55.0" selected="true" style="-fx-text-fill: black; -fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="Polish">
                                  <effect>
                                     <ImageInput>
                                        <source>
@@ -42,7 +42,7 @@
                                     <ToggleGroup fx:id="languages" />
                                  </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" onAction="#englishOnAction" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="English" toggleGroup="$languages">
+                              <ToggleButton fx:id="englishButton" mnemonicParsing="false" onAction="#englishOnAction" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="English" toggleGroup="$languages">
                                  <effect>
                                     <ImageInput>
                                        <source>

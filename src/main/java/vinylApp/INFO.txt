@@ -1,9 +1,0 @@
-If you want save vinyls in database comment  the dropTable() method in initDatabase()
-method from DbManager class. ONCE TIME. Every second time will generate errors. (You can't create
-second time the same objects so you must turn off loading vinyls by program like below).
-
-
-To turn off loading vinyls by program - comment FillDatabase.fillDatabase() method in
-enterOnAction() method from LoginWindowController class.
-
-more info later...

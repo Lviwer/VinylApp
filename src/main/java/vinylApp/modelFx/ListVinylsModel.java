@@ -30,14 +30,13 @@ public class ListVinylsModel {
     private ObjectProperty<ReleaseCountryFx> releaseCountryFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<LabelFx> labelFxObjectProperty = new SimpleObjectProperty<>();
 
-    private List<VinylFx> vinylFxList = new ArrayList<>(); //do przetrzymywania vinyli w liście
-    //price fields
+    private List<VinylFx> vinylFxList = new ArrayList<>();
     private double oneMonthSpend;
     private int thisMonthBuyed;
     private int allVinyls;
     private double oneMonthEarn;
     private int oneMonthSoldVinyl;
-//
+
 
     public void init() throws ApplicationException {
         VinylDao vinylDao = new VinylDao();
@@ -84,7 +83,6 @@ public class ListVinylsModel {
     }
 
 
-    //filterVinylList works with ifs ;|
     public void filterVinylList() {
         if (getAuthorFxObjectProperty() != null && getGenreFxObjectProperty() != null && getLabelFxObjectProperty() != null
                 && getReleaseCountryFxObjectProperty() != null) {
@@ -204,7 +202,7 @@ public class ListVinylsModel {
     }
 
     private void filterPredicate(Predicate<VinylFx> predicate) {
-        //stream filtruje naszą liste, tworzy nową i zapisuje w newList
+        //stream filters our list, creates a new one and saves in newList
         List<VinylFx> newList = vinylFxList.stream().filter(predicate).collect(Collectors.toList());
         this.vinylFxObservableList.setAll(newList);
     }

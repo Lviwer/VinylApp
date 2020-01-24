@@ -1,6 +1,5 @@
 package vinylApp.controllers;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
@@ -11,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import vinylApp.modelFx.*;
 import vinylApp.utils.DecimalColumnFactory;
 import vinylApp.utils.DialogsUtils;
@@ -61,15 +59,8 @@ public class ListOfVinylsController {
     private TableColumn<VinylFx, String> catalogNumberColumn;
     @FXML
     private TableColumn<VinylFx, LocalDate> dateOfPurchaseColumn;
-
-
-
     @FXML
     private TableColumn<VinylFx, Double> priceColumn;
-
-
-
-
     @FXML
     private TableColumn<VinylFx, Double> sellingPriceColumn;
     @FXML

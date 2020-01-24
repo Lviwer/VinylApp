@@ -18,6 +18,7 @@ public class Author implements BaseModel {
     private String nameOfAuthor;
 
     @ForeignCollectionField(columnName = "VINYL_ID")
+
     private ForeignCollection<Vinyl> vinylsAuthor;
 
     public int getId() {

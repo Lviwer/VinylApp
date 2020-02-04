@@ -65,7 +65,7 @@ public class LoginWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        polishButton.setOpacity(0.5);
+        englishButton.setOpacity(0.5);
         DbManager.initDatabaseUser();
         userModel = new UserModel();
         try {
@@ -171,8 +171,8 @@ public class LoginWindowController implements Initializable {
     public void polishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("pl"));
         if (polishButton.isSelected()) {
-            polishButton.setOpacity(0.5);
-            englishButton.setOpacity(1);
+            polishButton.setOpacity(1);
+            englishButton.setOpacity(0.5);
         }
 
     }
@@ -181,8 +181,8 @@ public class LoginWindowController implements Initializable {
     public void englishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("en"));
         if (englishButton.isSelected()) {
-            englishButton.setOpacity(0.5);
-            polishButton.setOpacity(1);
+            englishButton.setOpacity(1);
+            polishButton.setOpacity(0.5);
         }
     }
 

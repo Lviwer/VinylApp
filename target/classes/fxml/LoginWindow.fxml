@@ -34,7 +34,7 @@
                                  <effect>
                                     <ImageInput>
                                        <source>
-                                          <Image url="file:/C:/_WorkSpace_/VinylApp/src/main/resources/icons/plFlag.png" />
+                                          <Image url="@../icons/plFlag.png" />
                                        </source>
                                     </ImageInput>
                                  </effect>
@@ -46,7 +46,7 @@
                                  <effect>
                                     <ImageInput>
                                        <source>
-                                          <Image url="file:/C:/_WorkSpace_/VinylApp/src/main/resources/icons/usaFlag.png" />
+                                          <Image url="@../icons/usaFlag.png" />
                                        </source>
                                     </ImageInput>
                                  </effect>

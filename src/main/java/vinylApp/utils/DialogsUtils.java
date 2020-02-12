@@ -78,4 +78,14 @@ public class DialogsUtils {
         informationAlert.setContentText(bundle.getString("account.exist.text"));
         informationAlert.showAndWait();
     }
+
+    public static Optional<ButtonType> deleteConfirmationDialog() {
+        Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationDialog.setTitle(bundle.getString("delete"));
+        confirmationDialog.setHeaderText(bundle.getString("delete.vinyl.confirm"));
+        Optional<ButtonType> result = confirmationDialog.showAndWait();
+        return result;
+    }
+
+
 }

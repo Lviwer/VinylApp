@@ -19,6 +19,7 @@ import vinylApp.utils.exceptions.ApplicationException;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -153,19 +154,24 @@ public class ListOfVinylsController {
             protected void updateItem(VinylFx item, boolean empty) {
                 super.updateItem(item, empty);
 
-                if (empty) {  //buttons don't disaapear without this
+                if (empty) {  //buttons don't disappear without this
                     setGraphic(null);
                     return;
                 }
                 if (!empty) {
                     setGraphic(button);
                     button.setOnAction(event -> {
-                        try {
-                            listVinylsModel.deleteVinyl(item);
-                            initialize();
-                        } catch (ApplicationException e) {
-                            DialogsUtils.errorDialog(e.getMessage());
+                        Optional<ButtonType> result = DialogsUtils.deleteConfirmationDialog();
+                        if(result.get() == ButtonType.OK)
+                        {
+                            try {
+                                listVinylsModel.deleteVinyl(item);
+                                initialize();
+                            } catch (ApplicationException e) {
+                                DialogsUtils.errorDialog(e.getMessage());
+                            }
                         }
+
                     });
                 }
             }

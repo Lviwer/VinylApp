@@ -34,6 +34,8 @@ public class ListOfVinylsController {
     @FXML
     private Label buyedInMonthLabel;
     @FXML
+    private Label collectionValue;
+    @FXML
     private ComboBox genreComboBox;
     @FXML
     private ComboBox labelComboBox;
@@ -137,6 +139,7 @@ public class ListOfVinylsController {
         this.spendMonthLabel.setText(String.valueOf(listVinylsModel.getOneMonthSpend()));
         this.allSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthSoldVinyl()));
         this.priceSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthEarn()));
+        this.collectionValue.setText(String.valueOf(listVinylsModel.getAllCollectionValue()));
 //--------Edit--Column-----------------------------------------------------------------------------------
         this.editColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 //---------------------Delete--Column--------------------------------------------------------------------

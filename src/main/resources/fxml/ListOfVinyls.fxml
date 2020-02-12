@@ -116,6 +116,12 @@
                         <Label fx:id="priceSoldVinylsInMonth" />
                      </children>
                   </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="%collection.value" />
+                        <Label fx:id="collectionValue" />
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

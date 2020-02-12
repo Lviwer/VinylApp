@@ -2,22 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinylApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VinylApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boolean" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/LoginWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ListVinylsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ListVinylsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/databases/adminadmin123DB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/adminadmin123DB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/databases/marekmarek123DB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/marekmarek123DB.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/databases/usersDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/usersDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/LoginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VinylApp-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VinylApp-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/LoginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/LoginWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LoginWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/LoginWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-VinylApp-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VinylApp-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ListVinylsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ListVinylsModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,12 +181,12 @@
     <state x="546" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.870@0.0.1600.870" timestamp="1579034097786" />
     <state x="655" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1580762085607" />
     <state x="2466" y="522" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579693337218" />
-    <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1579708414121">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser" timestamp="1581534127516">
+      <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state x="1184" y="37" key="#com.intellij.ide.util.MemberChooser/0.0.1600.870@0.0.1600.870" timestamp="1578869180792" />
     <state x="726" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1579708414121" />
-    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579687418321" />
+    <state x="2525" y="435" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534127516" />
     <state x="695" y="509" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1576268616357">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -210,30 +209,30 @@
     </state>
     <state x="622" y="336" key="Github.CreateGistDialog/0.0.1600.870@0.0.1600.870" timestamp="1578225347607" />
     <state x="2542" y="625" key="Github.CreateGistDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351165972" />
-    <state width="1213" height="210" key="GridCell.Tab.0.bottom" timestamp="1580851327529">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state width="1002" height="214" key="GridCell.Tab.0.bottom" timestamp="1581534943096">
+      <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="1025" height="236" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1580578585351" />
-    <state width="1213" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1580851327529" />
-    <state width="1036" height="69" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579734074032" />
-    <state width="1213" height="210" key="GridCell.Tab.0.center" timestamp="1580851327529">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state width="1003" height="435" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
+    <state width="1211" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
+    <state width="1002" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
+    <state width="1002" height="214" key="GridCell.Tab.0.center" timestamp="1581534943096">
+      <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="1025" height="236" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1580578585351" />
-    <state width="1213" height="210" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1580851327529" />
-    <state width="1036" height="69" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579734074032" />
-    <state width="1213" height="210" key="GridCell.Tab.0.left" timestamp="1580851327529">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state width="1003" height="435" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
+    <state width="1211" height="304" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
+    <state width="1002" height="214" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
+    <state width="1002" height="214" key="GridCell.Tab.0.left" timestamp="1581534943096">
+      <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="1025" height="236" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1580578585351" />
-    <state width="1213" height="210" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1580851327529" />
-    <state width="1036" height="69" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579734074032" />
-    <state width="1213" height="210" key="GridCell.Tab.0.right" timestamp="1580851327529">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state width="1003" height="435" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
+    <state width="1211" height="304" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
+    <state width="1002" height="214" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
+    <state width="1002" height="214" key="GridCell.Tab.0.right" timestamp="1581534943096">
+      <screen x="1920" y="277" width="1600" height="900" />
     </state>
-    <state width="1025" height="236" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1580578585351" />
-    <state width="1213" height="210" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1580851327529" />
-    <state width="1036" height="69" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579734074032" />
+    <state width="1003" height="435" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
+    <state width="1211" height="304" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
+    <state width="1002" height="214" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
     <state width="1556" height="285" key="GridCell.Tab.1.bottom" timestamp="1578350821423">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
@@ -277,11 +276,11 @@
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1577620286306" />
-    <state x="594" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1580761837677">
+    <state x="594" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1581531616598">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="495" y="263" key="com.intellij.ide.util.TipDialog/0.0.1600.870@0.0.1600.870" timestamp="1580577330602" />
-    <state x="594" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1580761837677" />
+    <state x="594" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581531616598" />
     <state x="594" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1579621142392" />
     <state x="2144" y="474" width="1416" height="716" key="dock-window-1" timestamp="1576933863575">
       <screen x="1920" y="277" width="1600" height="900" />

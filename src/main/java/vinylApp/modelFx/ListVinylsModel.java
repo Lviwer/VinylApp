@@ -36,6 +36,7 @@ public class ListVinylsModel {
     private int allVinyls;
     private double oneMonthEarn;
     private int oneMonthSoldVinyl;
+    private double allCollectionValue;
 
 
     public void init() throws ApplicationException {
@@ -48,7 +49,7 @@ public class ListVinylsModel {
 
         });
 
-        getMoneyAndVinylsBuyInMonth();
+        getMoneyAndVinylsBuyInMonth();  // + allCollectionValue
         getMoneyVinylsSoldInMonth();
         allVinyls = vinylFxList.size();
 
@@ -73,6 +74,7 @@ public class ListVinylsModel {
 
     private void getMoneyAndVinylsBuyInMonth() {
         for (VinylFx a : vinylFxList) {
+            allCollectionValue += a.getPrice();
             if (a.getDateOfPurchase().getYear() == LocalDate.now().getYear() &&
                     a.getDateOfPurchase().getMonth() == LocalDate.now().getMonth()) {
                 oneMonthSpend += a.getPrice();
@@ -322,5 +324,9 @@ public class ListVinylsModel {
 
     public int getOneMonthSoldVinyl() {
         return oneMonthSoldVinyl;
+    }
+
+    public double getAllCollectionValue() {
+        return allCollectionValue;
     }
 }

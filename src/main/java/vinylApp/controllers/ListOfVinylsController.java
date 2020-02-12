@@ -135,7 +135,7 @@ public class ListOfVinylsController {
         changeBooleanToStringAvailableColumn();
 
 //-------Extra informations-----------------------------------------------------------------------------
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("0.00");
         this.buyedInMonthLabel.setText(String.valueOf(listVinylsModel.getThisMonthBuyed()));
         this.allVinylsLabel.setText(String.valueOf(listVinylsModel.getAllVinyls()));
         this.spendMonthLabel.setText(String.valueOf(df.format(listVinylsModel.getOneMonthSpend())));

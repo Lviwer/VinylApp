@@ -4,19 +4,8 @@
     <list default="true" id="8522fb3b-1d5f-4395-a3db-16e6e95b5394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/controllers/ListOfVinylsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ListVinylsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinylApp/modelFx/ListVinylsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/databases/adminadmin123DB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/adminadmin123DB.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/databases/usersDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databases/usersDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ListOfVinyls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ListOfVinyls.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/controllers/ListOfVinylsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ListVinylsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinylApp/modelFx/ListVinylsModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,30 +198,30 @@
     </state>
     <state x="622" y="336" key="Github.CreateGistDialog/0.0.1600.870@0.0.1600.870" timestamp="1578225347607" />
     <state x="2542" y="625" key="Github.CreateGistDialog/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1578351165972" />
-    <state width="1002" height="214" key="GridCell.Tab.0.bottom" timestamp="1581534943096">
+    <state width="1001" height="214" key="GridCell.Tab.0.bottom" timestamp="1581536541612">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1003" height="435" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
     <state width="1211" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
-    <state width="1002" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
-    <state width="1002" height="214" key="GridCell.Tab.0.center" timestamp="1581534943096">
+    <state width="1001" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581536541612" />
+    <state width="1001" height="214" key="GridCell.Tab.0.center" timestamp="1581536541612">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1003" height="435" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
     <state width="1211" height="304" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
-    <state width="1002" height="214" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
-    <state width="1002" height="214" key="GridCell.Tab.0.left" timestamp="1581534943096">
+    <state width="1001" height="214" key="GridCell.Tab.0.center/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581536541612" />
+    <state width="1001" height="214" key="GridCell.Tab.0.left" timestamp="1581536541612">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1003" height="435" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
     <state width="1211" height="304" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
-    <state width="1002" height="214" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
-    <state width="1002" height="214" key="GridCell.Tab.0.right" timestamp="1581534943096">
+    <state width="1001" height="214" key="GridCell.Tab.0.left/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581536541612" />
+    <state width="1001" height="214" key="GridCell.Tab.0.right" timestamp="1581536541612">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>
     <state width="1003" height="435" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1581459376573" />
     <state width="1211" height="304" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@0.0.1920.1170" timestamp="1581363711494" />
-    <state width="1002" height="214" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581534943096" />
+    <state width="1001" height="214" key="GridCell.Tab.0.right/0.0.1920.1170/1920.277.1600.900@1920.277.1600.900" timestamp="1581536541612" />
     <state width="1556" height="285" key="GridCell.Tab.1.bottom" timestamp="1578350821423">
       <screen x="1920" y="277" width="1600" height="900" />
     </state>

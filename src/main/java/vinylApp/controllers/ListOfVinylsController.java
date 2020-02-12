@@ -134,12 +134,13 @@ public class ListOfVinylsController {
         changeBooleanToStringAvailableColumn();
 
 //-------Extra informations-----------------------------------------------------------------------------
+        DecimalFormat df = new DecimalFormat("#.00");
         this.buyedInMonthLabel.setText(String.valueOf(listVinylsModel.getThisMonthBuyed()));
         this.allVinylsLabel.setText(String.valueOf(listVinylsModel.getAllVinyls()));
-        this.spendMonthLabel.setText(String.valueOf(listVinylsModel.getOneMonthSpend()));
+        this.spendMonthLabel.setText(String.valueOf(df.format(listVinylsModel.getOneMonthSpend())));
         this.allSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthSoldVinyl()));
-        this.priceSoldVinylsInMonth.setText(String.valueOf(listVinylsModel.getOneMonthEarn()));
-        this.collectionValue.setText(String.valueOf(listVinylsModel.getAllCollectionValue()));
+        this.priceSoldVinylsInMonth.setText(String.valueOf(df.format(listVinylsModel.getOneMonthEarn())));
+        this.collectionValue.setText(String.valueOf(df.format(listVinylsModel.getAllCollectionValue())));
 //--------Edit--Column-----------------------------------------------------------------------------------
         this.editColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue()));
 //---------------------Delete--Column--------------------------------------------------------------------

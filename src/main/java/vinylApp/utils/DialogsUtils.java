@@ -4,6 +4,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.WindowEvent;
+
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -28,6 +30,16 @@ public class DialogsUtils {
         return result;
     }
 
+    public static void confirmationDialogExit(WindowEvent event) {
+        Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationDialog.setTitle(bundle.getString("exit.title"));
+        confirmationDialog.setHeaderText(bundle.getString("exit.header"));
+        ButtonType result = confirmationDialog.showAndWait().orElse(ButtonType.CANCEL);
+
+        if (ButtonType.CANCEL.equals(result)) {
+            event.consume();
+        }
+    }
 
     public static void errorDialog(String error) {
         Alert errorAlert = new Alert((Alert.AlertType.ERROR));
@@ -52,8 +64,7 @@ public class DialogsUtils {
         return null;
     }
 
-    public static void createdNewAccount()
-    {
+    public static void createdNewAccount() {
         Alert informationAlert = new Alert(Alert.AlertType.INFORMATION);
         informationAlert.setTitle(bundle.getString("create.new.acc.title"));
         informationAlert.setHeaderText(bundle.getString("create.new.acc.header"));
@@ -61,8 +72,7 @@ public class DialogsUtils {
         informationAlert.showAndWait();
     }
 
-    public static void loginError()
-    {
+    public static void loginError() {
         Alert informationAlert = new Alert(Alert.AlertType.ERROR);
         informationAlert.setTitle(bundle.getString("login.error.title"));
         informationAlert.setHeaderText(bundle.getString("login.error.header"));

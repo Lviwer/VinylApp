@@ -68,7 +68,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.5em; -fx-font-family: Quicksand; -fx-fill: white; -fx-font-weight: bold;" text="VinylApp version 1.0" />
                      </children>
                   </HBox>
-                  <Label layoutX="362.0" layoutY="186.0" text="Create New User" textFill="#110b0b">
+                  <Label layoutX="362.0" layoutY="186.0" text="Create new user" textFill="#110b0b">
                      <font>
                         <Font name="System Bold" size="32.0" />
                      </font>

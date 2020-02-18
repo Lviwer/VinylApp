@@ -106,11 +106,11 @@
             <TextField fx:id="sellingPriceTextField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <TextField fx:id="titleTextField" GridPane.columnIndex="1" />
             <TextField fx:id="catalogTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <CheckBox fx:id="availableCheckBox" mnemonicParsing="false" style="-fx-background-color: orange;" text="Available" GridPane.columnIndex="1" GridPane.rowIndex="13">
+            <CheckBox fx:id="availableCheckBox" mnemonicParsing="false" style="-fx-background-color: orange;" text="%add.vinyl.available" GridPane.columnIndex="1" GridPane.rowIndex="13">
                <font>
                   <Font size="14.0" />
                </font></CheckBox>
-            <CheckBox fx:id="wantListCheckBox" mnemonicParsing="false" style="-fx-background-color: orange;" text="Want List" GridPane.columnIndex="1" GridPane.rowIndex="14">
+            <CheckBox fx:id="wantListCheckBox" mnemonicParsing="false" style="-fx-background-color: orange;" text="%add.vinyl.wantto" GridPane.columnIndex="1" GridPane.rowIndex="14">
                <font>
                   <Font size="14.0" />
                </font></CheckBox>

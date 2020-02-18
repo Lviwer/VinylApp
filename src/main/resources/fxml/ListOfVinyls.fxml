@@ -52,7 +52,7 @@
             <TableColumn fx:id="vinylConditionColumn" maxWidth="120.0" minWidth="40.0" prefWidth="50.0" text="%add.vinyl.lpconditon" />
             <TableColumn fx:id="conditionOfAcColumn" maxWidth="120.0" minWidth="40.0" prefWidth="50.0" text="%add.vinyl.accesoriescondition" />
             <TableColumn fx:id="availableColumn" maxWidth="70.0" minWidth="30.0" prefWidth="40.0" text="%add.vinyl.available" />
-            <TableColumn fx:id="wantToColumn" maxWidth="70.0" minWidth="40.0" prefWidth="40.0" text="%vinyl.wantList" />
+            <TableColumn fx:id="wantToColumn" maxWidth="70.0" minWidth="40.0" prefWidth="40.0" text="%add.vinyl.wantto" />
             <TableColumn fx:id="deleteColumn" editable="false" maxWidth="70.0" minWidth="40.0" prefWidth="40.0" sortable="false" text="%delete" />
             <TableColumn fx:id="editColumn" editable="false" maxWidth="70.0" minWidth="23.0" prefWidth="52.0" sortable="false" text="%edit" />
         </columns>
@@ -104,6 +104,12 @@
             </VBox>
             <VBox prefHeight="53.0" prefWidth="513.0">
                <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="%collection.value" />
+                        <Label fx:id="collectionValue" />
+                     </children>
+                  </HBox>
                   <HBox prefHeight="27.0" prefWidth="369.0">
                      <children>
                         <Label text="%sold.this.month" />
@@ -114,12 +120,6 @@
                      <children>
                         <Label text="%vinyls.sold.for.price" />
                         <Label fx:id="priceSoldVinylsInMonth" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label text="%collection.value" />
-                        <Label fx:id="collectionValue" />
                      </children>
                   </HBox>
                </children>

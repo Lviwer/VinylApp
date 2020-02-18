@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.KeyCode;
@@ -14,7 +16,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import vinylApp.Main;
 import vinylApp.database.dbUtils.DbManager;
 import vinylApp.modelFx.UserModel;
 import vinylApp.utils.DialogsUtils;
@@ -156,27 +157,27 @@ public class LoginWindowController implements Initializable {
 
     private void openNewWindowWithApp() {
 
-        Main main = new Main();
+       // Main main = new Main();
         Stage stage = new Stage();
         Pane pane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
-
+        assert pane != null;
         Scene scene = new Scene(pane);
         String vinylAppAndName = FxmlUtils.getResourceBundle().getString("title.application.with.login").concat(this.usernameTextField.getText());
         stage.setTitle(vinylAppAndName);
         stage.setScene(scene);
         stage.show();
+
+        stage.setOnCloseRequest(DialogsUtils::confirmationDialogExit); // original version with lambda
     }
 
 
-    public void polishOnAction(ActionEvent actionEvent) {
+    public void polishOnAction() {
         Locale.setDefault(new Locale("pl"));
         if (polishButton.isSelected()) {
             polishButton.setOpacity(1);
             englishButton.setOpacity(0.5);
         }
-
     }
-
 
     public void englishOnAction(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("en"));
@@ -185,7 +186,6 @@ public class LoginWindowController implements Initializable {
             polishButton.setOpacity(0.5);
         }
     }
-
 
 }
 

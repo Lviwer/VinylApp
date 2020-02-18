@@ -11,6 +11,8 @@ public class AuthorFx {
     private IntegerProperty id = new SimpleIntegerProperty();
     private StringProperty nameOfAuthor = new SimpleStringProperty();
 
+
+
     public int getId() {
         return id.get();
     }

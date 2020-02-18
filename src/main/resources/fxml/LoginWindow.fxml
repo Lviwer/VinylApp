@@ -51,12 +51,12 @@
                                     </ImageInput>
                                  </effect>
                               </ToggleButton>
-                              <Button mnemonicParsing="false" onAction="#newUserOnAction" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="New User">
+                              <Button mnemonicParsing="false" onAction="#newUserOnAction" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="New user">
                                  <HBox.margin>
                                     <Insets right="15.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#exitOnAction" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="EXIT" />
+                              <Button mnemonicParsing="false" onAction="#exitOnAction" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white; -fx-font-weight: bold; -fx-font-size: 1.3em;" text="Exit" />
                            </children>
                         </HBox>
                      </children>
@@ -101,7 +101,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.5em; -fx-font-family: Quicksand; -fx-fill: white; -fx-font-weight: bold;" text="VinylApp version 1.0" />
                      </children>
                   </HBox>
-                  <Label layoutX="435.0" layoutY="182.0" text="Sign In" textFill="#110b0b">
+                  <Label layoutX="435.0" layoutY="182.0" text="Sign in" textFill="#110b0b">
                      <font>
                         <Font name="System Bold" size="32.0" />
                      </font>

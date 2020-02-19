@@ -7,8 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.KeyCode;
@@ -150,7 +148,7 @@ public class LoginWindowController implements Initializable {
         anchorPaneId.getChildren().setAll(pane);
     }
 
-    public void exitOnAction(ActionEvent actionEvent) {
+    public void exitOnAction() {
         Platform.exit();
         System.exit(0);
     }
@@ -179,7 +177,7 @@ public class LoginWindowController implements Initializable {
         }
     }
 
-    public void englishOnAction(ActionEvent actionEvent) {
+    public void englishOnAction() {
         Locale.setDefault(new Locale("en"));
         if (englishButton.isSelected()) {
             englishButton.setOpacity(1);

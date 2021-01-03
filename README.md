@@ -25,7 +25,7 @@ VinylApp lets you:
  - H2 Database Engine
  
 <p align="center">
-<img src="https://github.com/Lviwer/VinylApp/blob/master/vinylApp.gif">
+<img src="https://github.com/Lviwer/VinylApp/blob/master/vinylApp.gif" width="634" height="440">
 </p>
  
  PS. 

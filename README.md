@@ -24,7 +24,9 @@ VinylApp lets you:
  - Java Database Connectivity 
  - H2 Database Engine
  
- 
+<p align="center">
+<img src="https://github.com/Lviwer/VinylApp/blob/master/vinylApp.gif">
+</p>
  
  PS. 
  If you want to check the possibilities of VinylApp user, use:
